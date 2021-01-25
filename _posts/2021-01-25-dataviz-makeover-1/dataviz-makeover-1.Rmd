@@ -4,20 +4,73 @@ description: |
   Due 28 Jan 2021, 2359h.
 author:
   - name: Cheryl Pay
-    url: https://linkedin.com/in/cherylpay
-date: 01-25-2021
+    url: 
+date: 01-28-2021
 output:
   distill::distill_article:
     self_contained: false
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-Distill is a publication format for scientific and technical writing, native to the web.
+# (A) Critic
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
+### Clarity
 
+-   C1. Trends in the first four sentences of the statement are not apparent in the visualization. In particular, the age groups "aged 55 and above" and "aged 25 to 54" are not clearly shown in the visualization.
+-   C2. The years in between 2009 and 2019 are missed out; only 2009 and 2019 are shown.
+-   C3. Y-axis is missing from the visualization.
+-   C4. No lead in or callouts to provide context.
+-   C5.Title and caption of visualization is misleading; "Per Cent" is inaccurate.
+-   C6. LFPR is used in the statement, without stating what LFPR stands for.
 
+### Aesthetics
+
+-   A1. Poor color choice of gray and blue used.
+-   A2. Y-axis labels are cramped.
+-   A3. Poor positioning of "Source" and "Note", with less than one line space between them and no spacing below "Note".
+
+In this hands-on exercise, you will learn how to plot data visualisation for visualising correlation matrix with R. It consists of three main sections. First, you will learn how to create correlation matrix using [*pairs()*](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/pairs) of R Graphics. Next, you will learn how to plot corrgram using **corrplot** package of R Lastly, you will learn how to create an interactive correlation matrix using plotly R. .
+
+# (B) Alternative Graphical Representation - Sketch
+
+*Insert sketch here*
+
+![alt text](/Users/Cheryl/cpwl23/blog/images/DataViz1%20images/01.png){width="500"}
+
+1.  asdfhlk
+2.  asdfhjkl
+
+Next, you will use the code chunk below to install and launch **corrplot**, **ggpubr**, **plotly** and **tidyverse** in RStudio.
+
+```{r, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+
+packages = c('ggpubr', 'tidyverse')
+
+for(p in packages){library
+  if(!require(p, character.only = T)){
+    install.packages(p)
+  }
+  library(p, character.only = T)
+}
+```
+
+# 3.0 Importing and Preparing The Data Set
+
+In this hands-on exercise, the [Wine Quality Data Set](https://archive.ics.uci.edu/ml/datasets/wine+quality) of UCI Machine Learning Repository will be used. The data set consists of 13 variables and 6497 observations. For the purpose of this exercise, we have combined the red wine and white wine data into one data file. It is called wine_quality and is in csv file format.
+
+### 3.1 Importing Data
+
+First, let us import the data into R by using *read_csv()* of **readr** package.
+
+Notice that beside quality and type, the rest of the variables are numerical and continuous data type.
+
+# 4.0 Univariate EDA with Histogram
+
+In the figure below, multiple histograms are plottted to reveal the distribution of the selected variables in the wine quality data sets.
+
+The code chunks used to create the data visualisation consists of two main parts. First, we will create the individual histograms using the code chunk below.
+
+Next, the *ggarrange* function of **ggpur** package is used to group these histograms together.
