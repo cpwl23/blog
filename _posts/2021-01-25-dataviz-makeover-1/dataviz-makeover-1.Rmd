@@ -27,7 +27,7 @@ knitr::opts_chunk$set(echo = FALSE)
 -   C2. The years in between 2009 and 2019 are missed out; only 2009 and 2019 are shown.
 -   C3. Y-axis is missing from the visualization.
 -   C4. No lead in or callouts to provide context.
--   C5.Title and caption of visualization is misleading; *Per Cent* is inaccurate.
+-   C5. Title and caption of visualization is misleading; *Per Cent* is inaccurate.
 -   C6. *LFPR* is used in the statement, without stating what LFPR stands for.
 
 ### Aesthetics
