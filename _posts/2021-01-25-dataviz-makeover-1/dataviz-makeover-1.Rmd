@@ -128,7 +128,41 @@ b.  Click on *Abc* of Year. From the dropdown, select **Date**.
 
     ![](images/05%20change%20year%20to%20date.png){width="400"}
 
-c.  
+c.  Go to *Sheet 1* from the tabs at the bottom of your window. In the *Data* pane, right-click *Age (Years)* and select **Create \> Group**.
+
+    ![](images/06%20create%20group.png){width="400"}
+
+d.  In the Create Group dialog box, select the age groups 55 and above, then click **Group**. Rename the group to *55+ years*. Do the same for the other two groups - *25-54 years* and *Below 25 years.*
+
+    <div>
+
+    > 55+
+    >
+    > -   asdfh
+    >
+    > -   asdfhl
+    >
+    > -   asdfh
+    >
+    > 25-54 years
+    >
+    > -   asdfhl
+    >
+    > -   asdfhjl
+    >
+    > -   asdfhl
+    >
+    > Below 25 years
+    >
+    > -   asdfhk
+    >
+    > -   asdfhjl
+    >
+    > -   asdfhjl
+
+    </div>
+
+e.  
 
 First, let us import the data into R by using *read_csv()* of **readr** package.
 
