@@ -23,18 +23,18 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ### Clarity
 
--   C1. Trends in the first four sentences of the statement are not apparent in the visualization. In particular, the age groups "aged 55 and above" and "aged 25 to 54" are not clearly shown in the visualization.
+-   C1. Trends in the first four sentences of the statement are not apparent in the visualization. In particular, the age groups *aged 55 and above* and *aged 25 to 54* are not clearly shown in the visualization.
 -   C2. The years in between 2009 and 2019 are missed out; only 2009 and 2019 are shown.
 -   C3. Y-axis is missing from the visualization.
 -   C4. No lead in or callouts to provide context.
--   C5.Title and caption of visualization is misleading; "Per Cent" is inaccurate.
--   C6. LFPR is used in the statement, without stating what LFPR stands for.
+-   C5.Title and caption of visualization is misleading; *Per Cent* is inaccurate.
+-   C6. *LFPR* is used in the statement, without stating what LFPR stands for.
 
 ### Aesthetics
 
 -   A1. Poor color choice of gray and blue used.
 -   A2. Y-axis labels are cramped.
--   A3. Poor positioning of "Source" and "Note", with less than one line space between them and no spacing below "Note".
+-   A3. Poor positioning of *Source* and *Note*, with less than one line space between them and no spacing below *Note*.
 
 In this hands-on exercise, you will learn how to plot data visualisation for visualising correlation matrix with R. It consists of three main sections. First, you will learn how to create correlation matrix using [*pairs()*](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/pairs) of R Graphics. Next, you will learn how to plot corrgram using **corrplot** package of R Lastly, you will learn how to create an interactive correlation matrix using plotly R. .
 
@@ -44,7 +44,7 @@ With reference to [(A) Critic], an alternative representation is sketched below.
 
 *insert sketch here*
 
-a.  Chart Title, *Proportion of labour force by age group*, *by year,* is added. (**C5**)
+a.  Chart Title, *Proportion of labour force by age group, by year*, is added. (**C5**)
 
 b.  An area chart is selected to show the percentage of each age group, every year from 2009 to 2019 (instead of showing only 2009 and 2019). (**C4**)
 
@@ -86,7 +86,7 @@ for(p in packages){library
 
 # C. Proposed Data Visualization - Tableau
 
-![](images/99.png){width="500"}
+![insert asefhjaksldhfls](images/99.png){width="500"}
 
 # D. Step-by-Step Guide for Creating the Visualization
 
@@ -134,33 +134,7 @@ c.  Go to *Sheet 1* from the tabs at the bottom of your window. In the *Data* pa
 
 d.  In the Create Group dialog box, select the age groups 55 and above, then click **Group**. Rename the group to *55+ years*. Do the same for the other two groups - *25-54 years* and *Below 25 years.*
 
-    <div>
-
-    > 55+
-    >
-    > -   asdfh
-    >
-    > -   asdfhl
-    >
-    > -   asdfh
-    >
-    > 25-54 years
-    >
-    > -   asdfhl
-    >
-    > -   asdfhjl
-    >
-    > -   asdfhl
-    >
-    > Below 25 years
-    >
-    > -   asdfhk
-    >
-    > -   asdfhjl
-    >
-    > -   asdfhjl
-
-    </div>
+    ![](images/07b%20create%20groups%20all-01.png){width="400"}
 
 e.  
 
@@ -170,8 +144,6 @@ Notice that beside quality and type, the rest of the variables are numerical and
 
 # E. Three Major Observations
 
-In the figure below, multiple histograms are plotted to reveal the distribution of the selected variables in the wine quality data sets.
-
-The code chunks used to create the data visualisation consists of two main parts. First, we will create the individual histograms using the code chunk below.
-
-Next, the *ggarrange* function of **ggpur** package is used to group these histograms together.
+1.  Proportion of labour force aged 55 and above is increasing or remain the same every year from 2009 to 2019.
+2.  asdfhjkl
+3.  asdfhjkl
