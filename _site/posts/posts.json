@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2021-01-25-dataviz-makeover-1/",
+    "title": "DataViz Makeover 1",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Cheryl Pay",
+        "url": "https://linkedin.com/in/cherylpay"
+      }
+    ],
+    "date": "2021-01-25",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-01-25T10:56:58+08:00",
+    "input_file": "dataviz-makeover-1.utf8.md"
+  },
+  {
     "path": "posts/2021-01-05-my-first-post/",
     "title": "Hands-on_Distill.Rmd from Prof Kam",
     "description": "A short description of the post.",
