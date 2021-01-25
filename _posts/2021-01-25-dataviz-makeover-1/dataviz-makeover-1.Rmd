@@ -17,6 +17,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # (A) Critic
 
+*A critic of the following data visualization is provided.*
+
+![Excerpt and chart is taken from Page 22 of Report: [Labour Force in Singapore 2019](https://stats.mom.gov.sg/Pages/Labour-Force-In-Singapore-2019.aspx)](images/00.jpg){width="500"}
+
 ### Clarity
 
 -   C1. Trends in the first four sentences of the statement are not apparent in the visualization. In particular, the age groups "aged 55 and above" and "aged 25 to 54" are not clearly shown in the visualization.
@@ -36,13 +40,35 @@ In this hands-on exercise, you will learn how to plot data visualisation for vis
 
 # (B) Alternative Graphical Representation - Sketch
 
-*Insert sketch here*
+With reference to [(A) Critic], an alternative representation is sketched below.
 
-![insert alt text here](images/01.png){width="100"}
+*insert sketch here*
 
-asdfhlk
+1.  Chart Title, *Proportion of labour force by age group*, *by year,* is added. (**C5**)
 
-1.  asdfhjkl
+2.  An area chart is selected to show the percentage of each age group, every year from 2009 to 2019 (instead of showing only 2009 and 2019). (**C4**)
+
+3.  Data is grouped according to three age groups. This grouping serves to reflect the increase in percentage points of residents aged 55 and over in the labour force over the years. (**C1**)
+
+    -   *55+ years*
+
+    -   *25 to 54 years*
+
+    -   *Below 25 years*
+
+4.  The legend, in a single line, is shown clearly below the chart title. (**C1, C2**)
+
+5.  Colour palette, *Tableau 10*, is chosen to differentiate the three age groups clearly; instead of grey-blue colour for 2009 and 2019 respectively. (**A1**)
+
+6.  Y-axis with minimum 0% and maximum 100% is shown. (**C3**)
+
+7.  X-axis labels are comfortably spaced i.e. not cramped. (**A2**)
+
+8.  *Source* is positioned two line spaces below x-axis; *Source* is also aligned right and italicized for differentiation from x-axis labels. (**A3**)
+
+9.  Callouts for percentage in 2009 and 2019, for all three age groups, are added to emphasis the trend as described in the statement. Font is bold. (**C1, C4**)
+
+10. Labour force participating rate is stated in the statement to reflect what LFPR stands for. (**C6**)
 
 Next, you will use the code chunk below to install and launch **corrplot**, **ggpubr**, **plotly** and **tidyverse** in RStudio.
 
@@ -58,11 +84,18 @@ for(p in packages){library
 }
 ```
 
-# 3.0 Importing and Preparing The Data Set
+# (C) Proposed Data Visualization - Tableau
 
 In this hands-on exercise, the [Wine Quality Data Set](https://archive.ics.uci.edu/ml/datasets/wine+quality) of UCI Machine Learning Repository will be used. The data set consists of 13 variables and 6497 observations. For the purpose of this exercise, we have combined the red wine and white wine data into one data file. It is called wine_quality and is in csv file format.
 
-### 3.1 Importing Data
+# (D) Step-by-Step Guide for creating the visualization
+
+### D.1 Preparing the data: excel file
+
+First, we download *Table (7): Resident Labour Force Aged Fifteen Years and Over by Age and sex,
+2009 -- 2019 (June)* from [Table: Labour Force 2019](https://stats.mom.gov.sg/Pages/Labour-Force-Tables2019.aspx).
+
+Then
 
 First, let us import the data into R by using *read_csv()* of **readr** package.
 
