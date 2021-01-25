@@ -1,7 +1,7 @@
 ---
 title: "DataViz Makeover 1"
 description: |
-  A short description of the post.
+  Due 28 Jan 2021, 2359h.
 author:
   - name: Cheryl Pay
     url: https://linkedin.com/in/cherylpay
