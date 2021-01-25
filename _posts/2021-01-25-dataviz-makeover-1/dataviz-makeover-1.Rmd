@@ -38,7 +38,7 @@ In this hands-on exercise, you will learn how to plot data visualisation for vis
 
 *Insert sketch here*
 
-![alt text](/Users/Cheryl/cpwl23/blog/images/DataViz1%20images/01.png){width="500"}
+![alt text](images/DataViz1 images/01.png){width="500"}
 
 1.  asdfhlk
 2.  asdfhjkl
