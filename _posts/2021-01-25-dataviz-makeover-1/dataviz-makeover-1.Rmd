@@ -38,10 +38,11 @@ In this hands-on exercise, you will learn how to plot data visualisation for vis
 
 *Insert sketch here*
 
-![](images/01.png){width="500"}
+![insert alt text here](images/01.png){width="100"}
 
-1.  asdfhlk
-2.  asdfhjkl
+asdfhlk
+
+1.  asdfhjkl
 
 Next, you will use the code chunk below to install and launch **corrplot**, **ggpubr**, **plotly** and **tidyverse** in RStudio.
 
