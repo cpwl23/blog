@@ -20,19 +20,18 @@
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css" data-origin="pandoc">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -52,7 +51,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
@@ -88,31 +87,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
 <title>IDEA: Hands-on_Distill.Rmd from Prof Kam</title>
 
-<meta property="description" itemprop="description" content="A short description of the post."/>
+<meta property="description" itemprop="description" content="Example .Rmd file provided by Prof Kam for ISSS608 Visual Analytics"/>
 
 
 <!--  https://schema.org/Article -->
 <meta property="article:published" itemprop="datePublished" content="2021-01-04"/>
 <meta property="article:created" itemprop="dateCreated" content="2021-01-04"/>
-<meta name="article:author" content="Cheryl Pay"/>
+<meta name="article:author" content="Prof Kam Tim Seong"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
 <meta property="og:title" content="IDEA: Hands-on_Distill.Rmd from Prof Kam"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="A short description of the post."/>
+<meta property="og:description" content="Example .Rmd file provided by Prof Kam for ISSS608 Visual Analytics"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="IDEA"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
 <meta property="twitter:title" content="IDEA: Hands-on_Distill.Rmd from Prof Kam"/>
-<meta property="twitter:description" content="A short description of the post."/>
+<meta property="twitter:description" content="Example .Rmd file provided by Prof Kam for ISSS608 Visual Analytics"/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Hands-on_Distill.Rmd from Prof Kam"]},{"type":"character","attributes":{},"value":["A short description of the post."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Cheryl Pay"]},{"type":"character","attributes":{},"value":["https://linkedin.com/in/cherylpay"]}]}]},{"type":"character","attributes":{},"value":["01-04-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Hands-on_Distill.Rmd from Prof Kam"]},{"type":"character","attributes":{},"value":["Example .Rmd file provided by Prof Kam for ISSS608 Visual Analytics"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Prof Kam Tim Seong"]},{"type":"NULL"}]}]},{"type":"character","attributes":{},"value":["01-04-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -2041,6 +2040,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.6.6/header-attrs.js"></script>
   <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
   <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -2061,7 +2061,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Hands-on_Distill.Rmd from Prof Kam","description":"A short description of the post.","authors":[{"author":"Cheryl Pay","authorURL":"https://linkedin.com/in/cherylpay","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-01-04T00:00:00.000+00:00","citationText":"Pay, 2021"}
+{"title":"Hands-on_Distill.Rmd from Prof Kam","description":"Example .Rmd file provided by Prof Kam for ISSS608 Visual Analytics","authors":[{"author":"Prof Kam Tim Seong","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-01-04T00:00:00.000+00:00","citationText":"Seong, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2089,11 +2089,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <h1>Hands-on_Distill.Rmd from Prof Kam</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>A short description of the post.</p></p>
+<p><p>Example .Rmd file provided by Prof Kam for ISSS608 Visual Analytics</p></p>
 </div>
 
 <div class="d-byline">
-  Cheryl Pay <a href="https://linkedin.com/in/cherylpay" class="uri">https://linkedin.com/in/cherylpay</a> 
+  Prof Kam Tim Seong  
   
 <br/>01-04-2021
 </div>
@@ -2123,7 +2123,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>Next, you will use the code chunk below to install and launch <strong>corrplot</strong>, <strong>ggpubr</strong>, <strong>plotly</strong> and <strong>tidyverse</strong> in RStudio.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre><code><span class='va'>packages</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'ggpubr'</span>, <span class='st'>'tidyverse'</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>packages</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'ggpubr'</span>, <span class='st'>'tidyverse'</span><span class='op'>)</span>
 
 <span class='kw'>for</span><span class='op'>(</span><span class='va'>p</span> <span class='kw'>in</span> <span class='va'>packages</span><span class='op'>)</span><span class='op'>{</span><span class='va'>library</span>
   <span class='kw'>if</span><span class='op'>(</span><span class='op'>!</span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>require</a></span><span class='op'>(</span><span class='va'>p</span>, character.only <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span>
@@ -2140,7 +2140,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>First, let us import the data into R by using <em>read_csv()</em> of <strong>readr</strong> package.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre><code><span class='va'>wine</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='st'>"data/wine_quality.csv"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>wine</span> <span class='op'>&lt;-</span> <span class='fu'>read_csv</span><span class='op'>(</span><span class='st'>"data/wine_quality.csv"</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -2153,7 +2153,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>The code chunks used to create the data visualisation consists of two main parts. First, we will create the individual histograms using the code chunk below.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre><code><span class='va'>fa</span> <span class='op'>&lt;-</span> <span class='fu'>ggplot</span><span class='op'>(</span>data<span class='op'>=</span><span class='va'>wine</span>, <span class='fu'>aes</span><span class='op'>(</span>x<span class='op'>=</span> <span class='va'>`fixed acidity`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>fa</span> <span class='op'>&lt;-</span> <span class='fu'>ggplot</span><span class='op'>(</span>data<span class='op'>=</span><span class='va'>wine</span>, <span class='fu'>aes</span><span class='op'>(</span>x<span class='op'>=</span> <span class='va'>`fixed acidity`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'>geom_histogram</span><span class='op'>(</span>bins<span class='op'>=</span><span class='fl'>20</span>, color<span class='op'>=</span><span class='st'>"black"</span>, fill<span class='op'>=</span><span class='st'>"light blue"</span><span class='op'>)</span>
 <span class='va'>va</span> <span class='op'>&lt;-</span> <span class='fu'>ggplot</span><span class='op'>(</span>data<span class='op'>=</span><span class='va'>wine</span>, <span class='fu'>aes</span><span class='op'>(</span>x<span class='op'>=</span> <span class='va'>`volatile acidity`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'>geom_histogram</span><span class='op'>(</span>bins<span class='op'>=</span><span class='fl'>20</span>, color<span class='op'>=</span><span class='st'>"black"</span>, fill<span class='op'>=</span><span class='st'>"light blue"</span><span class='op'>)</span>
@@ -2181,7 +2181,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>Next, the <em>ggarrange</em> function of <strong>ggpur</strong> package is used to group these histograms together.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre><code><span class='fu'>ggarrange</span><span class='op'>(</span><span class='va'>fa</span>, <span class='va'>va</span>, <span class='va'>ca</span>, <span class='va'>rs</span>, <span class='va'>ch</span>, <span class='va'>fSO2</span>, <span class='va'>tSO2</span>, <span class='va'>density</span>, <span class='va'>pH</span>, <span class='va'>sulphates</span>, <span class='va'>alcohol</span>, 
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>ggarrange</span><span class='op'>(</span><span class='va'>fa</span>, <span class='va'>va</span>, <span class='va'>ca</span>, <span class='va'>rs</span>, <span class='va'>ch</span>, <span class='va'>fSO2</span>, <span class='va'>tSO2</span>, <span class='va'>density</span>, <span class='va'>pH</span>, <span class='va'>sulphates</span>, <span class='va'>alcohol</span>, 
           ncol <span class='op'>=</span> <span class='fl'>4</span>, nrow <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span>
 </code></pre>
 </div>
