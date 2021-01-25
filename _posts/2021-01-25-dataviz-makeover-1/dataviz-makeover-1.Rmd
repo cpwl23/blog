@@ -15,7 +15,7 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# (A) Critic
+# A. Critic
 
 *A critic of the following data visualization is provided.*
 
@@ -38,17 +38,17 @@ knitr::opts_chunk$set(echo = FALSE)
 
 In this hands-on exercise, you will learn how to plot data visualisation for visualising correlation matrix with R. It consists of three main sections. First, you will learn how to create correlation matrix using [*pairs()*](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/pairs) of R Graphics. Next, you will learn how to plot corrgram using **corrplot** package of R Lastly, you will learn how to create an interactive correlation matrix using plotly R. .
 
-# (B) Alternative Graphical Representation - Sketch
+# B. Alternative Graphical Representation - Sketch
 
 With reference to [(A) Critic], an alternative representation is sketched below.
 
 *insert sketch here*
 
-1.  Chart Title, *Proportion of labour force by age group*, *by year,* is added. (**C5**)
+a.  Chart Title, *Proportion of labour force by age group*, *by year,* is added. (**C5**)
 
-2.  An area chart is selected to show the percentage of each age group, every year from 2009 to 2019 (instead of showing only 2009 and 2019). (**C4**)
+b.  An area chart is selected to show the percentage of each age group, every year from 2009 to 2019 (instead of showing only 2009 and 2019). (**C4**)
 
-3.  Data is grouped according to three age groups. This grouping serves to reflect the increase in percentage points of residents aged 55 and over in the labour force over the years. (**C1**)
+c.  Data is grouped according to three age groups. This grouping serves to reflect the increase in percentage points of residents aged 55 and over in the labour force over the years. (**C1**)
 
     -   *55+ years*
 
@@ -56,19 +56,19 @@ With reference to [(A) Critic], an alternative representation is sketched below.
 
     -   *Below 25 years*
 
-4.  The legend, in a single line, is shown clearly below the chart title. (**C1, C2**)
+d.  The legend, in a single line, is shown clearly below the chart title. (**C1, C2**)
 
-5.  Colour palette, *Tableau 10*, is chosen to differentiate the three age groups clearly; instead of grey-blue colour for 2009 and 2019 respectively. (**A1**)
+e.  Colour palette, *Tableau 10*, is chosen to differentiate the three age groups clearly; instead of grey-blue colour for 2009 and 2019 respectively. (**A1**)
 
-6.  Y-axis with minimum 0% and maximum 100% is shown. (**C3**)
+f.  Y-axis with minimum 0% and maximum 100% is shown. (**C3**)
 
-7.  X-axis labels are comfortably spaced i.e. not cramped. (**A2**)
+g.  X-axis labels are comfortably spaced i.e. not cramped. (**A2**)
 
-8.  *Source* is positioned two line spaces below x-axis; *Source* is also aligned right and italicized for differentiation from x-axis labels. (**A3**)
+h.  *Source* is positioned two line spaces below x-axis; *Source* is also aligned right and italicized for differentiation from x-axis labels. (**A3**)
 
-9.  Callouts for percentage in 2009 and 2019, for all three age groups, are added to emphasis the trend as described in the statement. Font is bold. (**C1, C4**)
+i.  Callouts for percentage in 2009 and 2019, for all three age groups, are added to emphasis the trend as described in the statement. Font is bold. (**C1, C4**)
 
-10. Labour force participating rate is stated in the statement to reflect what LFPR stands for. (**C6**)
+j.  Labour force participating rate is stated in the statement to reflect what LFPR stands for. (**C6**)
 
 Next, you will use the code chunk below to install and launch **corrplot**, **ggpubr**, **plotly** and **tidyverse** in RStudio.
 
@@ -84,26 +84,59 @@ for(p in packages){library
 }
 ```
 
-# (C) Proposed Data Visualization - Tableau
+# C. Proposed Data Visualization - Tableau
 
 ![](images/99.png){width="500"}
 
-# (D) Step-by-Step Guide for creating the visualization
+# D. Step-by-Step Guide for Creating the Visualization
 
 ### D.1 Preparing the data: excel file
 
-First, we download *Table (7): Resident Labour Force Aged Fifteen Years and Over by Age and sex,
-2009 -- 2019 (June)* from [Table: Labour Force 2019](https://stats.mom.gov.sg/Pages/Labour-Force-Tables2019.aspx).
+a.  First, we download *Table (7): Resident Labour Force Aged Fifteen Years and Over by Age and sex, 2009 -- 2019 (June)* from [Table: Labour Force 2019](https://stats.mom.gov.sg/Pages/Labour-Force-Tables2019.aspx).
 
-Then
+b.  Then, we need to calculate **proportion of resident labour force of each age group, by year**, in percent.
+
+    <div>
+
+    > Proportion = **number of residents in each age group each year** divided by **the total number of residents in the same year**
+    >
+    > ![](images/02%20calculate%20proportion.png){width="250"}
+
+    </div>
+
+c.  Do the same for every year and every age group.
+
+d.  Copy and paste the values calculated onto another excel file. Save file as **data.xlsx** to use as your data source for Tableau. You should have the following three columns with 133 observations.
+
+    <div>
+
+    > Column A: **Year**
+    >
+    > Column B: **Age (Years)**
+    >
+    > Column C: **Percentage**
+    >
+    > ![](images/03%20data%20source%20excel%20raw.png){width="250"}
+
+    </div>
+
+### D.2 Creating the visualization on Tableau
+
+a.  Load Tableau and click on *Microsoft Excel* from the taskbar on the left. Select the file: *data.xlsx* that you have created previously. Click **Open**.
+
+b.  Click on *Abc* of Year. From the dropdown, select **Date**.
+
+    ![](images/05%20change%20year%20to%20date.png){width="400"}
+
+c.  
 
 First, let us import the data into R by using *read_csv()* of **readr** package.
 
 Notice that beside quality and type, the rest of the variables are numerical and continuous data type.
 
-# 4.0 Univariate EDA with Histogram
+# E. Three Major Observations
 
-In the figure below, multiple histograms are plottted to reveal the distribution of the selected variables in the wine quality data sets.
+In the figure below, multiple histograms are plotted to reveal the distribution of the selected variables in the wine quality data sets.
 
 The code chunks used to create the data visualisation consists of two main parts. First, we will create the individual histograms using the code chunk below.
 
