@@ -2110,8 +2110,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <li>C2. The years in between 2009 and 2019 are missed out; only 2009 and 2019 are shown.</li>
 <li>C3. Y-axis is missing from the visualization.</li>
 <li>C4. No lead in or callouts to provide context.</li>
-<li>C5.Title and caption of visualization is misleading; <em>Per Cent</em> is inaccurate.</li>
+<li>C5. Title and caption of visualization is misleading; <em>Per Cent</em> is inaccurate.</li>
 <li>C6. <em>LFPR</em> is used in the statement, without stating what LFPR stands for.</li>
+<li>C7. <em>LFPR</em> trends are not shown in the chart.</li>
 </ul>
 <h3 id="aesthetics">Aesthetics</h3>
 <ul>
@@ -2121,24 +2122,35 @@ document.addEventListener('DOMContentLoaded', function() {
 </ul>
 <p>In this hands-on exercise, you will learn how to plot data visualisation for visualising correlation matrix with R. It consists of three main sections. First, you will learn how to create correlation matrix using <a href="https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/pairs"><em>pairs()</em></a> of R Graphics. Next, you will learn how to plot corrgram using <strong>corrplot</strong> package of R Lastly, you will learn how to create an interactive correlation matrix using plotly R. .</p>
 <h1 id="b.-alternative-graphical-representation---sketch">B. Alternative Graphical Representation - Sketch</h1>
-<p>With reference to [(A) Critic], an alternative representation is sketched below.</p>
+<p>With reference to <a href="#a.-critic">A. Critic</a>, an alternative representation is sketched below.</p>
 <p><em>insert sketch here</em></p>
 <ol type="a">
-<li><p>Chart Title, <em>Proportion of labour force by age group, by year</em>, is added. (<strong>C5</strong>)</p></li>
-<li><p>An area chart is selected to show the percentage of each age group, every year from 2009 to 2019 (instead of showing only 2009 and 2019). (<strong>C4</strong>)</p></li>
-<li><p>Data is grouped according to three age groups. This grouping serves to reflect the increase in percentage points of residents aged 55 and over in the labour force over the years. (<strong>C1</strong>)</p>
+<li><p>Two charts, with chart title, are added. (<strong>C5</strong>)</p>
+<p>Chart 1: <em>Labour force participation rate</em></p>
+<p>Chart 2: <em>Proportion of labour force</em></p></li>
+<li><p>In both charts, data points range every year from 2009 to 2019 (instead of showing only 2009 and 2019). (<strong>C4</strong>)</p></li>
+<li><p>Data is grouped into three and four age groups in Chart 1 and Chart 2 respectively. (<strong>C1</strong>)</p></li>
+<li><p>Chart 1 is a line chart that shows the labour force participation rate (LFPR) by age group by year. This will reflect the trends in LFPR, in particular the sustained increase in LFPR for the cohorts aged 55 and above. (<strong>C1, C7</strong>)</p>
+<ul>
+<li><p><em>65 and above</em></p></li>
+<li><p><em>55 - 64 years</em></p></li>
+<li><p><em>25 - 54 years</em></p></li>
+<li><p><em>15 - 24 years</em></p></li>
+</ul></li>
+<li><p>Chart 2 is an area chart that shows three age groups and their proportion of the labour force each year. This chart serves to reflect the increase in proportion of residents aged 55 and over in the labour force over the years. The values for 2009 and 2019, for each age group, are shown. (<strong>C1</strong>)</p>
 <ul>
 <li><p><em>55+ years</em></p></li>
 <li><p><em>25 to 54 years</em></p></li>
 <li><p><em>Below 25 years</em></p></li>
 </ul></li>
-<li><p>The legend, in a single line, is shown clearly below the chart title. (<strong>C1, C2</strong>)</p></li>
-<li><p>Colour palette, <em>Tableau 10</em>, is chosen to differentiate the three age groups clearly; instead of grey-blue colour for 2009 and 2019 respectively. (<strong>A1</strong>)</p></li>
-<li><p>Y-axis with minimum 0% and maximum 100% is shown. (<strong>C3</strong>)</p></li>
-<li><p>X-axis labels are comfortably spaced i.e. not cramped. (<strong>A2</strong>)</p></li>
-<li><p><em>Source</em> is positioned two line spaces below x-axis; <em>Source</em> is also aligned right and italicized for differentiation from x-axis labels. (<strong>A3</strong>)</p></li>
-<li><p>Callouts for percentage in 2009 and 2019, for all three age groups, are added to emphasis the trend as described in the statement. Font is bold. (<strong>C1, C4</strong>)</p></li>
+<li><p>Each line and area is clearly labelled. (<strong>C1, C2</strong>)</p></li>
+<li><p>Colour palette, <em>Tableau 10</em>, is chosen to differentiate the age groups clearly; instead of grey-blue colour for 2009 and 2019 respectively. (<strong>A1</strong>)</p></li>
+<li><p>Y-axis with minimum 0% and maximum 100% are shown on both charts. (<strong>C3</strong>)</p></li>
+<li><p>X-axis labels and x-axis title, are comfortably spaced i.e. not cramped on both charts. (<strong>A2</strong>)</p></li>
+<li><p><em>Source</em> is positioned two line spaces below the x-axes; <em>Source</em> is also aligned left and in different front from x-axis labels (for differentiation). (<strong>A3</strong>)</p></li>
+<li><p>Callouts for percentage in 2009 and 2019, for all three age groups, are added to emphasis the trend as described in the statement. (<strong>C1, C4</strong>)</p></li>
 <li><p>Labour force participating rate is stated in the statement to reflect what LFPR stands for. (<strong>C6</strong>)</p></li>
+<li><p>Median age in 2019 and 2009 are shown in a callout on Chart 2. (<strong>C1</strong>)</p></li>
 </ol>
 <p>Next, you will use the code chunk below to install and launch <strong>corrplot</strong>, <strong>ggpubr</strong>, <strong>plotly</strong> and <strong>tidyverse</strong> in RStudio.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -2155,9 +2167,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </div>
 <h1 id="c.-proposed-data-visualization---tableau">C. Proposed Data Visualization - Tableau</h1>
-<figure>
-<img src="images/99.png" width="500" alt="insert asefhjaksldhfls" /><figcaption aria-hidden="true">insert asefhjaksldhfls</figcaption>
-</figure>
+<p>insert tableau visualization here</p>
 <h1 id="d.-step-by-step-guide-for-creating-the-visualization">D. Step-by-Step Guide for Creating the Visualization</h1>
 <h3 id="d.1-preparing-the-data-excel-file">D.1 Preparing the data: excel file</h3>
 <ol type="a">

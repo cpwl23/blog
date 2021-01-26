@@ -29,6 +29,7 @@ knitr::opts_chunk$set(echo = FALSE)
 -   C4. No lead in or callouts to provide context.
 -   C5. Title and caption of visualization is misleading; *Per Cent* is inaccurate.
 -   C6. *LFPR* is used in the statement, without stating what LFPR stands for.
+-   C7. *LFPR* trends are not shown in the chart.
 
 ### Aesthetics
 
@@ -40,15 +41,31 @@ In this hands-on exercise, you will learn how to plot data visualisation for vis
 
 # B. Alternative Graphical Representation - Sketch
 
-With reference to [(A) Critic], an alternative representation is sketched below.
+With reference to [A. Critic], an alternative representation is sketched below.
 
 *insert sketch here*
 
-a.  Chart Title, *Proportion of labour force by age group, by year*, is added. (**C5**)
+a.  Two charts, with chart title, are added. (**C5**)
 
-b.  An area chart is selected to show the percentage of each age group, every year from 2009 to 2019 (instead of showing only 2009 and 2019). (**C4**)
+    Chart 1: *Labour force participation rate*
 
-c.  Data is grouped according to three age groups. This grouping serves to reflect the increase in percentage points of residents aged 55 and over in the labour force over the years. (**C1**)
+    Chart 2: *Proportion of labour force*
+
+b.  In both charts, data points range every year from 2009 to 2019 (instead of showing only 2009 and 2019). (**C4**)
+
+c.  Data is grouped into three and four age groups in Chart 1 and Chart 2 respectively. (**C1**)
+
+d.  Chart 1 is a line chart that shows the labour force participation rate (LFPR) by age group by year. This will reflect the trends in LFPR, in particular the sustained increase in LFPR for the cohorts aged 55 and above. (**C1, C7**)
+
+    -   *65 and above*
+
+    -   *55 - 64 years*
+
+    -   *25 - 54 years*
+
+    -   *15 - 24 years*
+
+e.  Chart 2 is an area chart that shows three age groups and their proportion of the labour force each year. This chart serves to reflect the increase in proportion of residents aged 55 and over in the labour force over the years. The values for 2009 and 2019, for each age group, are shown. (**C1**)
 
     -   *55+ years*
 
@@ -56,19 +73,21 @@ c.  Data is grouped according to three age groups. This grouping serves to refle
 
     -   *Below 25 years*
 
-d.  The legend, in a single line, is shown clearly below the chart title. (**C1, C2**)
+f.  Each line and area is clearly labelled. (**C1, C2**)
 
-e.  Colour palette, *Tableau 10*, is chosen to differentiate the three age groups clearly; instead of grey-blue colour for 2009 and 2019 respectively. (**A1**)
+g.  Colour palette, *Tableau 10*, is chosen to differentiate the age groups clearly; instead of grey-blue colour for 2009 and 2019 respectively. (**A1**)
 
-f.  Y-axis with minimum 0% and maximum 100% is shown. (**C3**)
+h.  Y-axis with minimum 0% and maximum 100% are shown on both charts. (**C3**)
 
-g.  X-axis labels are comfortably spaced i.e. not cramped. (**A2**)
+i.  X-axis labels and x-axis title, are comfortably spaced i.e. not cramped on both charts. (**A2**)
 
-h.  *Source* is positioned two line spaces below x-axis; *Source* is also aligned right and italicized for differentiation from x-axis labels. (**A3**)
+j.  *Source* is positioned two line spaces below the x-axes; *Source* is also aligned left and in different front from x-axis labels (for differentiation). (**A3**)
 
-i.  Callouts for percentage in 2009 and 2019, for all three age groups, are added to emphasis the trend as described in the statement. Font is bold. (**C1, C4**)
+k.  Callouts for percentage in 2009 and 2019, for all three age groups, are added to emphasis the trend as described in the statement. (**C1, C4**)
 
-j.  Labour force participating rate is stated in the statement to reflect what LFPR stands for. (**C6**)
+l.  Labour force participating rate is stated in the statement to reflect what LFPR stands for. (**C6**)
+
+m.  Median age in 2019 and 2009 are shown in a callout on Chart 2. (**C1**)
 
 Next, you will use the code chunk below to install and launch **corrplot**, **ggpubr**, **plotly** and **tidyverse** in RStudio.
 
