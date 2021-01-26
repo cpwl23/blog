@@ -65,29 +65,29 @@ d.  Chart 1 is a line chart that shows the labour force participation rate (LFPR
 
     -   *15 - 24 years*
 
-e.  Chart 2 is an area chart that shows three age groups and their proportion of the labour force each year. This chart serves to reflect the increase in proportion of residents aged 55 and over in the labour force over the years. The values for 2009 and 2019, for each age group, are shown. (**C1**)
+e.  Chart 2 is an area chart that shows three age groups and their proportion of the labour force each year. This chart serves to reflect the increase in proportion of residents aged 55 and over in the labour force over the years. (**C1**)
 
     -   *55+ years*
 
-    -   *25 to 54 years*
+    -   *25 - 54 years*
 
-    -   *Below 25 years*
+    -   *15 - 24 years*
 
-f.  Each line and area is clearly labelled. (**C1, C2**)
+f.  In Chart 2, the values for proportion of labour force of each age group, in 2009 and 2019, are labelled to emphasis the trend as described in the statement. (**C1,C4**)
 
-g.  Colour palette, *Tableau 10*, is chosen to differentiate the age groups clearly; instead of grey-blue colour for 2009 and 2019 respectively. (**A1**)
+g.  Each line and area is clearly labelled. (**C1, C2**)
 
-h.  Y-axis with minimum 0% and maximum 100% are shown on both charts. (**C3**)
+h.  Colour palette, *Tableau 10*, is chosen to differentiate the age groups clearly; instead of grey-blue colour for 2009 and 2019 respectively. (**A1**)
 
-i.  X-axis labels and x-axis title, are comfortably spaced i.e. not cramped on both charts. (**A2**)
+i.  Y-axis with minimum 0% and maximum 100% are shown on both charts. (**C3**)
 
-j.  *Source* is positioned two line spaces below the x-axes; *Source* is also aligned left and in different front from x-axis labels (for differentiation). (**A3**)
+j.  X-axis labels and x-axis title, are comfortably spaced i.e. not cramped on both charts. (**A2**)
 
-k.  Callouts for percentage in 2009 and 2019, for all three age groups, are added to emphasis the trend as described in the statement. (**C1, C4**)
+k.  *Source* is positioned two line spaces below the x-axes; *Source* is also aligned left and in different front from x-axis labels (for differentiation). (**A3**)
 
 l.  Labour force participating rate is stated in the statement to reflect what LFPR stands for. (**C6**)
 
-m.  Median age in 2019 and 2009 are shown in a callout on Chart 2. (**C1**)
+m.  Median working age in 2019 and 2009 are shown in a callout on Chart 2. (**C1**)
 
 Next, you will use the code chunk below to install and launch **corrplot**, **ggpubr**, **plotly** and **tidyverse** in RStudio.
 
@@ -105,7 +105,7 @@ for(p in packages){library
 
 # C. Proposed Data Visualization - Tableau
 
-![insert asefhjaksldhfls](images/99.png){width="500"}
+insert tableau visualization here
 
 # D. Step-by-Step Guide for Creating the Visualization
 
