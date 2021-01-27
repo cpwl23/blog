@@ -49,7 +49,7 @@ a.  Two charts, with chart title, are added. (**C5**)
 
     Chart 1: *Labour force participation rate*
 
-    Chart 2: *Proportion of labour force*
+    Chart 2: *Distribution of labour force*
 
 b.  In both charts, data points range every year from 2009 to 2019 (instead of showing only 2009 and 2019). (**C4**)
 
@@ -135,9 +135,9 @@ b.  From the data in Table 5, copy and paste the labour force participation rate
 
     2.  Column B: **Age Group**
 
-    3.  Column C: **Labour Force Participating Rate**
+    3.  Column C: **Labour Force Participation Rate**
 
-        ![](images/02a%20data%20lfpr%20excel.png){width="250"}
+        ![](images/02a%20data%20lfpr%20excel-01.png){width="250"}
 
 c.  From the data in Table 7, we need to calculate **proportion of resident labour force of each age group, by year**, in percent.
 
@@ -157,7 +157,7 @@ d.  Do the same for every year and every age group. Copy and paste the values ca
 
     2.  Column B: **Age (Years)**
 
-    3.  Column C: **Percentage**
+    3.  Column C: **Percentage** (*i.e. the proportion of resident labour force of each age group in each year)*
 
         ![](images/03%20data%20source%20excel%20raw.png){width="250"}
 
@@ -179,19 +179,23 @@ e.  From Columns*,* click on the dropdown arrow from *YEAR(Year)*and select **Ye
 
     ![](images/05c%20set%20year.png){width="250"}
 
-f.  Double click on the chart title and change it to **Labour Force Participation Rate**. Double click on the x-axis and change *Title* from **Year of Year** to **Year**. Double click on the y-axis and remove the *Title*. Set *Range* to **Fixed start = 0**, **Fixed end = 100**.
+f.  Double click on the chart title and change it to **Labour Force Participation Rate**.
 
-g.  Right click the y-axis and select **Format**. On theleft pane, go to Scale \> Numbersand select **Number(Custom)**. Set *decimal places* to **0** and *suffix* to **%**.
+g.  Double click on the x-axis and change *Title* from **Year of Year** to **Year**.
+
+h.  Double click on the y-axis and remove the *Title*. Set *Range* to **Fixed start = 0**, **Fixed end = 100**.
+
+i.  Right click the y-axis and select **Format**. On the left pane, go to Scale \> Numbersand select **Number(Custom)**. Set *decimal places* to **0** and *suffix* to **%**.
 
     ![](images/05.0%20show%20%25%20sign.png){width="250"}
 
-h.  To label each line with the age group, drag **Age Group** from the *Data* pane to *Label* in the *Marks* pane. In the *Marks* pane, click on *Label* and update the following attributes.
+j.  To label each line with the age group, drag **Age Group** from the *Data* pane to *Label* in the *Marks* pane. In the *Marks* pane, click on *Label* and update the following attributes.
 
     1.  Text: **\<Age Group\> years**
 
     2.  Font: **Tableau Bold, 10pt,** Match Mark Color
 
-i.  From the legend, click the drop-down arrow and go to **EditColors**. Set the colors of each age group according to the screenshot below. The color for *65 & Over* is a darker shade from the color for *55 - 64*. Click **OK**.
+k.  From the legend, click the drop-down arrow and go to **EditColors**. Set the colors of each age group according to the screenshot below. The color for *65 & Over* is a darker shade from the color for *55 - 64*. Click **OK**.
 
     ![](images/05.4%20edit%20colors%20legend.png){width="250"}
 
@@ -207,7 +211,7 @@ b.  Click on *Abc* of Year. From the dropdown, select **Date**.
 
 c.  Go to *Sheet 2* from the tabs at the bottom of your window. In the *Data* pane, right-click *Age (Years)* and select **Create \> Group**.
 
-    ![](images/06%20create%20group.png){width="400"}
+    ![](images/06%20create%20group-01.png){width="250"}
 
 d.  In the Create Group dialog box, select the age groups 55 and above, then click **Group**. Rename the group to *55+ years*. Do the same for the other two groups - *25-54 years* and *Below 25 years.*
 
@@ -215,7 +219,29 @@ d.  In the Create Group dialog box, select the age groups 55 and above, then cli
 
     ![](images/07.1%20create%20groups%20all-01.png){width="250"}
 
-e.  
+e.  From the *Data* pane, drag **Year** to *Columns*, drag **Percentage** to *Rows*, and drag **Age (Years) (group)** to *Color* (in the *Marks* pane).
+
+f.  From Columns*,* click on the dropdown arrow from *YEAR(Year)*and select **Year** as shown in the screenshot below.
+
+    ![](images/07.2%20set%20year.png){width="250"}
+
+g.  From the *Show Me* pane on the right, select **Area chart (continuous)**.
+
+    ![](images/07.3%20select%20area%20chart%20continuous.png){width="250"}
+
+h.  Double click on the chart title and change it to **Distribution of labour force**.
+
+i.  Double click on the x-axis and change *Title* to **Year**.
+
+j.  Right click the y-axis and select **Format**. On the left pane, go to Scale \> Numbers and select **Percentage**. Set *decimal places* to **0**.
+
+    ![](images/07.4%20format%20scale%20numbers%20to%20percentage.png){width="250"}
+
+k.  Double click on the y-axis and remove the *Title*. Set *Range* to **Fixed start = 0**, **Fixed end = 1**. Go to *Tick Marks*, select *Major Tick Marks* as **Fixed**, and set **Tick origin = 0**, **Tick interval = 1**.
+
+    ![](images/07.5%20major%20tick%20marks%20only.png){width="250"}
+
+l.  
 
 First, let us import the data into R by using *read_csv()* of **readr** package.
 
