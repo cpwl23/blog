@@ -11,6 +11,7 @@ output:
   distill::distill_article:
     toc: true
     toc_float: false
+    self_contained: false
 ---
 
 ```{r setup, include=FALSE}
@@ -31,7 +32,7 @@ A critic of the following data visualization is provided.
 -   C4. No lead in or callouts to provide context.
 -   C5. Title and statement of visualization are misleading; *Per Cent* is inaccurate.
 -   C6. *LFPR* is used in the statement, without stating what LFPR stands for.
--   C7. *LFPR* trends are not shown in the chart.
+-   C7. *LFPR* trends are not shown in the chart despite being mentioned in the statement.
 -   C8. Chart Title *Resident labour force by age* is not accurate; instead, "Resident labour force by age group" is more accurate.
 
 ### Aesthetics
