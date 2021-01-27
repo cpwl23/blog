@@ -2,6 +2,7 @@
 title: "DataViz Makeover 1"
 description: |
   Due 28 Jan 2021, 2359h.
+preview: images/999.png
 author:
   - name: Cheryl Pay
     url: 
@@ -88,6 +89,8 @@ l.  Labour force participating rate is stated in the statement to reflect what L
 m.  Median working age in 2019 and 2009 are shown in a callout on Chart 2. (**C1**)
 
 # C. Proposed Data Visualization - Tableau
+
+![Available for download on Tableau Public [here](https://public.tableau.com/views/dataviz_makeover_1_16117486799790/Dashboard1?:language=en&:display_count=y&publish=yes&:origin=viz_share_link)](images/999.png){width="100%"}
 
 # D. Step-by-Step Guide for Creating the Visualization
 
@@ -307,7 +310,7 @@ e.  From the *Objects* pane, drag and drop **Blank** in between your two charts.
 
 f.  From the *Objects* pane, drag and drop text box to the bottom of the canvas (below both charts). A box spanning the entire width of the canvas must appear before you release your cursor.
 
-g.  An Edit Text dialog box appears. Place the *Source* in the box. Update the font to
+g.  An Edit Text dialog box appears. Place the *Source* in the box. Update the font to **Tableau Light, 9**, with color = same as chart title. 
 
     > Source: Comprehensive Labour Force Survey, Manpower Research & Statistics Department, MOM
 
