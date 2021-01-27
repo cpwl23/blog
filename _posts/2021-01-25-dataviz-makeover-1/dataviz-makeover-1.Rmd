@@ -37,8 +37,6 @@ knitr::opts_chunk$set(echo = FALSE)
 -   A2. Y-axis labels are cramped.
 -   A3. Poor positioning of *Source* and *Note*, with less than one line space between them and no spacing below *Note*.
 
-In this hands-on exercise, you will learn how to plot data visualisation for visualising correlation matrix with R. It consists of three main sections. First, you will learn how to create correlation matrix using [*pairs()*](https://www.rdocumentation.org/packages/graphics/versions/3.6.0/topics/pairs) of R Graphics. Next, you will learn how to plot corrgram using **corrplot** package of R Lastly, you will learn how to create an interactive correlation matrix using plotly R. .
-
 # B. Alternative Graphical Representation - Sketch
 
 With reference to [A. Critic], an alternative representation is sketched below.
