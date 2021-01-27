@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/header-attrs-2.6.6/header-attrs.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","images/00.jpg","images/01.png","images/02 calculate proportion.png","images/02a data lfpr excel-01.png","images/02a data lfpr excel.png","images/03 data source excel raw.png","images/05 change year to date.png","images/05.0 show % sign.png","images/05.1 drag.png","images/05.2 show marks.png","images/05.3 line labels.png","images/05.4 edit colors legend.png","images/05a change year to date.png","images/05c set year to discrete.png","images/05c set year.png","images/06 create group-01.png","images/06 create group.png","images/07.1 create groups all-01.png","images/07.1 create groups all.png","images/07.10 annotations six.png","images/07.2 set year.png","images/07.3 select area chart continuous.png","images/07.4 format scale numbers to percentage.png","images/07.5 major tick marks only.png","images/07.6 sort by descending.png","images/07.7 edit colors.png","images/07.8 annotate mark-01.png","images/07.8 annotate mark.png","images/07.9 edit annotation size.png","images/07b create groups all-01.png","images/07b create groups all.png","images/99.png","images/area chart.png","images/line chart.png","images/paste-52E59631.png"]}
+  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/header-attrs-2.6.6/header-attrs.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","images/00.jpg","images/01.png","images/02 calculate proportion.png","images/02a data lfpr excel-01.png","images/02a data lfpr excel.png","images/03 data source excel raw.png","images/05 change year to date.png","images/05.0 show % sign.png","images/05.1 drag.png","images/05.2 show marks.png","images/05.3 line labels.png","images/05.4 edit colors legend.png","images/05a change year to date.png","images/05c set year to discrete.png","images/05c set year.png","images/06 create group-01.png","images/06 create group.png","images/07.1 create groups all-01.png","images/07.1 create groups all.png","images/07.10 annotations six.png","images/07.11 statement color.png","images/07.13 set major tick marks to year-01.png","images/07.13 set major tick marks to year.png","images/07.2 set year.png","images/07.3 select area chart continuous.png","images/07.4 format scale numbers to percentage.png","images/07.5 major tick marks only.png","images/07.6 sort by descending.png","images/07.7 edit colors.png","images/07.8 annotate mark-01.png","images/07.8 annotate mark.png","images/07.9 edit annotation size.png","images/07b create groups all-01.png","images/07b create groups all.png","images/99.png","images/area chart.png","images/line chart.png","images/paste-52E59631.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2152,20 +2152,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><p>Labour force participating rate is stated in the statement to reflect what LFPR stands for. (<strong>C6</strong>)</p></li>
 <li><p>Median working age in 2019 and 2009 are shown in a callout on Chart 2. (<strong>C1</strong>)</p></li>
 </ol>
-<p>Next, you will use the code chunk below to install and launch <strong>corrplot</strong>, <strong>ggpubr</strong>, <strong>plotly</strong> and <strong>tidyverse</strong> in RStudio.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>packages</span> <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'ggpubr'</span>, <span class='st'>'tidyverse'</span><span class='op'>)</span>
-
-<span class='kw'>for</span><span class='op'>(</span><span class='va'>p</span> <span class='kw'>in</span> <span class='va'>packages</span><span class='op'>)</span><span class='op'>{</span><span class='va'>library</span>
-  <span class='kw'>if</span><span class='op'>(</span><span class='op'>!</span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>require</a></span><span class='op'>(</span><span class='va'>p</span>, character.only <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span><span class='op'>)</span><span class='op'>{</span>
-    <span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='va'>p</span><span class='op'>)</span>
-  <span class='op'>}</span>
-  <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>p</span>, character.only <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>
-<span class='op'>}</span>
-</code></pre>
-</div>
-</div>
 <h1 id="c.-proposed-data-visualization---tableau">C. Proposed Data Visualization - Tableau</h1>
 <p>insert tableau visualization here</p>
 <h1 id="d.-step-by-step-guide-for-creating-the-visualization">D. Step-by-Step Guide for Creating the Visualization</h1>
@@ -2217,10 +2203,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <p><img src="images/05.2%20show%20marks.png" width="250" /></p></li>
 <li><p>From Columns<em>,</em> click on the dropdown arrow from <em>YEAR(Year)</em>and select <strong>Year</strong> as shown in the screenshot below.</p>
 <p><img src="images/05c%20set%20year.png" width="250" /></p></li>
-<li><p>Double click on the chart title and change it to <strong>Labour Force Participation Rate</strong>.</p></li>
-<li><p>Double click on the x-axis and change <em>Title</em> from <strong>Year of Year</strong> to <strong>Year</strong>.</p></li>
+<li><p>Double click on the chart title and change it to <strong>Labour force participation rate</strong>. Set font to <strong>Tableau Book, 12, bold</strong>.</p></li>
+<li><p>Double click on the x-axis and change <em>Title</em> from <strong>Year of Year</strong> to <strong>Year</strong>. Go to Tick Marks. Set <em>Major Tick Marks</em> to <strong>Fixed</strong>, <strong>Interval = 1</strong>, <strong>Unit = Years</strong>.</p>
+<p><img src="images/07.13%20set%20major%20tick%20marks%20to%20year.png" width="250" /></p></li>
 <li><p>Double click on the y-axis and remove the <em>Title</em>. Set <em>Range</em> to <strong>Fixed start = 0</strong>, <strong>Fixed end = 100</strong>.</p></li>
-<li><p>Right click the y-axis and select <strong>Format</strong>. On the left pane, go to Scale &gt; Numbersand select <strong>Number(Custom)</strong>. Set <em>decimal places</em> to <strong>0</strong> and <em>suffix</em> to <strong>%</strong>.</p>
+<li><p>Right click the y-axis and select <strong>Format</strong>. On the left pane, go to Scale &gt; Numbers and select <strong>Number(Custom)</strong>. Set <em>decimal places</em> to <strong>0</strong> and <em>suffix</em> to <strong>%</strong>.</p>
 <p><img src="images/05.0%20show%20%25%20sign.png" width="250" /></p></li>
 <li><p>To label each line with the age group, drag <strong>Age Group</strong> from the <em>Data</em> pane to <em>Label</em> in the <em>Marks</em> pane. In the <em>Marks</em> pane, click on <em>Label</em> and update the following attributes.</p>
 <ol type="1">
@@ -2229,6 +2216,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </ol></li>
 <li><p>From the legend, click the drop-down arrow and go to <strong>EditColors</strong>. Set the colors of each age group according to the screenshot below. The color for <em>65 &amp; Over</em> is a darker shade from the color for <em>55 - 64</em>. Click <strong>OK</strong>.</p>
 <p><img src="images/05.4%20edit%20colors%20legend.png" width="250" /></p></li>
+<li><p>From the legend, click the drop-down arrow and select <strong>HideCard</strong>.</p></li>
+<li><p>Rename the sheet from Sheet1 to <strong>LFPR</strong>.</p></li>
 </ol>
 <p>The line chart: <em>Labour Force Participation Rate</em> is ready.</p>
 <p><img src="images/line%20chart.png" width="400" /></p>
@@ -2247,9 +2236,10 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><p>From Columns<em>,</em> click on the dropdown arrow from <em>YEAR(Year)</em>and select <strong>Year</strong> as shown in the screenshot below.</p>
 <p><img src="images/07.2%20set%20year.png" width="250" /></p></li>
 <li><p>From the <em>Show Me</em> pane on the right, select <strong>Area chart (continuous)</strong>.</p>
-<p><img src="images/07.3%20select%20area%20chart%20continuous.png" width="250" /></p></li>
-<li><p>Double click on the chart title and change it to <strong>Distribution of labour force</strong>.</p></li>
-<li><p>Double click on the x-axis and change <em>Title</em> to <strong>Year</strong>.</p></li>
+<p><img src="images/07.3%20select%20area%20chart%20continuous.png" width="400" /></p></li>
+<li><p>Double click on the chart title and change it to <strong>Distribution of labour force</strong>. Set font to <strong>Tableau Book, 12, bold</strong>.</p></li>
+<li><p>Double click on the x-axis and change <em>Title</em> to <strong>Year</strong>. Go to Tick Marks. Set <em>Major Tick Marks</em> to <strong>Fixed</strong>, <strong>Interval = 1</strong>, <strong>Unit = Years</strong>.</p>
+<p><img src="images/07.13%20set%20major%20tick%20marks%20to%20year-01.png" width="164" /></p></li>
 <li><p>Right click the y-axis and select <strong>Format</strong>. On the left pane, go to Scale &gt; Numbers and select <strong>Percentage</strong>. Set <em>decimal places</em> to <strong>0</strong>.</p>
 <p><img src="images/07.4%20format%20scale%20numbers%20to%20percentage.png" width="250" /></p></li>
 <li><p>Double click on the y-axis and remove the <em>Title</em>. Set <em>Range</em> to <strong>Fixed start = 0</strong>, <strong>Fixed end = 1</strong>. Go to <em>Tick Marks</em>, select <em>Major Tick Marks</em> as <strong>Fixed</strong>, and set <strong>Tick origin = 0</strong>, <strong>Tick interval = 1</strong>.</p>
@@ -2272,11 +2262,32 @@ document.addEventListener('DOMContentLoaded', function() {
 <p><img src="images/07.9%20edit%20annotation%20size.png" width="250" /></p></li>
 <li><p>Create the same annotation for 2009 and 2019 data points. There should be six annotations in total - two each for 3 age groups. Drag each annotation in place, as shown in the screenshot below.</p>
 <p><img src="images/07.10%20annotations%20six.png" width="250" /></p></li>
+<li><p>From the legend, click the drop-down arrow and select <strong>HideCard</strong>.</p></li>
+<li><p>Rename the sheet from Sheet2 to <strong>Labour Force</strong>.</p></li>
 </ol>
 <p>The area chart: <em>Distribution of labour force</em> is ready.</p>
 <p><img src="images/area%20chart.png" width="400" /></p>
-<h3 id="d.3-creating-the-dashboard-static-on-tableau">D.3 Creating the dashboard (static) on Tableau</h3>
-<p>First, let us import the data into R by using <em>read_csv()</em> of <strong>readr</strong> package.</p>
+<h3 id="d.3-creating-the-dashboard-on-tableau">D.3 Creating the dashboard on Tableau</h3>
+<ol type="a">
+<li><p>Create a <strong>NewDashboard</strong> in the same Tableau file.</p></li>
+<li><p>From the <em>Dashboard</em> pane, drag <strong>LFPR</strong> to the canvas. Then, drag <strong>Labour Force</strong> to the right half of the canvas.</p></li>
+<li><p>From the <em>Objects</em> pane, drag and drop text box to the top of the canvas (above both charts). A box spanning the entire width of the canvas must appear before you release your cursor.</p></li>
+<li><p>An Edit Text dialog box appears. Place your title and description in the box. Update their fonts accordingly.</p>
+<ul>
+<li><p>Title: <strong>Tableau Light, 16, bold</strong></p>
+<blockquote>
+<p>Share of older residents in the labour force has risen in 2019</p>
+</blockquote></li>
+<li><p>Description: <strong>Tableau Light, 10</strong>, <em>not bold</em></p>
+<blockquote>
+<p>The labour force participation rate (LFPR) of older residents has been increasing since 2009. In particular, the age group with the greatest increase in LFPR is residents aged 65 and above; their LFPR increased by 12 percentage points from 17% in 2009 to 29% in 2019. Coupled with aging population, the proportion of residents aged 55 and above that make up our labour force increased to 25% in 2019. While the LFPR of those aged 25 - 54 years increased as well, the cohorts entering this age band were smaller than those who moved out due to lower birth rates. Hence the proportion of residents aged 25 - 54 in the labour force fell from 75% in 2009 to 67% in 2019. In 2019, the median working age is 44 years.</p>
+</blockquote></li>
+<li><p>For both <em>Title</em> and <em>Description</em>, font color (as shown below) is the same.</p>
+<p><img src="images/07.11%20statement%20color.png" width="250" /></p></li>
+</ul></li>
+<li><p>From the <em>Objects</em> pane, drag and drop <strong>Blank</strong> in between your two charts.</p></li>
+<li><p>With all the different parts of your chart added, resize each pane and reposition data labels.</p></li>
+</ol>
 <p>Notice that beside quality and type, the rest of the variables are numerical and continuous data type.</p>
 <h1 id="e.-three-major-observations">E. Three Major Observations</h1>
 <ol type="1">
