@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 *A critic of the following data visualization is provided.*
 
-![Excerpt and chart taken from Page 22 of Report: [Labour Force in Singapore 2019](https://stats.mom.gov.sg/Pages/Labour-Force-In-Singapore-2019.aspx)](images/00.jpg){width="300"}
+![Excerpt and chart taken from Page 22 of Report: [Labour Force in Singapore 2019](https://stats.mom.gov.sg/Pages/Labour-Force-In-Singapore-2019.aspx)](images/00.jpg){width=100%}
 
 ### Clarity
 
@@ -123,7 +123,7 @@ b.  From the data in Table 5, copy and paste the labour force participation rate
 
     3.  Column C: **Labour Force Participation Rate**
 
-        ![](images/02a%20data%20lfpr%20excel-01.png){width="300"}
+        ![](images/02a%20data%20lfpr%20excel-01.png){width=45%}
 
 c.  From the data in Table 7, we need to calculate **proportion of resident labour force of each age group, by year**, in percent.
 
@@ -131,7 +131,7 @@ c.  From the data in Table 7, we need to calculate **proportion of resident labo
 
     > Proportion = **number of residents in each age group each year** divided by **the total number of residents in the same year**
     >
-    > ![](images/02%20calculate%20proportion.png){width="250"}
+    > ![](images/02%20calculate%20proportion.png){width=30%}
 
     </div>
 
@@ -145,7 +145,7 @@ d.  Do the same for every year and every age group. Copy and paste the values ca
 
     3.  Column C: **Percentage** (*i.e. the proportion of resident labour force of each age group in each year)*
 
-        ![](images/03%20data%20source%20excel%20raw-01.png){width="250"}
+        ![](images/03%20data%20source%20excel%20raw-01.png){width=40%}
 
 ### D.2 Creating the line chart on Tableau
 
@@ -153,29 +153,29 @@ a.  Load Tableau and click on *Microsoft Excel* from the taskbar on the left. Se
 
 b.  Click on *Abc* of Year. From the dropdown, select **Date**. Then, go to **Sheet 1**.
 
-    ![](images/05a%20change%20year%20to%20date.png){width="500"}
+    ![](images/05a%20change%20year%20to%20date.png){width=100%}
 
 c.  From the *Data* pane, drag **Year** to *Columns*, drag **Labour Force Participation Rate** to *Rows*, and drag **Age Group** to *Color* (in the *Marks* pane).
 
 d.  To show all markers for each line, click on *color* in the *Marks* pane and set *Markers* to **all** i.e. the icon showing a line with markers*.*
 
-    ![](images/05.2%20show%20marks.png){width="250"}
+    ![](images/05.2%20show%20marks.png){width=30%}
 
 e.  From Columns*,* click on the dropdown arrow from *YEAR(Year)*and select **Year** as shown in the screenshot below.
 
-    ![](images/05c%20set%20year.png){width="250"}
+    ![](images/05c%20set%20year.png){width=100%}
 
 f.  Double click on the chart title and change it to **Labour force participation rate**. Set font to **Tableau Book, 12, bold**.
 
 g.  Double click on the x-axis and change *Title* from **Year of Year** to **Year**. Go to Tick Marks. Set *Major Tick Marks* to **Fixed**, **Interval = 1**, **Unit = Years**.
 
-    ![](images/07.13%20set%20major%20tick%20marks%20to%20year.png){width="250"}
+    ![](images/07.13%20set%20major%20tick%20marks%20to%20year.png){width=40%}
 
 h.  Double click on the y-axis and remove the *Title*. Set *Range* to **Fixed start = 0**, **Fixed end = 100**.
 
 i.  Right click the y-axis and select **Format**. On the left pane, go to Scale \> Numbers and select **Number(Custom)**. Set *decimal places* to **0** and *suffix* to **%**.
 
-    ![](images/05.0%20show%20%25%20sign.png){width="250"}
+    ![](images/05.0%20show%20%25%20sign.png){width=100%}
 
 j.  To label each line with the age group, drag **Age Group** from the *Data* pane to *Label* in the *Marks* pane. In the *Marks* pane, click on *Label* and update the following attributes. Note that there are [two]{.ul} spaces between **\<Age Group\>** and **years**.
 
@@ -185,7 +185,7 @@ j.  To label each line with the age group, drag **Age Group** from the *Data* pa
 
 k.  From the legend, click the drop-down arrow and go to **EditColors**. Set the colors of each age group according to the screenshot below. The color for *65 & Over* is a darker shade from the color for *55 - 64*. Click **OK**.
 
-    ![](images/05.4%20edit%20colors%20legend.png){width="250"}
+    ![](images/05.4%20edit%20colors%20legend.png){width=45%}
 
 l.  From the legend, click the drop-down arrow and select **HideCard**.
 
@@ -193,7 +193,7 @@ m.  Rename the sheet from Sheet1 to **LFPR**.
 
 The line chart: *Labour Force Participation Rate* is ready.
 
-![](images/line%20chart.png){width="600"}
+![](images/line%20chart.png){width=100%}
 
 ### D.3 Creating the stacked area chart on Tableau
 
@@ -203,37 +203,37 @@ b.  Click on *Abc* of Year. From the dropdown, select **Date**.
 
 c.  Go to *Sheet 2* from the tabs at the bottom of your window. In the *Data* pane, right-click *Age (Years)* and select **Create \> Group**.
 
-    ![](images/06%20create%20group-01.png){width="500"}
+    ![](images/06%20create%20group-01.png){width=100%}
 
 d.  In the Create Group dialog box, select the age groups 55 and above, then click **Group**. Rename the group to *55+ years*. Do the same for the other two groups - *25-54 years* and *Below 25 years.*
 
     > Group naming must be consistent with the line chart in [D.2 Creating the line chart on Tableau].
 
-    ![](images/07.1%20create%20groups%20all-01.png){width="250"}
+    ![](images/07.1%20create%20groups%20all-01.png){width=45%}
 
 e.  From the *Data* pane, drag **Year** to *Columns*, drag **Percentage** to *Rows*, and drag **Age (Years) (group)** to *Color* (in the *Marks* pane).
 
 f.  From Columns*,* click on the dropdown arrow from *YEAR(Year)*and select **Year** as shown in the screenshot below.
 
-    ![](images/07.2%20set%20year.png){width="500"}
+    ![](images/07.2%20set%20year.png){width=100%}
 
 g.  From the *Show Me* pane on the right, select **Area chart (continuous)**.
 
-    ![](images/07.3%20select%20area%20chart%20continuous.png){width="500"}
+    ![](images/07.3%20select%20area%20chart%20continuous.png){width=100%}
 
 h.  Double click on the chart title and change it to **Distribution of labour force**. Set font to **Tableau Book, 12, bold**.
 
 i.  Double click on the x-axis and change *Title* to **Year**. Go to Tick Marks. Set *Major Tick Marks* to **Fixed**, **Interval = 1**, **Unit = Years**.
 
-    ![](images/07.13%20set%20major%20tick%20marks%20to%20year-01.png){width="200"}
+    ![](images/07.13%20set%20major%20tick%20marks%20to%20year-01.png){width=40%}
 
 j.  Right click the y-axis and select **Format**. On the left pane, go to Scale \> Numbers and select **Percentage**. Set *decimal places* to **0**.
 
-    ![](images/07.4%20format%20scale%20numbers%20to%20percentage.png){width="500"}
+    ![](images/07.4%20format%20scale%20numbers%20to%20percentage.png){width=100%}
 
 k.  Double click on the y-axis and remove the *Title*. Set *Range* to **Fixed start = 0**, **Fixed end = 1**. Go to *Tick Marks*, select *Major Tick Marks* as **Fixed**, and set **Tick origin = 0**, **Tick interval = 1**.
 
-    ![](images/07.5%20major%20tick%20marks%20only.png){width="200"}
+    ![](images/07.5%20major%20tick%20marks%20only.png){width=40%}
 
 l.  To label each line with the age group, drag **Age (Years) (group)** from the *Data* pane to *Label* in the *Marks* pane. In the *Marks* pane, click on *Label* and update the following attributes.
 
@@ -243,25 +243,25 @@ l.  To label each line with the age group, drag **Age (Years) (group)** from the
 
 m.  In the *Marks* pane, click on the drop down error for **Color**: *Age (Years) (group).* Go to Sort. Select Sort by = **Data Source order** and Sort Order = **Descending**.
 
-    ![](images/07.6%20sort%20by%20descending.png){width="500"}
+    ![](images/07.6%20sort%20by%20descending.png){width=100%}
 
 n.  From the legend, click the drop-down arrow and go to **EditColors**. Set the colors of each age group according to the screenshot below. Click **OK**.
 
     > The color chosen for each age group must be consistent with the line chart in [D.2 Creating the line chart on Tableau].
 
-    ![](images/07.7%20edit%20colors.png){width="250"}
+    ![](images/07.7%20edit%20colors.png){width=45%}
 
 o.  On the area chart, right click on the data point: **55+ years**, **2009**, **16%**. Select **Annotate \> Mark**. In the Edit Annotation dialog box, type **\<SUM(Percentage)\>**. Change font size to **8**.
 
-    ![](images/07.8%20annotate%20mark-01.png){width="500"}
+    ![](images/07.8%20annotate%20mark-01.png){width=100%}
 
 p.  An annotation showing **16%** will appear on the area chart. Resize the annotation area to its smallest width by dragging the green box. On the *Format Annotation* pane (left), set **Shading = None**, **Line = None**.
 
-    ![](images/07.9%20edit%20annotation%20size.png){width=70%}
+    ![](images/07.9%20edit%20annotation%20size.png){width=100%}
 
 q.  Create the same annotation for 2009 and 2019 data points. There should be six annotations in total - two each for 3 age groups. Drag each annotation in place, as shown in the screenshot below.
 
-    ![](images/07.10%20annotations%20six.png){width=70%}
+    ![](images/07.10%20annotations%20six.png){width=100%}
 
 r.  From the legend, click the drop-down arrow and select **HideCard**.
 
@@ -269,7 +269,7 @@ s.  Rename the sheet from Sheet2 to **Labour Force**.
 
 The area chart: *Distribution of labour force* is ready.
 
-![](images/99-distribution.png){width="80%"}
+![](images/99-distribution.png){width="100%"}
 
 ### D.3 Creating the dashboard on Tableau
 
@@ -291,7 +291,7 @@ d.  An Edit Text dialog box appears. Place your title and description in the box
 
     -   For both *Title* and *Description*, font color (as shown below) is the same.
 
-        ![](images/07.11%20statement%20color.png){width="250"}
+        ![](images/07.11%20statement%20color.png){width=45%}
 
 e.  From the *Objects* pane, drag and drop **Blank** in between your two charts.
 
