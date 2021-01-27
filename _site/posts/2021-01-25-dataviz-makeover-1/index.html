@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/header-attrs-2.6.6/header-attrs.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","images/00.jpg","images/01.png","images/02 calculate proportion.png","images/03 data source excel raw.png","images/05 change year to date.png","images/06 create group.png","images/07b create groups all-01.png","images/07b create groups all.png","images/99.png"]}
+  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/header-attrs-2.6.6/header-attrs.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","images/00.jpg","images/01.png","images/02 calculate proportion.png","images/02a data lfpr excel.png","images/03 data source excel raw.png","images/05 change year to date.png","images/05.0 show % sign.png","images/05.1 drag.png","images/05.2 show marks.png","images/05.3 line labels.png","images/05.4 edit colors legend.png","images/05a change year to date.png","images/05c set year to discrete.png","images/05c set year.png","images/06 create group.png","images/07b create groups all-01.png","images/07b create groups all.png","images/99.png","images/paste-52E59631.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2132,7 +2132,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><p>Data is grouped into three and four age groups in Chart 1 and Chart 2 respectively. (<strong>C1</strong>)</p></li>
 <li><p>Chart 1 is a line chart that shows the labour force participation rate (LFPR) by age group by year. This will reflect the trends in LFPR, in particular the sustained increase in LFPR for the cohorts aged 55 and above. (<strong>C1, C7</strong>)</p>
 <ul>
-<li><p><em>65 and above</em></p></li>
+<li><p><em>65 and above years</em></p></li>
 <li><p><em>55 - 64 years</em></p></li>
 <li><p><em>25 - 54 years</em></p></li>
 <li><p><em>15 - 24 years</em></p></li>
@@ -2169,32 +2169,69 @@ document.addEventListener('DOMContentLoaded', function() {
 <h1 id="c.-proposed-data-visualization---tableau">C. Proposed Data Visualization - Tableau</h1>
 <p>insert tableau visualization here</p>
 <h1 id="d.-step-by-step-guide-for-creating-the-visualization">D. Step-by-Step Guide for Creating the Visualization</h1>
-<h3 id="d.1-preparing-the-data-excel-file">D.1 Preparing the data: excel file</h3>
+<h3 id="d.1-preparing-the-data-in-excel">D.1 Preparing the data in excel</h3>
 <ol type="a">
-<li><p>First, we download <em>Table (7): Resident Labour Force Aged Fifteen Years and Over by Age and sex, 2009 – 2019 (June)</em> from <a href="https://stats.mom.gov.sg/Pages/Labour-Force-Tables2019.aspx">Table: Labour Force 2019</a>.</p></li>
-<li><p>Then, we need to calculate <strong>proportion of resident labour force of each age group, by year</strong>, in percent.</p>
+<li><p>First, we download the following two tables from <a href="https://stats.mom.gov.sg/Pages/Labour-Force-Tables2019.aspx">Table: Labour Force 2019</a>.</p>
+<ul>
+<li><p><em>Table (5): Resident Labour Force Participation Rate by Age and Sex, 2009 - 2019 (June)</em></p></li>
+<li><p><em>Table (7): Resident Labour Force Aged Fifteen Years and Over by Age and Sex, 2009 – 2019 (June)</em></p></li>
+</ul></li>
+<li><p>From the data in Table 5, copy and paste the labour force participation rates of the following age groups, from years 2009 to 2019, onto another excel file. You should have three columns with 44 observations. Save file as <strong>data_lfpr.xlsx</strong> to use as your data source for Tableau.</p>
+<p><u>Age Groups</u></p>
+<ol type="1">
+<li><p>15 - 24</p></li>
+<li><p>25 - 54</p></li>
+<li><p>55 - 64</p></li>
+<li><p>65 &amp; Over</p></li>
+</ol>
+<p><u>Data Columns</u></p>
+<ol type="1">
+<li><p>Column A: <strong>Year</strong></p></li>
+<li><p>Column B: <strong>Age Group</strong></p></li>
+<li><p>Column C: <strong>Labour Force Participating Rate</strong></p>
+<p><img src="images/02a%20data%20lfpr%20excel.png" width="250" /></p></li>
+</ol></li>
+<li><p>From the data in Table 7, we need to calculate <strong>proportion of resident labour force of each age group, by year</strong>, in percent.</p>
 <div>
 <blockquote>
 <p>Proportion = <strong>number of residents in each age group each year</strong> divided by <strong>the total number of residents in the same year</strong></p>
 <p><img src="images/02%20calculate%20proportion.png" width="250" /></p>
 </blockquote>
 </div></li>
-<li><p>Do the same for every year and every age group.</p></li>
-<li><p>Copy and paste the values calculated onto another excel file. Save file as <strong>data.xlsx</strong> to use as your data source for Tableau. You should have the following three columns with 133 observations.</p>
-<div>
-<blockquote>
-<p>Column A: <strong>Year</strong></p>
-<p>Column B: <strong>Age (Years)</strong></p>
-<p>Column C: <strong>Percentage</strong></p>
-<p><img src="images/03%20data%20source%20excel%20raw.png" width="250" /></p>
-</blockquote>
-</div></li>
+<li><p>Do the same for every year and every age group. Copy and paste the values calculated onto another excel file. You should have the following three columns with 133 observations. Save file as <strong>data_LFPR.xlsx</strong> to use as your data source for Tableau</p>
+<p><u>Data Columns</u></p>
+<ol type="1">
+<li><p>Column A: <strong>Year</strong></p></li>
+<li><p>Column B: <strong>Age (Years)</strong></p></li>
+<li><p>Column C: <strong>Percentage</strong></p>
+<p><img src="images/03%20data%20source%20excel%20raw.png" width="250" /></p></li>
+</ol></li>
 </ol>
-<h3 id="d.2-creating-the-visualization-on-tableau">D.2 Creating the visualization on Tableau</h3>
+<h3 id="d.2-creating-the-line-chart-on-tableau">D.2 Creating the line chart on Tableau</h3>
 <ol type="a">
-<li><p>Load Tableau and click on <em>Microsoft Excel</em> from the taskbar on the left. Select the file: <em>data.xlsx</em> that you have created previously. Click <strong>Open</strong>.</p></li>
-<li><p>Click on <em>Abc</em> of Year. From the dropdown, select <strong>Date</strong>.</p>
-<p><img src="images/05%20change%20year%20to%20date.png" width="400" /></p></li>
+<li><p>Load Tableau and click on <em>Microsoft Excel</em> from the taskbar on the left. Select the file: <em>data_lfpr.xlsx</em> that you have created previously. Click <strong>Open</strong>.</p></li>
+<li><p>Click on <em>Abc</em> of Year. From the dropdown, select <strong>Date</strong>. Then, go to <strong>Sheet 1</strong>.</p>
+<p><img src="images/05a%20change%20year%20to%20date.png" width="250" /></p></li>
+<li><p>From the <em>Data</em> pane, drag <strong>Year</strong> to <em>Columns</em>, drag <strong>Labour Force Participation Rate</strong> to <em>Rows</em>, and drag <strong>Age Group</strong> to <em>Color</em> (in the <em>Marks</em> pane).</p></li>
+<li><p>To show all markers for each line, click on <em>color</em> in the <em>Marks</em> pane and set <em>Markers</em> to <strong>all</strong> i.e. the icon showing a line with markers<em>.</em></p>
+<p><img src="images/05.2%20show%20marks.png" width="250" /></p></li>
+<li><p>From Columns<em>,</em> click on the dropdown arrow from <em>YEAR(Year)</em>and select <strong>Year</strong> as shown in the screenshot below.</p>
+<p><img src="images/05c%20set%20year.png" width="250" /></p></li>
+<li><p>Double click on the chart title and change it to <strong>Labour Force Participation Rate</strong>. Double click on the x-axis and change <em>Title</em> from <strong>Year of Year</strong> to <strong>Year</strong>. Double click on the y-axis and remove the <em>Title</em>. Set <em>Range</em> to <strong>Fixed start = 0</strong>, <strong>Fixed end = 100</strong>.</p></li>
+<li><p>Right click the y-axis and select <strong>Format</strong>. On theleft pane, go to Scale &gt; Numbersand select <strong>Number(Custom)</strong>. Set <em>decimal places</em> to <strong>0</strong> and <em>suffix</em> to <strong>%</strong>.</p>
+<p><img src="images/05.0%20show%20%25%20sign.png" width="250" /></p></li>
+<li><p>To label each line with the age group, drag <strong>Age Group</strong> from the <em>Data</em> pane to <em>Label</em> in the <em>Marks</em> pane. In the <em>Marks</em> pane, click on <em>Label</em> and update the following attributes.</p>
+<ol type="1">
+<li><p>Text: <strong>&lt;Age Group&gt; years</strong></p></li>
+<li><p>Font: <strong>Tableau Bold, 10pt,</strong> Match Mark Color</p></li>
+</ol></li>
+<li><p>From the legend, click the drop-down arrow and go to <strong>EditColors</strong>. Set the colors of each age group according to the screenshot below. The color for <em>65 &amp; Over</em> is a darker shade from the color for <em>55 - 64</em>.</p>
+<p><img src="images/05.4%20edit%20colors%20legend.png" width="250" /></p></li>
+</ol>
+<p>The line chart: Labour Force Participation Rate is ready. We will now create the area chart: Proportion of labour force.</p>
+<p>asdfg</p>
+<ol type="a">
+<li><p>Click on <em>Abc</em> of Year. From the dropdown, select <strong>Date</strong>.</p></li>
 <li><p>Go to <em>Sheet 1</em> from the tabs at the bottom of your window. In the <em>Data</em> pane, right-click <em>Age (Years)</em> and select <strong>Create &gt; Group</strong>.</p>
 <p><img src="images/06%20create%20group.png" width="400" /></p></li>
 <li><p>In the Create Group dialog box, select the age groups 55 and above, then click <strong>Group</strong>. Rename the group to <em>55+ years</em>. Do the same for the other two groups - <em>25-54 years</em> and <em>Below 25 years.</em></p>
