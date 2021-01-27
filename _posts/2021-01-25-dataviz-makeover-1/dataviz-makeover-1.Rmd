@@ -6,7 +6,7 @@ preview: images/999.png
 author:
   - name: Cheryl Pay
     url: 
-date: 01-28-2021
+date: 01-25-2021
 output:
   distill::distill_article:
     self_contained: false
@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 *A critic of the following data visualization is provided.*
 
-![Excerpt and chart taken from Page 22 of Report: [Labour Force in Singapore 2019](https://stats.mom.gov.sg/Pages/Labour-Force-In-Singapore-2019.aspx)](images/00.jpg){width="100%"}
+![Excerpt and chart taken from Page 22 of Report: [Labour Force in Singapore 2019](https://stats.mom.gov.sg/Pages/Labour-Force-In-Singapore-2019.aspx)](images/00.jpg)
 
 ### Clarity
 
@@ -122,7 +122,7 @@ b.  From the data in Table 5, copy and paste the labour force participation rate
 
     3.  Column C: **Labour Force Participation Rate**
 
-        ![](images/02a%20data%20lfpr%20excel-01.png){width="45%"}
+        ![](images/02a%20data%20lfpr%20excel.png){width="45%"}
 
 c.  From the data in Table 7, we need to calculate **proportion of resident labour force of each age group, by year**, in percent.
 
@@ -130,7 +130,7 @@ c.  From the data in Table 7, we need to calculate **proportion of resident labo
 
     > Proportion = **number of residents in each age group each year** divided by **the total number of residents in the same year**
     >
-    > ![](images/02%20calculate%20proportion.png){width="30%"}
+    > ![](images/02%20calculate%20proportion.png){width="40%"}
 
     </div>
 
@@ -144,7 +144,7 @@ d.  Do the same for every year and every age group. Copy and paste the values ca
 
     3.  Column C: **Percentage** (*i.e. the proportion of resident labour force of each age group in each year)*
 
-        ![](images/03%20data%20source%20excel%20raw-01.png){width="40%"}
+        ![](images/03%20data%20source%20excel%20raw.png){width="40%"}
 
 ### D.2 Creating the line chart on Tableau
 
@@ -202,13 +202,13 @@ b.  Click on *Abc* of Year. From the dropdown, select **Date**.
 
 c.  Go to *Sheet 2* from the tabs at the bottom of your window. In the *Data* pane, right-click *Age (Years)* and select **Create \> Group**.
 
-    ![](images/06%20create%20group-01.png){width="100%"}
+    ![](images/06%20create%20group.png){width="100%"}
 
 d.  In the Create Group dialog box, select the age groups 55 and above, then click **Group**. Rename the group to *55+ years*. Do the same for the other two groups - *25-54 years* and *Below 25 years.*
 
     > Group naming must be consistent with the line chart in [D.2 Creating the line chart on Tableau].
 
-    ![](images/07.1%20create%20groups%20all-01.png){width="45%"}
+    ![](images/07.1%20create%20groups%20all.png){width="45%"}
 
 e.  From the *Data* pane, drag **Year** to *Columns*, drag **Percentage** to *Rows*, and drag **Age (Years) (group)** to *Color* (in the *Marks* pane).
 
@@ -252,7 +252,7 @@ n.  From the legend, click the drop-down arrow and go to **EditColors**. Set the
 
 o.  On the area chart, right click on the data point: **55+ years**, **2009**, **16%**. Select **Annotate \> Mark**. In the Edit Annotation dialog box, type **\<SUM(Percentage)\>**. Change font size to **8**.
 
-    ![](images/07.8%20annotate%20mark-01.png){width="100%"}
+    ![](images/07.8%20annotate%20mark.png){width="100%"}
 
 p.  An annotation showing **16%** will appear on the area chart. Resize the annotation area to its smallest width by dragging the green box. On the *Format Annotation* pane (left), set **Shading = None**, **Line = None**.
 
@@ -282,7 +282,7 @@ t.  Rename the sheet from Sheet2 to **Labour Force**.
 
 The area chart: *Distribution of labour force* is ready.
 
-![](images/99-distribution-01.png){width="100%"}
+![](images/99-distribution.png){width="100%"}
 
 ### D.3 Creating the dashboard on Tableau
 
@@ -310,7 +310,7 @@ e.  From the *Objects* pane, drag and drop **Blank** in between your two charts.
 
 f.  From the *Objects* pane, drag and drop text box to the bottom of the canvas (below both charts). A box spanning the entire width of the canvas must appear before you release your cursor.
 
-g.  An Edit Text dialog box appears. Place the *Source* in the box. Update the font to **Tableau Light, 9**, with color = same as chart title. 
+g.  An Edit Text dialog box appears. Place the *Source* in the box. Update the font to **Tableau Light, 9**, with color = same as chart title.
 
     > Source: Comprehensive Labour Force Survey, Manpower Research & Statistics Department, MOM
 
