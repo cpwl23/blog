@@ -41,7 +41,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 With reference to [A. Critic], an alternative representation is sketched below.
 
-*insert sketch here*
+![](images/dataviz01-sketch-01.PNG){width="100%"}
 
 a.  Two charts, with chart title, are added. (**C5**)
 
@@ -88,8 +88,6 @@ l.  Labour force participating rate is stated in the statement to reflect what L
 m.  Median working age in 2019 and 2009 are shown in a callout on Chart 2. (**C1**)
 
 # C. Proposed Data Visualization - Tableau
-
-insert tableau visualization here
 
 # D. Step-by-Step Guide for Creating the Visualization
 
