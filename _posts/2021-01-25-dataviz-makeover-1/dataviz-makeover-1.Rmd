@@ -241,7 +241,39 @@ k.  Double click on the y-axis and remove the *Title*. Set *Range* to **Fixed st
 
     ![](images/07.5%20major%20tick%20marks%20only.png){width="250"}
 
-l.  
+l.  To label each line with the age group, drag **Age (Years) (group)** from the *Data* pane to *Label* in the *Marks* pane. In the *Marks* pane, click on *Label* and update the following attributes.
+
+    1.  Text: **\<Age Group\> years**
+
+    2.  Font: **Tableau Bold, 10pt,** Match Mark Color
+
+m.  In the *Marks* pane, click on the drop down error for **Color**: *Age (Years) (group).* Go to Sort. Select Sort by = **Data Source order** and Sort Order = **Descending**.
+
+    ![](images/07.6%20sort%20by%20descending.png){width="250"}
+
+n.  From the legend, click the drop-down arrow and go to **EditColors**. Set the colors of each age group according to the screenshot below. Click **OK**.
+
+    > The color chosen for each age group must be consistent with the line chart in [D.2 Creating the line chart on Tableau].
+
+    ![](images/07.7%20edit%20colors.png){width="250"}
+
+o.  On the area chart, right click on the data point: **55+ years**, **2009**, **16%**. Select **Annotate \> Mark**. In the Edit Annotation dialog box, type **\<SUM(Percentage)\>**. Change font size to **8**.
+
+    ![](images/07.8%20annotate%20mark-01.png){width="250"}
+
+p.  An annotation showing **16%** will appear on the area chart. Resize the annotation area to its smallest width by dragging the green box. On the *Format Annotation* pane (left), set **Shading = None**, **Line = None**.
+
+    ![](images/07.9%20edit%20annotation%20size.png){width="250"}
+
+q.  Create the same annotation for 2009 and 2019 data points. There should be six annotations in total - two each for 3 age groups. Drag each annotation in place, as shown in the screenshot below.
+
+    ![](images/07.10%20annotations%20six.png){width="250"}
+
+The area chart: *Distribution of labour force* is ready.
+
+![](images/area%20chart.png){width="400"}
+
+### D.3 Creating the dashboard (static) on Tableau
 
 First, let us import the data into R by using *read_csv()* of **readr** package.
 
