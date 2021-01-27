@@ -308,7 +308,7 @@ h.  Resize each pane. Reposition marker annotations and data labels accordingly.
 # E. Three Major Observations
 
 1.  Labour force participation rate of residents *aged 65 & over* years has increased the most, compared to other age groups, from 2009 to 2019. 29% in 2019 is also the highest in ten years.
-2.  Proportion of labour force *aged 55 and above* is increasing every year from 2009 to 2019, except from 2014 to 2015 where the proportion remained the same, suggesting an aging workforce in Singapore.
+2.  Proportion of labour force *aged 55 and above* is increasing every year from 2009 to 2019 (except 2014 to 2015 where the proportion remained the same). This suggests an aging workforce in Singapore.
 3.  The labour force participation rate of residents *aged 15 - 24 years* was highest in 2015.
 
-Aside from an aging workforce, my observations reflect that a greater proportion of elderly are continuing to work past the age of 65 years old and unable to retire earlier. This trend makes me wonder if the Central Provident Fund scheme has been helpful for retirement.
+Aside from an aging resident labour force, a greater proportion of elderly are continuing to work past the age of 65 years old and unable to retire earlier, despite having the Central Provident Fund (CPF) scheme.
