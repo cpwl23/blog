@@ -3,7 +3,7 @@ title: "Hands-on_Distill.Rmd from Prof Kam"
 description: |
   Example .Rmd file provided by Prof Kam for ISSS608 Visual Analytics
 author:
-  - name: Prof Kam Tim Seong
+  - name: Cheryl Pay
     url: 
 date: 01-04-2021
 output:
