@@ -47,7 +47,7 @@ With reference to [A. Critic], an alternative representation is sketched below.
 
 a.  Two charts, with chart title, are added. (**C5**)
 
-    Chart 1: *Labour force participation rate*
+    Chart 1: *Labour force participation rate (%)*
 
     Chart 2: *Distribution of labour force*
 
@@ -193,7 +193,7 @@ m.  Rename the sheet from Sheet1 to **LFPR**.
 
 The line chart: *Labour Force Participation Rate* is ready.
 
-![](images/line%20chart.png){width="400"}
+![](images/line%20chart.png){width="600"}
 
 ### D.3 Creating the stacked area chart on Tableau
 
@@ -295,9 +295,15 @@ d.  An Edit Text dialog box appears. Place your title and description in the box
 
 e.  From the *Objects* pane, drag and drop **Blank** in between your two charts.
 
-f.  With all the different parts of your chart added, resize each pane and reposition data labels.
+f.  From the *Objects* pane, drag and drop text box to the bottom of the canvas (below both charts). A box spanning the entire width of the canvas must appear before you release your cursor.
 
-Notice that beside quality and type, the rest of the variables are numerical and continuous data type.
+g.  An Edit Text dialog box appears. Place the *Source* in the box. Update the font to
+
+    > Source: Comprehensive Labour Force Survey, Manpower Research & Statistics Department, MOM
+
+h.  Resize each pane. Reposition marker annotations and data labels accordingly. The final dashboard is shown below.
+
+![](images/999.png){width="600"}
 
 # E. Three Major Observations
 
