@@ -19,25 +19,27 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # A. Critic
 
-*A critic of the following data visualization is provided.*
+A critic of the following data visualization is provided.
 
 ![Excerpt and chart taken from Page 22 of Report: [Labour Force in Singapore 2019](https://stats.mom.gov.sg/Pages/Labour-Force-In-Singapore-2019.aspx)](images/00.jpg)
 
 ### Clarity
 
--   C1. Trends in the first four sentences of the statement are not apparent in the visualization. In particular, the age groups *aged 55 and above* and *aged 25 to 54* are not clearly shown in the visualization.
--   C2. The years in between 2009 and 2019 are missed out; only 2009 and 2019 are shown.
+-   C1. Trends in the first four sentences of the statement are not immediately apparent in the visualization. In particular, the age groups *aged 55 and above* and *aged 25 to 54* in the statement have not been grouped in the visualization.
+-   C2. The years in between 2009 and 2019 are missed out; only 2009 and 2019 are shown. A comparison of two years can be one-sided. The years in between must be shown to reflect trend and add meaning.
 -   C3. Y-axis is missing from the visualization.
 -   C4. No lead in or callouts to provide context.
--   C5. Title and caption of visualization is misleading; *Per Cent* is inaccurate.
+-   C5. Title and statement of visualization are misleading; *Per Cent* is inaccurate.
 -   C6. *LFPR* is used in the statement, without stating what LFPR stands for.
 -   C7. *LFPR* trends are not shown in the chart.
+-   C8. Chart Title *Resident labour force by age* is not accurate; instead, "Resident labour force by age group" is more accurate.
 
 ### Aesthetics
 
--   A1. Poor color choice of gray and blue used.
--   A2. Y-axis labels are cramped.
+-   A1. Poor color choice of gray and blue used; the shaded tables are difficult to read.
+-   A2. X-axis labels are cramped.
 -   A3. Poor positioning of *Source* and *Note*, with less than one line space between them and no spacing below *Note*.
+-   A4. *Per Cent*, which is placed below the chart title, is positioned too far away from the line graph and will likely be overlooked by the reader.
 
 # B. Alternative Graphical Representation - Sketch
 
@@ -45,15 +47,15 @@ With reference to [A. Critic], an alternative representation is sketched below.
 
 ![](images/dataviz01-sketch-01.PNG){width="100%"}
 
-a.  Two charts, with chart title, are added. (**C5**)
+a.  Two charts, with chart title, are added. (**C5, C8**)
 
     Chart 1: *Labour force participation rate (%)*
 
     Chart 2: *Distribution of labour force*
 
-b.  In both charts, data points range every year from 2009 to 2019 (instead of showing only 2009 and 2019). (**C4**)
+b.  In both charts, data points range every year from 2009 to 2019 (instead of showing only 2009 and 2019) to reflect trend. (**C4**)
 
-c.  Data is grouped into three and four age groups in Chart 1 and Chart 2 respectively. (**C1**)
+c.  Data is grouped into three and four age groups in Chart 1 and Chart 2 respectively. The grouping allows for more meaningful data visualization and trend observations. (**C1**)
 
 d.  Chart 1 is a line chart that shows the labour force participation rate (LFPR) by age group by year. This will reflect the trends in LFPR, in particular the sustained increase in LFPR for the cohorts aged 55 and above. (**C1, C7**)
 
@@ -73,21 +75,23 @@ e.  Chart 2 is an area chart that shows three age groups and their proportion of
 
     -   *15 - 24 years*
 
-f.  In Chart 2, the values for proportion of labour force of each age group, in 2009 and 2019, are labelled to emphasis the trend as described in the statement. (**C1,C4**)
+f.  In Chart 2, the values for proportion of labour force of each age group, in 2009 and 2019, are labelled to emphasis the corresponding trend described in the statement. (**C1,C4**)
 
-g.  Each line and area is clearly labelled. (**C1, C2**)
+g.  Each line and area is clearly labelled with the age group. (**C1, C2**)
 
-h.  Colour palette, *Tableau 10*, is chosen to differentiate the age groups clearly; instead of grey-blue colour for 2009 and 2019 respectively. (**A1**)
+h.  Colour palette, *Tableau 10*, is chosen to differentiate the age groups clearly; instead of grey-blue colour for 2009 and 2019 respectively. Colours across the charts are consistent i.e. same age group, same color, to reduce miscommunication. (**A1**)
 
-i.  Y-axis with minimum 0% and maximum 100% are shown on both charts. (**C3**)
+i.  Y-axes with minimum 0% and maximum 100% are shown on both charts. (**C3, A4**)
 
-j.  X-axis labels and x-axis title, are comfortably spaced i.e. not cramped on both charts. (**A2**)
+j.  X-axis labels and x-axis title are comfortably spaced i.e. not cramped on both charts. (**A2**)
 
 k.  *Source* is positioned two line spaces below the x-axes; *Source* is also aligned left and in different front from x-axis labels (for differentiation). (**A3**)
 
 l.  Labour force participating rate is stated in the statement to reflect what LFPR stands for. (**C6**)
 
 m.  Median working age in 2019 and 2009 are shown in a callout on Chart 2. (**C1**)
+
+n.  Blank spaces are purposefully added in the visualization e.g. between the two charts, to increase neatness overall. (**A2**)
 
 # C. Proposed Data Visualization - Tableau
 
