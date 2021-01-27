@@ -295,11 +295,11 @@ d.  An Edit Text dialog box appears. Place your title and description in the box
 
     -   Title: **Tableau Light, 16, bold**
 
-        > Share of older residents in the labour force has risen in 2019
+        > Share of older residents in the labour force rose in 2019
 
     -   Description: **Tableau Light, 10**, *not bold*
 
-        > The labour force participation rate (LFPR) of older residents has been increasing since 2009. In particular, the age group with the greatest increase in LFPR is residents aged 65 and above; their LFPR increased by 12 percentage points from 17% in 2009 to 29% in 2019. Coupled with aging population, the proportion of residents aged 55 and above that make up our labour force increased to 25% in 2019. While the LFPR of those aged 25 - 54 years increased as well, the cohorts entering this age band were smaller than those who moved out due to lower birth rates. Hence the proportion of residents aged 25 - 54 in the labour force fell from 75% in 2009 to 67% in 2019. In 2019, the median working age is 44 years.
+        > The labour force participation rate (LFPR) of residents has increased since 2009. The increase in LFPR was steepest for those *aged 65 and above*; from 2009 to 2019, their LFPR increased by 12 percentage points. The LFPR of residents aged *55 - 64 years* also increased by 9 percentage points. Coupled with aging population, the proportion of residents aged 55 and above that make up our labour force rose to 25% in 2019. While the LFPR of those in the next age band *25 - 54 years* increased as well, the cohorts entering this age band were smaller than those who moved out due to lower birth rates. Hence the proportion of residents *aged 25 - 54* in the labour force declined from 75% in 2009 to 67% in 2019. In 2019, the median working age is 44 years.
 
     -   For both *Title* and *Description*, font color (as shown below) is the same.
 
@@ -315,12 +315,12 @@ g.  An Edit Text dialog box appears. Place the *Source* in the box. Update the f
 
 h.  Resize each pane. Reposition marker annotations and data labels accordingly. The final dashboard is shown below.
 
-![](images/999-03.png){width="100%"}
+![](images/999.png){width="100%"}
 
 # E. Three Major Observations
 
-1.  Labour force participation rate of residents *aged 65 & over* years has increased the most, compared to other age groups, from 2009 to 2019. 29% in 2019 is also the highest in ten years.
-2.  Proportion of labour force *aged 55 and above* is increasing every year from 2009 to 2019 (except 2014 to 2015 where the proportion remained the same). This suggests an aging workforce in Singapore.
-3.  The labour force participation rate of residents *aged 15 - 24 years* was highest in 2015.
+1.  Labour force participation rate of residents (LFPR) *aged 65 & over years* has increased the most, compared to other age groups, from 2009 to 2019. Their LFPR of 29% in 2019 is also the highest in ten years.
+2.  Proportion of labour force *aged 55 and above* has increased by from 2009 to 2019. This suggests an aging workforce in Singapore.
+3.  Despite the labour force participation rate for residents *aged 25 - 54 years* increasing over the past ten years, their proportion in our labour force has declined from 75% in 2009 to 67% in 2019.
 
 Aside from an aging resident labour force, a greater proportion of elderly are continuing to work past the age of 65 years old and not retire earlier, despite Singapore having the Central Provident Fund (CPF) scheme.
