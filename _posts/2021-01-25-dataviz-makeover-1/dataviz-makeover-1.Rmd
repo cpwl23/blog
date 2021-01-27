@@ -117,7 +117,7 @@ a.  First, we download the following two tables from [Table: Labour Force 2019](
 
     -   *Table (7): Resident Labour Force Aged Fifteen Years and Over by Age and Sex, 2009 -- 2019 (June)*
 
-b.  From the data in Table 5, copy and paste the labour force participation rates of the following age groups, from years 2009 to 2019, onto another excel file. You should have three columns with 44 observations. Save file as **data_lfpr.xlsx** to use as your data source for Tableau.
+b.  From the data in Table 5, copy and paste the labour force participation rates of the following age groups, from years 2009 to 2019, onto another excel file. You should have three columns with 44 observations. Save file as **data_LFPR.xlsx** to use as your data source for Tableau.
 
     [Age Groups]{.ul}
 
@@ -149,7 +149,7 @@ c.  From the data in Table 7, we need to calculate **proportion of resident labo
 
     </div>
 
-d.  Do the same for every year and every age group. Copy and paste the values calculated onto another excel file. You should have the following three columns with 133 observations. Save file as **data_LFPR.xlsx** to use as your data source for Tableau
+d.  Do the same for every year and every age group. Copy and paste the values calculated onto another excel file. You should have the following three columns with 133 observations. Save file as **data_labour_force.xlsx** to use as your data source for Tableau
 
     [Data Columns]{.ul}
 
@@ -191,27 +191,31 @@ h.  To label each line with the age group, drag **Age Group** from the *Data* pa
 
     2.  Font: **Tableau Bold, 10pt,** Match Mark Color
 
-i.  From the legend, click the drop-down arrow and go to **EditColors**. Set the colors of each age group according to the screenshot below. The color for *65 & Over* is a darker shade from the color for *55 - 64*.
+i.  From the legend, click the drop-down arrow and go to **EditColors**. Set the colors of each age group according to the screenshot below. The color for *65 & Over* is a darker shade from the color for *55 - 64*. Click **OK**.
 
     ![](images/05.4%20edit%20colors%20legend.png){width="250"}
 
-The line chart: Labour Force Participation Rate is ready.
+The line chart: *Labour Force Participation Rate* is ready.
 
-> ![](images/line%20chart.png){width="400"}
+![](images/line%20chart.png){width="400"}
 
 ### D.3 Creating the stacked area chart on Tableau
 
-a.  Click on *Abc* of Year. From the dropdown, select **Date**.
+a.  Create a new Worksheet in the same Tableau file. Using the top menu bar, select **Data** \> **New Data Source**. Connect to **data_labour_force.xlsx**.
 
-b.  Go to *Sheet 1* from the tabs at the bottom of your window. In the *Data* pane, right-click *Age (Years)* and select **Create \> Group**.
+b.  Click on *Abc* of Year. From the dropdown, select **Date**.
+
+c.  Go to *Sheet 2* from the tabs at the bottom of your window. In the *Data* pane, right-click *Age (Years)* and select **Create \> Group**.
 
     ![](images/06%20create%20group.png){width="400"}
 
-c.  In the Create Group dialog box, select the age groups 55 and above, then click **Group**. Rename the group to *55+ years*. Do the same for the other two groups - *25-54 years* and *Below 25 years.*
+d.  In the Create Group dialog box, select the age groups 55 and above, then click **Group**. Rename the group to *55+ years*. Do the same for the other two groups - *25-54 years* and *Below 25 years.*
 
-    ![](images/07b%20create%20groups%20all-01.png){width="400"}
+    > Group naming must be consistent with the line chart in [D.2 Creating the line chart on Tableau].
 
-d.  
+    ![](images/07.1%20create%20groups%20all-01.png){width="250"}
+
+e.  
 
 First, let us import the data into R by using *read_csv()* of **readr** package.
 
