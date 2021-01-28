@@ -116,7 +116,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["images/00.jpg","images/02 calculate proportion.png","images/02a data lfpr excel.png","images/03 data source excel raw.png","images/05.0 show % sign.png","images/05.2 show marks.png","images/05.4 edit colors legend.png","images/05a change year to date.png","images/05c set year.png","images/06 create group.png","images/07.1 create groups all.png","images/07.10 annotations six.png","images/07.11 statement color.png","images/07.13 set major tick marks to year-01.png","images/07.13 set major tick marks to year.png","images/07.2 set year.png","images/07.3 select area chart continuous.png","images/07.4 format scale numbers to percentage.png","images/07.5 major tick marks only.png","images/07.6 sort by descending.png","images/07.7 edit colors.png","images/07.8 annotate mark.png","images/07.9 edit annotation size.png","images/99-distribution.png","images/999.png","images/dataviz01-sketch-01.PNG","images/dataviz01-sketch.PNG","images/line chart.png"]}
+  {"type":"character","attributes":{},"value":["dataviz-makeover-1_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-1_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-1_files/distill-2.2.21/template.v2.js","dataviz-makeover-1_files/header-attrs-2.6.6/header-attrs.js","dataviz-makeover-1_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-1_files/popper-2.6.0/popper.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-1_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.css","dataviz-makeover-1_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-1_files/webcomponents-2.0.0/webcomponents.js","images/00.jpg","images/02 calculate proportion.png","images/02a data lfpr excel.png","images/03 data source excel raw.png","images/05.0 show % sign.png","images/05.2 show marks.png","images/05.4 edit colors legend.png","images/05a change year to date.png","images/05c set year.png","images/06 create group.png","images/07.1 create groups all.png","images/07.10 annotations six.png","images/07.11 statement color.png","images/07.13 set major tick marks to year-01.png","images/07.13 set major tick marks to year.png","images/07.14 annotate ppt.png","images/07.2 set year.png","images/07.3 select area chart continuous.png","images/07.4 format scale numbers to percentage.png","images/07.5 major tick marks only.png","images/07.6 sort by descending.png","images/07.7 edit colors.png","images/07.8 annotate mark.png","images/07.9 edit annotation size.png","images/99-distribution.png","images/999_2-01.png","images/999_2-02.png","images/999_2-03.png","images/999_2-04.png","images/999_2.png","images/999.png","images/dataviz01-sketch-01.PNG","images/dataviz01-sketch.PNG","images/line chart.png","images/line chart2-01.png","images/line chart2.png"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2173,12 +2173,13 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><p>X-axis labels and x-axis title are comfortably spaced i.e. not cramped on both charts. (<strong>A2</strong>)</p></li>
 <li><p><em>Source</em> is positioned two line spaces below the x-axes; <em>Source</em> is also aligned left and in different front from x-axis labels (for differentiation). (<strong>A3</strong>)</p></li>
 <li><p>Labour force participating rate is stated in the statement to reflect what LFPR stands for. (<strong>C6</strong>)</p></li>
-<li><p>Median working age in 2019 and 2009 are shown in a callout on Chart 2. (<strong>C1</strong>)</p></li>
+<li><p>Median working age in 2019 and 2009 are shown as an annotation on Chart 2. <em>(not in sketch)</em> (<strong>C1</strong>)</p></li>
+<li><p>Callouts are added in the line chart, indicating the increase in labour force participation rates of age groups 55 - 64 years and 65 &amp; over years, from 2009 to 2019. (<strong>C4</strong>)</p></li>
 <li><p>Blank spaces are purposefully added in the visualization e.g. between the two charts, to increase neatness overall. (<strong>A2</strong>)</p></li>
 </ol>
 <h1 id="c.-proposed-data-visualization---tableau">C. Proposed Data Visualization - Tableau</h1>
 <figure>
-<img src="images/999.png" style="width:100.0%" alt="Available for download on Tableau Public here" /><figcaption aria-hidden="true">Available for download on Tableau Public <a href="https://public.tableau.com/views/dataviz_makeover_1_16117486799790/Dashboard1?:language=en&amp;:display_count=y&amp;publish=yes&amp;:origin=viz_share_link">here</a></figcaption>
+<img src="images/999_2-04.png" alt="Available for download on Tableau Public here" /><figcaption aria-hidden="true">Available for download on Tableau Public <a href="https://public.tableau.com/views/dataviz_makeover_1_16117486799790/Dashboard1?:language=en&amp;:display_count=y&amp;publish=yes&amp;:origin=viz_share_link">here</a></figcaption>
 </figure>
 <h1 id="d.-step-by-step-guide-for-creating-the-visualization">D. Step-by-Step Guide for Creating the Visualization</h1>
 <h3 id="d.1-preparing-the-data-in-excel">D.1 Preparing the data in excel</h3>
@@ -2243,10 +2244,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <li><p>From the legend, click the drop-down arrow and go to <strong>EditColors</strong>. Set the colors of each age group according to the screenshot below. The color for <em>65 &amp; Over</em> is a darker shade from the color for <em>55 - 64</em>. Click <strong>OK</strong>.</p>
 <p><img src="images/05.4%20edit%20colors%20legend.png" style="width:45.0%" /></p></li>
 <li><p>From the legend, click the drop-down arrow and select <strong>HideCard</strong>.</p></li>
+<li><p>On the line chart, right click on the data point: <strong>55 - 64 years</strong>, <strong>2019</strong>. Select <strong>Annotate &gt; Mark</strong>. In the Edit Annotation dialog box, type <strong>+9 ppt from year 2000</strong>. Change font to <strong>Tableau Book,</strong> <strong>8</strong> and bold only <strong>+9 ppt.</strong></p></li>
+<li><p>On the line chart, right click on the data point: <strong>65 &amp; Over years</strong>, <strong>2019</strong>. Select <strong>Annotate &gt; Mark</strong>. In the Edit Annotation dialog box, type <strong>+12 ppt from year 2000</strong>. Change font to <strong>Tableau Book,</strong> <strong>8</strong> and bold only <strong>+12 ppt</strong>.</p></li>
 <li><p>Rename the sheet from Sheet1 to <strong>LFPR</strong>.</p></li>
 </ol>
 <p>The line chart: <em>Labour Force Participation Rate</em> is ready.</p>
-<p><img src="images/line%20chart.png" style="width:100.0%" /></p>
+<p><img src="images/line%20chart2-01.png" style="width:100.0%" /></p>
 <h3 id="d.3-creating-the-stacked-area-chart-on-tableau">D.3 Creating the stacked area chart on Tableau</h3>
 <ol type="a">
 <li><p>Create a new Worksheet in the same Tableau file. Using the top menu bar, select <strong>Data</strong> &gt; <strong>New Data Source</strong>. Connect to <strong>data_labour_force.xlsx</strong>.</p></li>
@@ -2334,7 +2337,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </blockquote></li>
 <li><p>Resize each pane. Reposition marker annotations and data labels accordingly. The final dashboard is shown below.</p></li>
 </ol>
-<p><img src="images/999.png" style="width:100.0%" /></p>
+<p><img src="images/999_2-02.png" style="width:100.0%" /></p>
 <h1 id="e.-three-major-observations">E. Three Major Observations</h1>
 <ol type="1">
 <li>Labour force participation rate of residents (LFPR) <em>aged 65 &amp; over years</em> has increased the most, compared to other age groups, from 2009 to 2019. Their LFPR of 29% in 2019 is also the highest in ten years.</li>
