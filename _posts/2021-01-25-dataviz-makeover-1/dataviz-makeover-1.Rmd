@@ -90,7 +90,7 @@ k.  *Source* is positioned two line spaces below the x-axes; *Source* is also al
 
 l.  Labour force participating rate is stated in the statement to reflect what LFPR stands for. (**C6**)
 
-m.  Median working age in 2019 and 2009 are shown as an annotation on Chart 2. *(not in sketch)* (**C1**)
+m.  Median working age in 2019 and 2009 are shown as an annotation on Chart 2. (**C1**)
 
 n.  Callouts are added in the line chart, indicating the increase in labour force participation rates of age groups 55 - 64 years and 65 & over years, from 2009 to 2019. (**C4**)
 
@@ -196,9 +196,9 @@ k.  From the legend, click the drop-down arrow and go to **EditColors**. Set the
 
 l.  From the legend, click the drop-down arrow and select **HideCard**.
 
-m.  On the line chart, right click on the data point: **55 - 64 years**, **2019**. Select **Annotate \> Mark**. In the Edit Annotation dialog box, type **+9 ppt from year 2000**. Change font to **Tableau Book,** **8** and bold only **+9 ppt.**
+m.  On the line chart, right click on the data point: **55 - 64 years**, **2019**. Select **Annotate \> Mark**. In the Edit Annotation dialog box, type **+9 ppt from year 2000**. Change font to **Tableau Book,** **8** and bold only *+9 ppt***.**
 
-n.  On the line chart, right click on the data point: **65 & Over years**, **2019**. Select **Annotate \> Mark**. In the Edit Annotation dialog box, type **+12 ppt from year 2000**. Change font to **Tableau Book,** **8** and bold only **+12 ppt**.
+n.  On the line chart, right click on the data point: **65 & Over years**, **2019**. Select **Annotate \> Mark**. In the Edit Annotation dialog box, type **+12 ppt from year 2000**. Change font to **Tableau Book,** **8** and bold only *+12 ppt*.
 
 o.  Rename the sheet from Sheet1 to **LFPR**.
 
