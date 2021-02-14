@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2021-02-14-dataviz-makeover-2/",
+    "title": "DataViz Makeover 2",
+    "description": "Due 19 Feb 2021, 2359h.",
+    "author": [
+      {
+        "name": "Cheryl Pay",
+        "url": {}
+      }
+    ],
+    "date": "2021-02-14",
+    "categories": [],
+    "contents": "\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-02-14T11:50:46+08:00",
+    "input_file": "dataviz-makeover-2.utf8.md"
+  },
+  {
     "path": "posts/2021-01-25-dataviz-makeover-1/",
     "title": "DataViz Makeover 1",
     "description": "Due 28 Jan 2021, 2359h.",

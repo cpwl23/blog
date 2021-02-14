@@ -1,0 +1,21 @@
+---
+title: "DataViz Makeover 2"
+description: |
+  Due 19 Feb 2021, 2359h.
+author:
+  - name: Cheryl Pay
+    url: 
+date: 02-14-2021
+output:
+  distill::distill_article:
+    toc: true
+    toc_float: false
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
