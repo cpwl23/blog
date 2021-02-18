@@ -293,7 +293,7 @@ Importing and Preparing the data in Tableau
 
     ![](images/score%20-%20alias%20dict-01.png){width="50%"}
 
-4.  Create the following **parameters** and their calculated field to be used for toggling responses in the dashboard
+4.  Create the following **parameters** and their **calculated field** to be used for toggling responses in the dashboard
 
     -   
 
@@ -326,7 +326,7 @@ Importing and Preparing the data in Tableau
         |                                                                                                                                       |                                                                                |
         | Set *Allowable Values* as **List** and add the *ListofValues* per screenshot below. Note the *DisplayAs* column.                      | ![](images/parameter%20-%20view%20responses%20by%20-%20calc.png){width="100%"} |
         |                                                                                                                                       |                                                                                |
-        | ![](images/parameter%20-%20view%20responses%20by.png){width="100%"}                                                                   |                                                                                |
+        | ![](images/parameter%20-%20view%20responses%20by-01.png){width="100%"}                                                                |                                                                                |
         +---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
         | Set [Parameter] *Name* as **Sort by**.                                                                                                | Set [Calculated Field] *Name* as **Sort visualization by**.                    |
         |                                                                                                                                       |                                                                                |
@@ -337,7 +337,7 @@ Importing and Preparing the data in Tableau
         | ![](images/parameter%20-%20sort%20by.png){width="100%"}                                                                               |                                                                                |
         +---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
 
-    Once you have created all the parameters above, right click on **Question Parameter** in the *Data: Parameters* pane and select **ShowParameter**. Then, do the same for **View respnse by** and **Sort by**. The three parameters should appear on the right hand side of your window.
+    Once you have created all the parameters above, right click on **Question Parameter** in the *Data: Parameters* pane and select **ShowParameter**. Then, do the same for **View response by** and **Sort by**. The three parameters should appear on the right hand side of your window.
 
     ![](images/parameters%20-%20show%20parameters-01.png){width="80%"}
 
@@ -359,7 +359,7 @@ Importing and Preparing the data in Tableau
 
     ![](images/likert%2002%20-%20drop%20score%20to%20color.png){width="80%"}
 
-9.  On the color legend,click on the down arrowhead to the right of "Score" and select **EditColors** from the dropdown. Select **Tableau Classic 20** as the Color Palette and update each color according to the screenshot below. Click **Apply**, then click **OK.**
+9.  On the color legend, click on the down arrowhead to the right of "Score" and select **EditColors** from the dropdown. Select **Tableau Classic 20** as the Color Palette and update each color according to the screenshot below. Click **Apply**, then click **OK.**
 
     ![](images/likert%2003%20-%20change%20color.png){width="80%"}
 
@@ -395,7 +395,7 @@ Importing and Preparing the data in Tableau
 
     ![](images/likert%2010%20-%20chart%20title%20-%20add%20question%20parameter.png){width="50%"}
 
-    Then, copy and paste the following two lines below.
+    Then, copy and paste the following text to the Edit Title window.
 
     > **Strongly disagree** \| **Somewhat disagree** \| **Neutral** \| **Somewhat agree** \| **Strongly agree**
 
@@ -407,19 +407,305 @@ Importing and Preparing the data in Tableau
 
     ![](images/likert%2012%20-%20uncheck%20sort%20controls.png){width="80%"}
 
-The divergent bar chart is now ready with parameter controls on the right to allow the reader to select.
+18. Click on **All** below the *Marks* pane. From the *Data* pane, drag **Number of Response** and drop onto **Tooltip**.
+
+    ![](images/likert%2013%20-%20drag%20number%20of%20response%20to%20tooltip-01.png){width="80%"}
+
+19. From *Rows,* right click on *View by* and click **Sort**.
+
+    ![](images/likert%20-%20sort.png){width="80%"}
+
+    Sort by **Field**, and select *Field Name* as **Sort visualization by** (the calculated field for [parameter] Sort by).
+
+    ![](images/sort%20view%20by.png){width="35%"}
+
+20. From the *Data* pane, drag **Country** to *Filters* pane. In the *Filter[Country]* window, click **All** to select all countries. Then click **OK**.
+
+    ![](images/likert%2014%20-%20add%20country%20filter.png){width="80%"}
+
+21. In the *Filters* pane, click on the down arrowhead next to **Country**. Click **ShowFilter**.
+
+    ![](images/likert%2015%20-%20show%20filter%20card.png){width="80%"}
+
+22. Then, go to the right of your window. Click on the down arrowhead of the Country filter card. Go to ApplytoWorksheets \> Tick **UsingRelatedDataSources**. Since we are working with one data source only, by ticking **UsingRelatedDataSources**, we ensure that the country filter is applied to all charts on the dashboard (for consistency purposes).
+
+    Also ensure that **MultipleValues(list)** is selected. This allows the users to view the statistics of a few countries at one glance.
+
+    ![](images/likert%2016%20-%20country%20filter%20apply%20to%20all%20worksheets-01.png){width="80%"}
+
+The diverging bar chart is now ready with parameter controls on the right to allow the reader to select.
 
 ![](images/likert%20-%20ready-02.png){width="100%"}
 
 ### Creating dot-and-line chart for confidence levels
 
-1.  
+1.  On the taskbar at the top, go to Worksheet \> **New Worksheet**.
 
-asdf
+2.  Rename the worksheet by double clicking on the sheet on the bottom of your window. Rename to **Uncertainty**.
 
-Dashboarding
+    ![](images/uncertainty%2001%20-%20new%20worksheet.png){width="80%"}
 
--   Frame
+3.  Create a new parameter named **Confidence Level**.
+
+    +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+    | Parameter                                                                           | Calculated Field                                                               |
+    +=====================================================================================+================================================================================+
+    | Set [Parameter] *Name* as **Confidence Level**.                                     | Set [Calculated Field] *Name* as **CI Selected**.                              |
+    |                                                                                     |                                                                                |
+    | Set *Data Type* as **String**.                                                      | Add the following formula. Click **Apply,** then click **OK**.                 |
+    |                                                                                     |                                                                                |
+    | Set *Allowable Values* as **List** and add the *ListofValues* per screenshot below. | ![](images/uncertainty%2008%20-%20parameter%20CI%20-%20calc.png){width="100%"} |
+    |                                                                                     |                                                                                |
+    | ![](images/uncertainty%2002%20-%20parameter%20CI.png){width="100%"}                 |                                                                                |
+    +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+
+4.  In the *Data: Parameters* pane, right click on **Confidence Level**, select **ShowParameter**.
+
+    ![](images/uncertainty%2009%20-%20show%20parameter%20CI.png){width="80%"}
+
+5.  On the taskbar at the top, go to Analysis \> CreateCalculatedField. Create the following calculated fields.
+
+    ![](images/uncertainty%2003%20-%20create%20calculated%20field.png){width="80%"}
+
+    +--------------------+-------------------------------------------------------------------------------+
+    | Name               | Formula                                                                       |
+    +====================+===============================================================================+
+    | CI_Lower Limit 95% | ![](images/uncertainty%2004%20-%20CI_Lower%20Limit%2095-01.png){width="100%"} |
+    +--------------------+-------------------------------------------------------------------------------+
+    | CI_Upper Limit 95% | ![](images/uncertainty%2005%20-%20CI_Upper%20Limit%2095.png){width="100%"}    |
+    +--------------------+-------------------------------------------------------------------------------+
+    | CI_Lower Limit 99% | ![](images/uncertainty%2006%20-%20CI_Lower%20Limit%2099.png){width="100%"}    |
+    +--------------------+-------------------------------------------------------------------------------+
+    | CI_Upper Limit 99% | ![](images/uncertainty%2007%20-%20CI_Upper%20Limit%2099-01.png){width="100%"} |
+    +--------------------+-------------------------------------------------------------------------------+
+
+6.  From the *Data* pane, drag **Row by** to Rows, drag **Prop Agree** to Columns. In the *Marks* pane, change Automatic to **Circle**.
+
+    ![](images/uncertainty%2010%20-%20select%20circle%20chart.png){width="80%"}
+
+7.  From the *Data* pane, drag **Measure Values** to Columns. In the *Measure Values* pane, remove all fields except the following four fields.
+
+    -   AGG(CI_Lower Limit 95%)
+
+    -   AGG(CI_Upper Limit 95%)
+
+    -   AGG(CI_Lower Limit 99%)
+
+    -   AGG(CI_Upper Limit 99%)
+
+    ![](images/uncertainty%2011%20-%20retain%20only%20agg%20CI.png){width="80%"}
+
+8.  Right click on the x-axis for **Value**, and select **DualAxis**.
+
+9.  Right click on the x-axis on the top, and select **SynchronizeAxis**.
+
+    ![](images/uncertainty%2012%20-%20synchronize%20axis.png){width="80%"}
+
+10. In the *Marks:Measures Values* pane, change the chart from Circle to **Line**.
+
+    ![](images/uncertainty%2012%20-%20measure%20values%20line%20chart.png){width="80%"}
+
+11. From the *Data* pane, drag **Measure Names** to Path (under the *Marks: Measure Values* pane).
+
+    ![](images/uncertainty%2014%20-%20measure%20names%20to%20path.png){width="80%"}
+
+12. Click **Color** in the *Marks:Measure Values* pane and select blue (in the screenshot below).
+
+    ![](images/uncertainty%2015%20-%20color%20blue.png){width="80%"}
+
+13. Click **Size** in the *Marks:Measure Values* pane and adjust the size to the screenshot below.
+
+    ![](images/uncertainty%2016%20-%20size.png){width="80%"}
+
+14. Right click on the y-axis, select **Format**. For *Alignment,* select **Center** for both Horizontal and Vertical.
+
+    ![](images/uncertainty%2013%20-%20center%20align%20y%20axis.png){width="80%"}
+
+15. Right click on the x-axis on the top \> **Uncheck** Show Header.
+
+    ![](images/uncertainty%2019%20-%20hide%20second%20x%20axis.png){width="80%"}
+
+16. On the taskbar at the top, go to Analysis \> Totals, select **Show Column Grand Totals** and **Column Totals to Top**. Ensure that there is a tickmark in front of both fields.
+
+    ![](images/uncertainty%2020%20-%20show%20total.png){width="80%"}
+
+17. Right click on the x-axis. Set Range to **Fixed**, Fixed start to **0**, and Fixed end to **1.** For *Axis Titles*, remove Prop Agree from the Title. The title is left blank.
+
+    ![](images/uncertainty%2023%20-%20x%20axis%20start%20and%20end.png){width="40%"}
+
+    Next, go to **Tick Marks**. Set *Major Tick Marks* to **Fixed**, with *Tick Interval* as **0.1**.
+
+    ![](images/uncertainty%2024%20-%20x%20axis%20major%20tick%20marks.png){width="40%"}
+
+18. Double click on the title. Copy and paste the following to the *Edit Title* window.
+
+    > Proportion of respondents that somewhat/strongly agree to the statement above.
+
+    ![](images/uncertainty%2017%20-%20title.png){width="45%"}
+
+19. Right click on the x-axis, select **Format**. Under *Scale* \> **Numbers**, choose **Percentage** and set decimal places to **0**.
+
+    ![](images/uncertainty%2018%20-%20format%20x-axis.png){width="80%"}
+
+20. Right click on the x-axis \> **AddReferenceLine** for average value.
+
+    ![](images/uncertainty%20-%20add%20reference%20line-01.png){width="45%"}
+
+21. From the *Marks:AGG(Prop Agree)* pane, click on **Tooltip**. In the *Edit Tooltip* window, update to include the Parameter Question.
+
+    ![](images/uncertainty%2022%20-%20edit%20tooltip.png){width="80%"}
+
+Create worksheets for Age and Gender
+
+1.  Create new worksheet. Rename the sheet to **Gender**.
+
+2.  From the *Data* pane, drag **Number of Response** to Columns, **Gender** to Row. Then, drag **Score** to Color in the *Marks* pane.
+
+    ![](images/gender%2001%20-%20row%20and%20column.png){width="80%"}
+
+3.  Right click on the Title: Gender, select **HideTitle**.
+
+    ![](images/gender%2006%20-%20hide%20title.png){width="80%"}
+
+4.  On the color legend, click on the down arrowhead to the right of "Score" and select **EditColors** from the dropdown. Select **Tableau Classic 20** as the Color Palette and update each color according to the screenshot below. Click **Apply**, then click **OK.**
+
+    ![](images/likert%2003%20-%20change%20color.png){width="80%"}
+
+5.  Double click on the x-axis. Remove the *Title* from Axis Titles.
+
+    ![](images/gender%2002%20-%20leave%20x%20axis%20title%20blank.png){width="40%"}
+
+    Go to Tick Marks. Set *Major Tick Marks* to **Fixed** and update *Tick Interval* to **0.1**.
+
+    ![](images/uncertainty%2024%20-%20x%20axis%20major%20tick%20marks-01.png){width="40%"}
+
+6.  Right click on the x-axis, select **Format**. Under *Scale* \> **Numbers**, choose **Percentage** and set decimal places to **0**.
+
+7.  In Columns, click on the down arrowhead of **SUM(Number of Response)**. Go to *QuickTableCalculation* and select **PercentofTotal**.
+
+    ![](images/gender%2003%20-%20percent%20of%20total%20column.png){width="80%"}
+
+8.  From the *Data* pane, drag Number of Response to **Tooltip**. Then, again from the *Data* pane, drag Number of Response to **Label**.
+
+    ![](images/gender%2004%20-%20tooltip%20and%20label.png){width="80%"}
+
+9.  In the *Marks* pane, click on the down arrowhead on SUM(Number of Response) - with the tooltip icon. Go to *QuickTableCalculation* and select **PercentofTotal**.
+
+    ![](images/gender%2005%20-%20label.png){width="80%"}
+
+10. From the *Marks* pane, click on **Label**. Go to **Font**, click the dropdown arrow. Set font to Tableau Book, Size 8 and color white.
+
+    ![](images/gender%2005%20-%20label%20white.png){width="80%"}
+
+11. Right click on the worksheet Gender at the bottom bar. Select **Duplicate**.
+
+    ![](images/age%2001%20-%20duplicate%20from%20gender.png){width="80%"}
+
+12. From *Rows,* right click on *Gender* and click **Sort**.
+
+    ![](images/gender%2007%20-%20sort.png){width="80%"}
+
+13. Sort by **Field**, and select *Field Name* as **Sort visualization by** (the calculated field for [parameter] Sort by).
+
+    ![](images/sort%20view%20by-01.png){width="40%"}
+
+14. Rename the worksheet to **Age**.
+
+15. Drag **Age (group)** to Rows and remove Gender from Rows.
+
+    ![](images/age%2002%20-%20row%20is%20age%20group.png){width="80%"}
+
+## Creating the dashboard
+
+1.  On the taskbar at the top, go to Dashboard \> **New Dashboard**.
+
+    ![](images/dashboard%2001%20-%20create%20new.png){width="80%"}
+
+2.  From the bottom bar, right click on the Dashboard tab and select **Rename**. Rename to the following.
+
+    > Public Survey on Covid-19 Vaccination
+
+    ![](images/dashboard%2002%20-%20rename.png){width="80%"}
+
+3.  On the taskbar at the top, go to Dashboard. **Tick** *Show Title*.
+
+    ![](images/dashboard%2003%20-%20show%20title.png){width="80%"}
+
+4.   From the *Size* pane on the left, set to **Custom size, Fixed Size, Custom,** Width = **1150 px** and Height = **800 px**. Custom size is selected so that the dashboard layout is not compromised when viewing on computers with different sizes.
+
+    ![](images/dashboard%2004%20-%20custom%20size.png){width="20%"}
+
+5.  From *Sheets*, drag and drop **Likert** to the top-center of the dashboard. A shaded grey rectangle that covers the top-half of the dashboard (below the title) should appear before you release your cursor.
+
+    ![](images/dashboard%2005%20-%20drag%20Likert.png){width="80%"}
+
+6.  Remove color legend from the dashboard.
+
+    ![](images/dashboard%2006%20-%20remove%20color%20legend%20from%20dashboard.png){width="80%"}
+
+7.  Add the other sheets: **Uncertainty**, **Gender** and **Age** to the dashboard and align the parameter controls and filters according to the screenshot below.
+
+    -   Question Parameter is below the dashboard title and above the diverging bar chart.
+
+    -   On the right most column of the dashboard is firstly **View response by**, followed by **Sort by**, and then **Country**.
+
+    ![](images/dashboard%2007%20-%20add%20all%20sheets-01.png){width="80%"}
+
+8.  Select the tile belonging to the diverging bar chart, change view from Standard to **Fit Height**. Do the same for the tile belonging to the confidence levels.
+
+    ![](images/dashboard%2007%20-%20fit%20height.png){width="80%"}
+
+9.  Drag **Text** from the *Objects* pane, on top of the **Gender** stacked bar chart (see above). In the *EditText* window, enter the following.
+
+    > Total Number of Response
+    >
+    > Select a bar above to watch the distribution below change.
+
+    ![](images/dashboard%2012%20-%20total%20number%20of%20response.png){width="45%"}
+
+10. Drag **Text** from the *Objects* pane to the right most column of the dashboard, below the Country filter. In the *EditText* window, enter the following.
+
+    > Data Source
+    >
+    > Imperial College London YouGov Covid 19 Behaviour Tracker Data Hub
+
+    ![](images/dashboard%2009%20-%20add%20data%20source.png){width="80%"}
+
+11. Add white spaces to the dashboard using the **Blank** from the *Objects* pane. The white spaces compartmentalizes the space and increase neatness.
+
+    ![](images/dashboard%2008%20-%20blanks.png){width="80%"}
+
+12. Right click on the y-axis of the diverging bar chart and the dot and line charts. Select **HideFieldLabelsforRows.**
+
+    ![](images/dashboard%2010-%20HideFieldLabelsforRows.png){width="80%"}
+
+13. Double-click on "Question Parameter". In the *EditTitle* window, type the following.
+
+    > Select statement from dropdown
+
+    ![](images/dashboard%2011%20-%20select%20statement.png){width="80%"}
+
+14. On the taskbar at the top, go to Dashboard \> **Actions**.
+
+    ![](images/dashboard%2013%20-%20create%20action.png){width="80%"}
+
+15.  In the *Actions* dialogue box, click Add Action \> **Filter**.
+
+    ![](images/dashboard%2014%20-%20action%20filters.png){width="45%"}
+
+16. In the *Edit Filter Action* dialogue box, set Name: **Distribution of Gender and Age (group)**.
+
+    -   Source Sheets: Tick **Likert** only, and Run action on: **Select.**
+
+    -   Target Sheets: Tick **Age, Gender** and **Likert** only. Clearing the selection will **Show all values**.
+
+    ![](images/dashboard%2016%20-%20selected%20-%20filter%20age%20and%20gender.png){width="45%"}
+
+    The above action will result in the Gender and Age(group) stacked bar charts to change accordingly when a selection is made in the diverging bar chart.
+
+The dashboard is now completed (available on Tableau).
+
+![](images/dashboard%2000.png){width="100%"}
 
 # E. Three Major Observations
 
