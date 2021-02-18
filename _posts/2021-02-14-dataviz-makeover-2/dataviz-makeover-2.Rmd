@@ -21,23 +21,9 @@ knitr::opts_chunk$set(echo = FALSE)
 
 A critic of the following data visualization is provided.
 
-![Excerpt and chart taken from Page 22 of Report: [Labour Force in Singapore 2019](https://stats.mom.gov.sg/Pages/Labour-Force-In-Singapore-2019.aspx)](images/00.jpg)
+![](images/00%20original.png){width="100%"}
 
-### Clarity
-
-1.  The y-axis on both charts do not follow the same sorting i.e. the stacked bar chart is sorted by alphabetical order on the y-axis while the bar chart on the right is sorted by descending percentage on the x-axis. Some readers may overlook this and assume that the bars in the same row belong to the same country in both charts.
-
-    > **Suggestion:** *Create parameter to allow users to select whether to sort by alphabetical or proportion agree, in ascending or descending orders. Ensure that this parameter is applied to all relevant charts for easy cross-reference.*
-
-2.  Demographics data such as age and gender are not reflected in the charts; these demographics data are important to provide further insights into the willingness of the public on Covid-19 vaccination (as trends may surface based on these factors).
-
-    > **Suggestion:** Create parameter to allow users to select their category of choice (country, age, gender etc) to view the responses accordingly. Ensure that this parameter is applied to all relevant charts for easy cross-reference.
-
-3.  The title of the 100% stacked bar chart, *Which country is more pro-vacinne?* does not provide any insights as to how the responses were collected.
-
-    **Suggestion**: Show in the visualization the survey question that respondents answered i.e. *If a Covid-19 vaccine were made available to me this week, I would definitely get it.*
-
-4.  The visualization provided does not state how the data is collected i.e. respondents answered one question of a public survey. Furthermore, Vac 1 in the legend on the right does not indicate what the question is.
+#### Clarity
 
 +-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | S/N | Critique                                                                                                                                                                                                                                                                                                                                | Suggestion                                                                                                                                                                                                               |
@@ -54,23 +40,19 @@ A critic of the following data visualization is provided.
 +-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 5   | Confidence levels in the survey responses are not reflected in the visualization. Confidence levels are important to show how representative is the survey of the general population.                                                                                                                                                   | Show error bars with a selector on confidence levels, 95% and 99%.                                                                                                                                                       |
 +-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     |                                                                                                                                                                                                                                                                                                                                         |                                                                                                                                                                                                                          |
-+-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     |                                                                                                                                                                                                                                                                                                                                         |                                                                                                                                                                                                                          |
-+-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-### Aesthetics
+#### Aesthetics
 
 +-----+---------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | S/N | Critique                                                                                                                                                      | Suggestion                                                                                                                                                                                                                       |
 +=====+===============================================================================================================================================================+==================================================================================================================================================================================================================================+
-| 4   | Vaccine is incorrectly spelt as "Vacinne" in the title for the 100% stacked bar chart.                                                                        | Use the correct spelling.                                                                                                                                                                                                        |
+| 6   | Vaccine is incorrectly spelled as "Vacinne" in the title for the 100% stacked bar chart.                                                                      | Use the correct spelling.                                                                                                                                                                                                        |
 +-----+---------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     | In the 100% stacked bar chart, five different colors is used to represent each response, making comparing distribution of responses difficult for the reader. | Instead, responses should be color-coded to three main sentiments - agree, neutral and disagree, and further differentiated by shades of the same color within the same sentiments.                                              |
+| 7   | In the 100% stacked bar chart, five different colors is used to represent each response, making comparing distribution of responses difficult for the reader. | Instead, responses should be color-coded to three main sentiments - agree, neutral and disagree, and further differentiated by shades of the same color within the same sentiments.                                              |
 +-----+---------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     | While the stacked bar chart retains the part-to-whole nature of the data, it does not efficiently show the split between positive and negative responses.     | Use diverging bar chart to allow readers to see the general shapes of agree and disagree. Complemented with three main colors, it is easy to see whether the sum of agree is greater than the sum of disagree for each question. |
+| 8   | While the stacked bar chart retains the part-to-whole nature of the data, it does not efficiently show the split between positive and negative responses.     | Use diverging bar chart to allow readers to see the general shapes of agree and disagree. Complemented with three main colors, it is easy to see whether the sum of agree is greater than the sum of disagree for each question. |
 +-----+---------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|     | The x-axis of both charts have different end points and their major tick marks have different decimal places.                                                 | Format both charts to have the same start and end points, and the number formats with the same decimal places.                                                                                                                   |
+| 9   | The x-axis of both charts have different end points and their major tick marks have different decimal places.                                                 | Format both charts to have the same start and end points, and the number formats with the same decimal places.                                                                                                                   |
 +-----+---------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 # B. Alternative Graphical Representation - Sketch
@@ -81,11 +63,11 @@ Additional enhancements
 
 # C. Proposed Dashboard created on Tableau
 
-asdfghjl
+[![](images/dashboard%2000-01.png){width="100%"}](https://public.tableau.com/profile/cheryl.pay#!/vizhome/dataviz2-final/PublicSurveyonCovid-19Vaccination?publish=yes)
 
 # D. Step by step
 
-Download and prepare data file in .csv format
+### Download and prepare data file in .csv format
 
 1.  Go to <https://github.com/YouGov-Data/covid-19-tracker> and download the zip file.\
     \
@@ -240,7 +222,7 @@ Importing and Preparing the data in Tableau
     |                          |                                                                                                              |
     |                          | Convert field to **Dimension** by right clicking on Score in the data pane \> Select **ConverttoDimension**. |
     |                          |                                                                                                              |
-    |                          | ![](images/calculated%20field%201%20-%20Score%20-%20convert%20to%20dimension.png){width="100%"}              |
+    |                          | ![](images/calculated%20field%201%20-%20Score%20-%20convert%20to%20dimension.png){width="80%"}               |
     +--------------------------+--------------------------------------------------------------------------------------------------------------+
     | Total Number of Response | `{ EXCLUDE [Country] : sum(([Number of Response])) }`                                                        |
     +--------------------------+--------------------------------------------------------------------------------------------------------------+
@@ -555,7 +537,7 @@ The diverging bar chart is now ready with parameter controls on the right to all
 
     ![](images/uncertainty%2022%20-%20edit%20tooltip.png){width="80%"}
 
-Create worksheets for Age and Gender
+#### Create worksheets for Age and Gender
 
 1.  Create new worksheet. Rename the sheet to **Gender**.
 
@@ -615,7 +597,7 @@ Create worksheets for Age and Gender
 
     ![](images/age%2002%20-%20row%20is%20age%20group.png){width="80%"}
 
-## Creating the dashboard
+### Creating the dashboard
 
 1.  On the taskbar at the top, go to Dashboard \> **New Dashboard**.
 
@@ -633,10 +615,7 @@ Create worksheets for Age and Gender
 
 4.  From the *Size* pane on the left, set to **Custom size, Fixed Size, Custom,** Width = **1150 px** and Height = **800 px**. Custom size is selected so that the dashboard layout is not compromised when viewing on computers with different sizes.
 
-```{=html}
-<!-- -->
-```
-    ![](images/dashboard%2004%20-%20custom%20size.png){width="20%"}
+    ![](images/dashboard%2004%20-%20custom%20size-01.png){width="25%"}
 
 5.  From *Sheets*, drag and drop **Likert** to the top-center of the dashboard. A shaded grey rectangle that covers the top-half of the dashboard (below the title) should appear before you release your cursor.
 
@@ -694,9 +673,8 @@ Create worksheets for Age and Gender
 
 15. In the *Actions* dialogue box, click Add Action \> **Filter**.
 
-```{=html}
 <!-- -->
-```
+
     ![](images/dashboard%2014%20-%20action%20filters.png){width="45%"}
 
 16. In the *Edit Filter Action* dialogue box, set Name: **Distribution of Gender and Age (group)**.
@@ -715,32 +693,30 @@ The dashboard is now completed (available on [Tableau](https://public.tableau.co
 
 # E. Main Observations
 
-1.  The proportion of respondents that are worried about getting Covid-19 do not vary much across gender, age or employment status. However, varying levels of concern are apparent when comparing responses by country. Japan, Spain and South Korea are the top three countries with more than 50% of respondents in these countries worrying about getting Covid-19.
+1.  The proportion of respondents that are worried about getting Covid-19 do not vary much across gender, age or employment status. However, **varying levels of concern** are apparent when comparing responses **by country.** **Japan**, **Spain** and **South Korea** are the top three countries with **more than 50%** of respondents in these countries worrying about getting Covid-19.
 
     > I am worried about getting Covid-19.
 
     ![](images/worried%20about%20covid%20-%20country.png){width="49%"}![](images/worried%20about%20covid%20-%20gender.png){width="49%"}![](images/worried%20about%20covid%20-%20age.png){width="50%"}![](images/worried%20about%20covid%20-%20employment%20status.png){width="50%"}
 
-2.  Despite Japan ranking the highest for worrying about getting Covid-19, Japanese respondents are unwilling to take the vaccine should it be available to them this week.
+2.  Despite Japan ranking the highest for worrying about getting Covid-19, Japanese respondents are **unwilling to take the vaccine** should it be available to them this week.
 
     ![In Japan, 30% of respondents disagreed to taking the vaccine if it were made available to them this week.](images/japan%2001.png){width="100%"}
 
-    Japan also has the highest proportion of respondents that are worried about the **side effects of the vaccine**.
+    **Japan** also has the highest proportion of respondents that are worried about the **side effects of the vaccine**.
 
     ![](images/japan%2002.png){width="100%"}
 
-3.  With regards to confidence in the government, Denmark and United Kingdom are leading at 73% and 69% of total respondents respectively that agree with the statement below.
+3.  With regards to confidence in the government, **Denmark** and **United Kingdom** are leading at 73% and 69% of total respondents respectively that agree with the statement below.
 
-    <div>
-
-    *I believe government health authorities in my country will provide me with an effective Covid-19 vaccine*
-
-    </div>
+    > I believe government health authorities in my country will provide me with an effective Covid-19 vaccine.
 
     ![](images/confidence%20in%20government.png){width="100%"}
 
-    Unsurprisingly, the same countries that were most worried about getting Covid-19 also have less belief in their government health authorities to provide an effective Covid-19 vaccine, namely South Korea and Japan.
+    Unsurprisingly, the same countries that were most worried about getting Covid-19 also have **less belief in their government health authorities** to provide an effective Covid-19 vaccine, namely **South Korea** and **Japan**.
 
-4.  Despite Singapore having greater confidence in their government health authorities than other countries, respondents from Singapore are less likely than other countries to take the vaccine should it be available to them this week.
+4.  Despite **Singapore** having **greater confidence in their government** **health authorities** than other countries, respondents from Singapore are less likely than other countries to take the vaccine should it be available to them this week.
 
-5.  Age (75) vs Employment Status (Retired) Male vs Female
+    > If a Covid-19 vaccine were made available to me this week, I would definitely get it.
+
+    ![Vaccine interest is higher in those aged 50 and above - more than 50% of them are keen to take the vaccine if it were available to them this week.](images/singapore%20-%20now%2037percent-01.png)
