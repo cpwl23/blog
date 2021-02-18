@@ -199,7 +199,7 @@ Importing and Preparing the data in Tableau
 |----------------------------------------------------------------|-----------------------------------------------------------------------|
 | ![](images/08%20create%20new%20parameter-01.png){width="100%"} | ![](images/08b%20create%20new%20calculated%20field.png){width="100%"} |
 
-1.  Create a new parameter: **Question Parameter** and its corresponding calculated field.
+1.  Create a new parameter: and its corresponding calculated field.
 
     *This parameter will be used to select the question (out of six questions) to show responses for in the dashboard.*
 
@@ -631,8 +631,11 @@ Create worksheets for Age and Gender
 
     ![](images/dashboard%2003%20-%20show%20title.png){width="80%"}
 
-4.   From the *Size* pane on the left, set to **Custom size, Fixed Size, Custom,** Width = **1150 px** and Height = **800 px**. Custom size is selected so that the dashboard layout is not compromised when viewing on computers with different sizes.
+4.  From the *Size* pane on the left, set to **Custom size, Fixed Size, Custom,** Width = **1150 px** and Height = **800 px**. Custom size is selected so that the dashboard layout is not compromised when viewing on computers with different sizes.
 
+```{=html}
+<!-- -->
+```
     ![](images/dashboard%2004%20-%20custom%20size.png){width="20%"}
 
 5.  From *Sheets*, drag and drop **Likert** to the top-center of the dashboard. A shaded grey rectangle that covers the top-half of the dashboard (below the title) should appear before you release your cursor.
@@ -689,8 +692,11 @@ Create worksheets for Age and Gender
 
     ![](images/dashboard%2013%20-%20create%20action.png){width="80%"}
 
-15.  In the *Actions* dialogue box, click Add Action \> **Filter**.
+15. In the *Actions* dialogue box, click Add Action \> **Filter**.
 
+```{=html}
+<!-- -->
+```
     ![](images/dashboard%2014%20-%20action%20filters.png){width="45%"}
 
 16. In the *Edit Filter Action* dialogue box, set Name: **Distribution of Gender and Age (group)**.
@@ -703,15 +709,25 @@ Create worksheets for Age and Gender
 
     The above action will result in the Gender and Age(group) stacked bar charts to change accordingly when a selection is made in the diverging bar chart.
 
-The dashboard is now completed (available on Tableau).
+The dashboard is now completed (available on [Tableau](https://public.tableau.com/views/dataviz2-final/PublicSurveyonCovid-19Vaccination?:language=en&:display_count=y&publish=yes&:origin=viz_share_link)).
 
 ![](images/dashboard%2000.png){width="100%"}
 
-# E. Three Major Observations
+# E. Main Observations
 
 1.  The proportion of respondents that are worried about getting Covid-19 do not vary much across gender, age or employment status. However, varying levels of concern are apparent when comparing responses by country. Japan, Spain and South Korea are the top three countries with more than 50% of respondents in these countries worrying about getting Covid-19.
 
-2.  Despite Japan ranking the highest for worrying about getting Covid-19, Japanese respondents are unwilling to take the vaccine should it be available to them this week. This reluctance stems from their concerns for the side effects of the vaccine; Japan ranks the highest among all countries in being worried about vaccine side-effects.
+    > I am worried about getting Covid-19.
+
+    ![](images/worried%20about%20covid%20-%20country.png){width="49%"}![](images/worried%20about%20covid%20-%20gender.png){width="49%"}![](images/worried%20about%20covid%20-%20age.png){width="50%"}![](images/worried%20about%20covid%20-%20employment%20status.png){width="50%"}
+
+2.  Despite Japan ranking the highest for worrying about getting Covid-19, Japanese respondents are unwilling to take the vaccine should it be available to them this week.
+
+    ![In Japan, 30% of respondents disagreed to taking the vaccine if it were made available to them this week.](images/japan%2001.png){width="100%"}
+
+    Japan also has the highest proportion of respondents that are worried about the **side effects of the vaccine**.
+
+    ![](images/japan%2002.png){width="100%"}
 
 3.  With regards to confidence in the government, Denmark and United Kingdom are leading at 73% and 69% of total respondents respectively that agree with the statement below.
 
@@ -721,6 +737,10 @@ The dashboard is now completed (available on Tableau).
 
     </div>
 
+    ![](images/confidence%20in%20government.png){width="100%"}
+
     Unsurprisingly, the same countries that were most worried about getting Covid-19 also have less belief in their government health authorities to provide an effective Covid-19 vaccine, namely South Korea and Japan.
 
-4.  Age (75) vs Employment Status (Retired) Male vs Female
+4.  Despite Singapore having greater confidence in their government health authorities than other countries, respondents from Singapore are less likely than other countries to take the vaccine should it be available to them this week.
+
+5.  Age (75) vs Employment Status (Retired) Male vs Female
