@@ -1,5 +1,5 @@
 ---
-title: "DataViz Makeover 2"
+title: "DataViz Makeover 2 - Work in Progress"
 description: |
   Due 19 Feb 2021, 2359h.
 author:
@@ -13,9 +13,330 @@ output:
     self_contained: false
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+# A. Critic
 
+A critic of the following data visualization is provided.
+
+![Excerpt and chart taken from Page 22 of Report: [Labour Force in Singapore 2019](https://stats.mom.gov.sg/Pages/Labour-Force-In-Singapore-2019.aspx)](images/00.jpg)
+
+### Clarity
+
+1.  The y-axis on both charts do not follow the same sorting i.e. the stacked bar chart is sorted by alphabetical order on the y-axis while the bar chart on the right is sorted by descending percentage on the x-axis. Some readers may overlook this and assume that the bars in the same row belong to the same country in both charts.
+
+    > **Suggestion:** *Create parameter to allow users to select whether to sort by alphabetical or proportion agree, in ascending or descending orders. Ensure that this parameter is applied to all relevant charts for easy cross-reference.*
+
+2.  Demographics data such as age and gender are not reflected in the charts; these demographics data are important to provide further insights into the willingness of the public on Covid-19 vaccination (as trends may surface based on these factors).
+
+    > **Suggestion:** Create parameter to allow users to select their category of choice (country, age, gender etc) to view the responses accordingly. Ensure that this parameter is applied to all relevant charts for easy cross-reference.
+
+3.  The title of the 100% stacked bar chart, *Which country is more pro-vacinne?* does not provide any insights as to how the responses were collected.
+
+    **Suggestion**: Show in the visualization the survey question that respondents answered i.e. *If a Covid-19 vaccine were made available to me this week, I would definitely get it.*
+
+4.  The visualization provided does not state how the data is collected i.e. respondents answered one question of a public survey. Furthermore, Vac 1 in the legend on the right does not indicate what the question is.
+
++-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| S/N | Critique                                                                                                                                                                                                                                                                                                                                | Suggestion                                                                                                                                                                                                               |
++=====+=========================================================================================================================================================================================================================================================================================================================================+==========================================================================================================================================================================================================================+
+| 1   | The y-axis on both charts do not follow the same sorting i.e. the stacked bar chart is sorted by alphabetical order on the y-axis while the bar chart on the right is sorted by descending percentage on the x-axis. Some readers may overlook this and assume that the bars in the same row belong to the same country in both charts. | Create parameter to allow users to select whether to sort by alphabetical or proportion agree, in ascending or descending orders. Ensure that this parameter is applied to all relevant charts for easy cross-reference. |
++-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2   | Demographics data such as age and gender are not reflected in the charts; these demographics data are important to provide further insights into the willingness of the public on Covid-19 vaccination (as trends may surface based on these factors).                                                                                  | Create parameter to allow users to select their category of choice (country, age, gender etc) to view the responses accordingly. Ensure that this parameter is applied to all relevant charts for easy cross-reference.  |
++-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 3   | The title of the 100% stacked bar chart, *Which country is more pro-vacinne?* does not provide any insights as to how the responses were collected.                                                                                                                                                                                     | Show in the visualization the survey question that respondents answered i.e. *If a Covid-19 vaccine were made available to me this week, I would definitely get it.*                                                     |
++-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 4   | The visualization provided does not state how the data is collected i.e. respondents answered one question of a public survey. Furthermore, Vac 1 in the legend on the right does not indicate what the question is.                                                                                                                    | Insert a title "Public Survey on Covid-19 Vaccination".                                                                                                                                                                  |
+|     |                                                                                                                                                                                                                                                                                                                                         |                                                                                                                                                                                                                          |
+|     |                                                                                                                                                                                                                                                                                                                                         | Insert more questions and their responses; create parameter to allow users to select the question they want to view the responses for.                                                                                   |
++-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 5   | Confidence levels in the survey responses are not reflected in the visualization. Confidence levels are important to show how representative is the survey of the general population.                                                                                                                                                   | Show error bars with a selector on confidence levels, 95% and 99%.                                                                                                                                                       |
++-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|     |                                                                                                                                                                                                                                                                                                                                         |                                                                                                                                                                                                                          |
++-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|     |                                                                                                                                                                                                                                                                                                                                         |                                                                                                                                                                                                                          |
++-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+### Aesthetics
+
++-----+---------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| S/N | Critique                                                                                                                                                      | Suggestion                                                                                                                                                                                                                       |
++=====+===============================================================================================================================================================+==================================================================================================================================================================================================================================+
+| 4   | Vaccine is incorrectly spelt as "Vacinne" in the title for the 100% stacked bar chart.                                                                        | Use the correct spelling.                                                                                                                                                                                                        |
++-----+---------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|     | In the 100% stacked bar chart, five different colors is used to represent each response, making comparing distribution of responses difficult for the reader. | Instead, responses should be color-coded to three main sentiments - agree, neutral and disagree, and further differentiated by shades of the same color within the same sentiments.                                              |
++-----+---------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|     | While the stacked bar chart retains the part-to-whole nature of the data, it does not efficiently show the split between positive and negative responses.     | Use diverging bar chart to allow readers to see the general shapes of agree and disagree. Complemented with three main colors, it is easy to see whether the sum of agree is greater than the sum of disagree for each question. |
++-----+---------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|     | The x-axis of both charts have different end points and their major tick marks have different decimal places.                                                 | Format both charts to have the same start and end points, and the number formats with the same decimal places.                                                                                                                   |
++-----+---------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+# B. Alternative Graphical Representation - Sketch
+
+asdfghjl insert sketch here
+
+Additional enhancements
+
+# C. Proposed Dashboard created on Tableau
+
+asdfghjl
+
+# D. Step by step
+
+Download and prepare data file in .csv format
+
+1.  Go to <https://github.com/YouGov-Data/covid-19-tracker> and download the zip file.\
+    \
+    ![](images/data%20download%20-%2001.png){width="80%"}\
+
+2.  Once the .zip file is downloaded, extract the files and go to the **data** folder.\
+
+3.  In Microsoft Excel, create a new workbook, insert the following column headers to each column, save as **data-merge.csv**.
+
+    | Column | Column Header     |
+    |--------|-------------------|
+    | A      | Country           |
+    | B      | RecordNo          |
+    | C      | endtime           |
+    | D      | age               |
+    | E      | gender            |
+    | F      | employment_status |
+    | G      | vac_1             |
+    | H      | vac2_1            |
+    | I      | vac2_2            |
+    | J      | vac2_3            |
+    | K      | vac2_6            |
+    | L      | vac_3             |
+
+4.  Go to the **data** folder, open **australia.csv**. (If it is in a .zip file, then extract the zip file. You will see the .csv file after the extraction.)
+
+5.  Select Row 1, go to vac_3 and filter for responses that is not blank.
+
+    ![](images/data%20download%20-%2002%20filter%20responses%20not%20blank-01.png){width="80%"}
+
+    Go to vac_1, vac2_1, vac2_3, vac2_6 and uncheck any blanks.
+
+    ![](images/data%20download%20-%2003%20check%20other%20vac.png){width="45%"}
+
+    Copy and paste the records from the 12 columns from **australia.csv** to **data-merge.csv**. Do not copy the header.
+
+    ![](images/data%20download%2004%20-%20copied%20to%20data-merge.png){width="80%"}
+
+    -   For some countries, **employment_status** is not one column. Instead, you will see 7 columns related to employment_status. To arrive at the corresponding employment_status, first create a new column named employment_status then conduct a vlookup.
+
+        -   Create a new column named **employment_status**.
+
+            ![](images/data%20download%20-%2006%20create%20new%20column%20employment_status.png){width="80%"}
+
+        -   Create a new tab called key and insert the key table into cells A1 to B8, as shown below.
+
+            ![](images/data%20download%2005%20-%20employement%20status%20key.png){width="45%"}
+
+        -   Next, go back to the newly created employment_status column, and insert the vlookup formula.
+
+            ![](images/data%20download%2007%20-%20vlookup%20formula-01.png){width="90%"}
+
+            The formula in Cell CG1 for employment_status is
+
+            ![](images/data%20download%2008%20-%20formula.png){width="80%"}
+
+        -   Drag and fill the formula down to all records.
+
+        -   Continue with Step 5 above.
+
+6.  Repeat steps 4 - 5 for the .csv files for all other countries. Once you have completed the above for all countries, save your data-merge.csv file to a local folder. Your final data-merge.csv should have 40,083 records.
+
+Importing and Preparing the data in Tableau
+
+1.  Open Tableau. Drag and drop your **data-merge.csv** file to Tableau.
+
+    ![](images/prep%20tableau%2001%20-%2012%20columns-01.png){width="90%"}
+
+2.  Go to Sheet1 at the bottom of your screen.
+
+3.  From the Data pane, drag Endtime to Filters. In the pop up, select **Years** and click **Next**.
+
+    ![](images/prep%20tableau%2002%20-%20filter%20endtime%20year.png){width="90%"}
+
+    Since we only want to include responses from 1 Jan 2021 onwards, we **check 2021** and **uncheck the other values**. Click **OK**.
+
+    ![](images/prep%20tableau%2003%20-%20year%202021.png){width="45%"}
+
+4.  To ensure that this filter applies to all the worksheets that we create on Tableau, right click on Endtime in the filters pane, go to Apply to Worksheets \> **AllUsingRelatedDataSources**.
+
+    ![](images/prep%20tableau%2004%20-%20filter%20all%20worksheets.png){width="90%"}
+
+5.  In the Data pane, right click on **Age**. Go to **Create \> Group.**
+
+    ![](images/prep%20tableau%20-%2005%20age%20group.png){width="45%"}
+
+    Select 18 to 33 and group them together. Name the group "18 to 33 years".
+
+    ![](images/prep%20tableau%20-%2005%20age%20group%201.png){width="45%"}
+
+6.  For the remaining ages, group them into 3 other age groups as shown below. There are 4 age groups in total.
+
+    ![](images/prep%20tableau%20-%2006%20age%20groups%204.png){width="45%"}
+
+### Creating the divergent bar chart
+
+*To create a new parameter or new calculated field, right click and select **CreateParameter** or **CreateCalculatedField*** from the *Data* pane.
+
+| Create new parameter                                           | Create new calculated field                                           |
+|----------------------------------------------------------------|-----------------------------------------------------------------------|
+| ![](images/08%20create%20new%20parameter-01.png){width="100%"} | ![](images/08b%20create%20new%20calculated%20field.png){width="100%"} |
+
+1.  Create a new parameter: **Question Parameter** and its corresponding calculated field.
+
+    *This parameter will be used to select the question (out of six questions) to show responses for in the dashboard.*
+
+    +---------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+    | Parameter                                                                                                                             | Calculated Field                                                  |
+    +=======================================================================================================================================+===================================================================+
+    | Set [Parameter] *Name* as **Question Parameter**                                                                                      | Set [Calculated Field] *Name* as **Question**.                    |
+    |                                                                                                                                       |                                                                   |
+    | Set *Data Type* as **String**.                                                                                                        | Add the following formula. Click **Apply**, then click **OK.**    |
+    |                                                                                                                                       |                                                                   |
+    | Set *Allowable Values* as **List** and add the *ListofValues* per screenshot below.                                                   | ![](images/parameter%20-%20question%20-%20calc.png){width="100%"} |
+    |                                                                                                                                       |                                                                   |
+    | ![](images/parameter%20-%20question.png){width="100%"}**Value** and **Display As** are listed as follows.                             |                                                                   |
+    |                                                                                                                                       |                                                                   |
+    | -   **Vac1**, display as *If a Covid-19 vaccine were made available to me this week, I would definitely get it.*                      |                                                                   |
+    |                                                                                                                                       |                                                                   |
+    | -   **Vac3**, display as *If a Covid-19 vaccine becomes available to me a year from now, I definitely intend to get it.*              |                                                                   |
+    |                                                                                                                                       |                                                                   |
+    | -   **Vac2 1**, display as *I am worried about getting Covid-19.*                                                                     |                                                                   |
+    |                                                                                                                                       |                                                                   |
+    | -   **Vac2 2**, display as *I am worried about potential side effects of a Covid-19* vaccine.                                         |                                                                   |
+    |                                                                                                                                       |                                                                   |
+    | -   **Vac2 3**, display as *I believe government health authorities in my country will provide me with an effective COVID19 vaccine*. |                                                                   |
+    |                                                                                                                                       |                                                                   |
+    | -   **Vac2 6**, display as *If I do not get a COVID19 vaccine when it is available, I will regret it*                                 |                                                                   |
+    +---------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
+
+2.  Create the following calculated fields.
+
+    +---------------------+--------------------------------------------------------------------------------------------------------------+
+    | Name                | Formula                                                                                                      |
+    +=====================+==============================================================================================================+
+    | Number of Response  | 1                                                                                                            |
+    +---------------------+--------------------------------------------------------------------------------------------------------------+
+    | Score               | `int(left([Question],1))`                                                                                    |
+    |                     |                                                                                                              |
+    |                     | ![](images/calculated%20field%201%20-%20Score.png){width="80%"}                                              |
+    |                     |                                                                                                              |
+    |                     | Convert field to **Dimension** by right clicking on Score in the data pane \> Select **ConverttoDimension**. |
+    |                     |                                                                                                              |
+    |                     | ![](images/calculated%20field%201%20-%20Score%20-%20convert%20to%20dimension.png){width="100%"}              |
+    +---------------------+--------------------------------------------------------------------------------------------------------------+
+    | Count Agree         | `If [Score] <= 2 then 1`                                                                                     |
+    |                     |                                                                                                              |
+    |                     | `elseif [Score]=3 then 0.5`                                                                                  |
+    |                     |                                                                                                              |
+    |                     | `else 0`                                                                                                     |
+    |                     |                                                                                                              |
+    |                     | `end`                                                                                                        |
+    +---------------------+--------------------------------------------------------------------------------------------------------------+
+    | Count Disagree      | `If [Score] <= 2 then 0`                                                                                     |
+    |                     |                                                                                                              |
+    |                     | `elseif [Score]=3 then 0.5`                                                                                  |
+    |                     |                                                                                                              |
+    |                     | `else 1`                                                                                                     |
+    |                     |                                                                                                              |
+    |                     | `end`                                                                                                        |
+    +---------------------+--------------------------------------------------------------------------------------------------------------+
+    | Percentage Agree    | `sum([Count Agree]) / sum({ EXCLUDE [Score] : sum([Number of Response])})`                                   |
+    +---------------------+--------------------------------------------------------------------------------------------------------------+
+    | Percentage Disagree | `sum([Count Disagree]) / sum({ EXCLUDE [Score] : sum([Number of Response])})`                                |
+    +---------------------+--------------------------------------------------------------------------------------------------------------+
+    | Prop Agree          | `sum(`                                                                                                       |
+    |                     |                                                                                                              |
+    |                     | `iif([Score] < 3, 1,0)`                                                                                      |
+    |                     |                                                                                                              |
+    |                     | `)`                                                                                                          |
+    |                     |                                                                                                              |
+    |                     | `/`                                                                                                          |
+    |                     |                                                                                                              |
+    |                     | `SUM([Number of Response])`                                                                                  |
+    +---------------------+--------------------------------------------------------------------------------------------------------------+
+
+    There are seven calculated fields created..
+
+    \
+    ![](images/calculated%20fields%20-%207%20total.png){width="31%"}
+
+3.  Create the following **parameters** and their calculated field to be used for toggling responses in the dashboard
+
+    -   
+
+        +---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+        | Parameter                                                                                                                             | Calculated Field                                                               |
+        +=======================================================================================================================================+================================================================================+
+        | Set [Parameter] *Name* as **Question Parameter**                                                                                      | Set [Calculated Field] *Name* as **Question**.                                 |
+        |                                                                                                                                       |                                                                                |
+        | Set *Data Type* as **String**.                                                                                                        | Add the following formula. Click **Apply**, then click **OK.**                 |
+        |                                                                                                                                       |                                                                                |
+        | Set *Allowable Values* as **List** and add the *ListofValues* per screenshot below.                                                   | ![](images/parameter%20-%20question%20-%20calc.png){width="100%"}              |
+        |                                                                                                                                       |                                                                                |
+        | ![](images/parameter%20-%20question.png){width="100%"}**Value** and **Display As** are listed as follows.                             |                                                                                |
+        |                                                                                                                                       |                                                                                |
+        | -   **Vac1**, display as *If a Covid-19 vaccine were made available to me this week, I would definitely get it.*                      |                                                                                |
+        |                                                                                                                                       |                                                                                |
+        | -   **Vac3**, display as *If a Covid-19 vaccine becomes available to me a year from now, I definitely intend to get it.*              |                                                                                |
+        |                                                                                                                                       |                                                                                |
+        | -   **Vac2 1**, display as *I am worried about getting Covid-19.*                                                                     |                                                                                |
+        |                                                                                                                                       |                                                                                |
+        | -   **Vac2 2**, display as *I am worried about potential side effects of a Covid-19* vaccine.                                         |                                                                                |
+        |                                                                                                                                       |                                                                                |
+        | -   **Vac2 3**, display as *I believe government health authorities in my country will provide me with an effective COVID19 vaccine*. |                                                                                |
+        |                                                                                                                                       |                                                                                |
+        | -   **Vac2 6**, display as *If I do not get a COVID19 vaccine when it is available, I will regret it*                                 |                                                                                |
+        +---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+        | Set [Parameter] *Name* as **View responses by**.                                                                                      | Set [Calculated Field] *Name* as **View by**.                                  |
+        |                                                                                                                                       |                                                                                |
+        | Set *Data Type* as **Integer**.                                                                                                       | Add the following formula. Click **Apply**, then click **OK.**                 |
+        |                                                                                                                                       |                                                                                |
+        | Set *Allowable Values* as **List** and add the *ListofValues* per screenshot below.                                                   | ![](images/parameter%20-%20view%20responses%20by%20-%20calc.png){width="100%"} |
+        |                                                                                                                                       |                                                                                |
+        | ![](images/parameter%20-%20view%20responses%20by.png){width="100%"}                                                                   |                                                                                |
+        +---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+        | Set [Parameter] *Name* as **Sort by**.                                                                                                | Set [Calculated Field] *Name* as **Sort visualization by**.                    |
+        |                                                                                                                                       |                                                                                |
+        | Set *Data Type* as **Integer**.                                                                                                       | Add the following formula. Click **Apply**, then click **OK.**                 |
+        |                                                                                                                                       |                                                                                |
+        | Set *Allowable Values* as **List** and add the *ListofValues* per screenshot below.                                                   | ![](images/parameter%20-%20sort%20by%20-%20calc.png){width="100%"}             |
+        |                                                                                                                                       |                                                                                |
+        | ![](images/parameter%20-%20sort%20by.png){width="100%"}                                                                               |                                                                                |
+        +---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+
+    Once you have created all the parameters above, right click on each parameter in the **Data: Parameters** pane and select **ShowParameter**.
+
+4.  asdf
+
+5.  \
+
+Parameters Control
+
+Dashboarding
+
+-   Frame
+
+# E. Three Major Observations
+
+1.  The proportion of respondents that are worried about getting Covid-19 do not vary much across gender, age or employment status. However, varying levels of concern are apparent when comparing responses by country. Japan, Spain and South Korea are the top three countries with more than 50% of respondents in these countries worrying about getting Covid-19.
+
+2.  Despite Japan ranking the highest for worrying about getting Covid-19, Japanese respondents are unwilling to take the vaccine should it be available to them this week. This reluctance stems from their concerns for the side effects of the vaccine; Japan ranks the highest among all countries in being worried about vaccine side-effects.
+
+3.  With regards to confidence in the government, Denmark and United Kingdom are leading at 73% and 69% of total respondents respectively that agree with the statement below.
+
+    <div>
+
+    *I believe government health authorities in my country will provide me with an effective Covid-19 vaccine*
+
+    </div>
+
+    Unsurprisingly, the same countries that were most worried about getting Covid-19 also have less belief in their government health authorities to provide an effective Covid-19 vaccine, namely South Korea and Japan.
+
+4.  Age (75) vs Employment Status (Retired) Male vs Female
