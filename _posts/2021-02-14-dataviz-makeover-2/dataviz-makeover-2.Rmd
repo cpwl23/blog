@@ -95,20 +95,33 @@ Download and prepare data file in .csv format
 
 3.  In Microsoft Excel, create a new workbook, insert the following column headers to each column, save as **data-merge.csv**.
 
+    +--------+-------------------+
     | Column | Column Header     |
-    |--------|-------------------|
+    +========+===================+
     | A      | Country           |
+    +--------+-------------------+
     | B      | RecordNo          |
+    +--------+-------------------+
     | C      | endtime           |
+    +--------+-------------------+
     | D      | age               |
+    +--------+-------------------+
     | E      | gender            |
+    +--------+-------------------+
     | F      | employment_status |
+    +--------+-------------------+
     | G      | vac_1             |
+    +--------+-------------------+
     | H      | vac2_1            |
+    +--------+-------------------+
     | I      | vac2_2            |
+    +--------+-------------------+
     | J      | vac2_3            |
+    +--------+-------------------+
     | K      | vac2_6            |
+    +--------+-------------------+
     | L      | vac_3             |
+    +--------+-------------------+
 
 4.  Go to the **data** folder, open **australia.csv**. (If it is in a .zip file, then extract the zip file. You will see the .csv file after the extraction.)
 
@@ -161,8 +174,6 @@ Importing and Preparing the data in Tableau
     ![](images/prep%20tableau%2002%20-%20filter%20endtime%20year.png){width="90%"}
 
     Since we only want to include responses from 1 Jan 2021 onwards, we **check 2021** and **uncheck the other values**. Click **OK**.
-
-    ![](images/prep%20tableau%2003%20-%20year%202021.png){width="45%"}
 
 4.  To ensure that this filter applies to all the worksheets that we create on Tableau, right click on Endtime in the filters pane, go to Apply to Worksheets \> **AllUsingRelatedDataSources**.
 
@@ -218,56 +229,71 @@ Importing and Preparing the data in Tableau
 
 2.  Create the following calculated fields.
 
-    +---------------------+--------------------------------------------------------------------------------------------------------------+
-    | Name                | Formula                                                                                                      |
-    +=====================+==============================================================================================================+
-    | Number of Response  | 1                                                                                                            |
-    +---------------------+--------------------------------------------------------------------------------------------------------------+
-    | Score               | `int(left([Question],1))`                                                                                    |
-    |                     |                                                                                                              |
-    |                     | ![](images/calculated%20field%201%20-%20Score.png){width="80%"}                                              |
-    |                     |                                                                                                              |
-    |                     | Convert field to **Dimension** by right clicking on Score in the data pane \> Select **ConverttoDimension**. |
-    |                     |                                                                                                              |
-    |                     | ![](images/calculated%20field%201%20-%20Score%20-%20convert%20to%20dimension.png){width="100%"}              |
-    +---------------------+--------------------------------------------------------------------------------------------------------------+
-    | Count Agree         | `If [Score] <= 2 then 1`                                                                                     |
-    |                     |                                                                                                              |
-    |                     | `elseif [Score]=3 then 0.5`                                                                                  |
-    |                     |                                                                                                              |
-    |                     | `else 0`                                                                                                     |
-    |                     |                                                                                                              |
-    |                     | `end`                                                                                                        |
-    +---------------------+--------------------------------------------------------------------------------------------------------------+
-    | Count Disagree      | `If [Score] <= 2 then 0`                                                                                     |
-    |                     |                                                                                                              |
-    |                     | `elseif [Score]=3 then 0.5`                                                                                  |
-    |                     |                                                                                                              |
-    |                     | `else 1`                                                                                                     |
-    |                     |                                                                                                              |
-    |                     | `end`                                                                                                        |
-    +---------------------+--------------------------------------------------------------------------------------------------------------+
-    | Percentage Agree    | `sum([Count Agree]) / sum({ EXCLUDE [Score] : sum([Number of Response])})`                                   |
-    +---------------------+--------------------------------------------------------------------------------------------------------------+
-    | Percentage Disagree | `sum([Count Disagree]) / sum({ EXCLUDE [Score] : sum([Number of Response])})`                                |
-    +---------------------+--------------------------------------------------------------------------------------------------------------+
-    | Prop Agree          | `sum(`                                                                                                       |
-    |                     |                                                                                                              |
-    |                     | `iif([Score] < 3, 1,0)`                                                                                      |
-    |                     |                                                                                                              |
-    |                     | `)`                                                                                                          |
-    |                     |                                                                                                              |
-    |                     | `/`                                                                                                          |
-    |                     |                                                                                                              |
-    |                     | `SUM([Number of Response])`                                                                                  |
-    +---------------------+--------------------------------------------------------------------------------------------------------------+
+    +--------------------------+--------------------------------------------------------------------------------------------------------------+
+    | Name                     | Formula                                                                                                      |
+    +==========================+==============================================================================================================+
+    | Number of Response       | 1                                                                                                            |
+    +--------------------------+--------------------------------------------------------------------------------------------------------------+
+    | Score                    | `int(left([Question],1))`                                                                                    |
+    |                          |                                                                                                              |
+    |                          | ![](images/calculated%20field%201%20-%20Score.png){width="80%"}                                              |
+    |                          |                                                                                                              |
+    |                          | Convert field to **Dimension** by right clicking on Score in the data pane \> Select **ConverttoDimension**. |
+    |                          |                                                                                                              |
+    |                          | ![](images/calculated%20field%201%20-%20Score%20-%20convert%20to%20dimension.png){width="100%"}              |
+    +--------------------------+--------------------------------------------------------------------------------------------------------------+
+    | Total Number of Response | `{ EXCLUDE [Country] : sum(([Number of Response])) }`                                                        |
+    +--------------------------+--------------------------------------------------------------------------------------------------------------+
+    | Count Agree              | `If [Score] <= 2 then 1`                                                                                     |
+    |                          |                                                                                                              |
+    |                          | `elseif [Score]=3 then 0.5`                                                                                  |
+    |                          |                                                                                                              |
+    |                          | `else 0`                                                                                                     |
+    |                          |                                                                                                              |
+    |                          | `end`                                                                                                        |
+    +--------------------------+--------------------------------------------------------------------------------------------------------------+
+    | Count Disagree           | `If [Score] <= 2 then 0`                                                                                     |
+    |                          |                                                                                                              |
+    |                          | `elseif [Score]=3 then 0.5`                                                                                  |
+    |                          |                                                                                                              |
+    |                          | `else 1`                                                                                                     |
+    |                          |                                                                                                              |
+    |                          | `end`                                                                                                        |
+    +--------------------------+--------------------------------------------------------------------------------------------------------------+
+    | Percentage Agree         | `sum([Count Agree]) / sum({ EXCLUDE [Score] : sum([Number of Response])})`                                   |
+    +--------------------------+--------------------------------------------------------------------------------------------------------------+
+    | Percentage Disagree      | `sum([Count Disagree]) / sum({ EXCLUDE [Score] : sum([Number of Response])})`                                |
+    +--------------------------+--------------------------------------------------------------------------------------------------------------+
+    | Prop Agree               | `sum(`                                                                                                       |
+    |                          |                                                                                                              |
+    |                          | `iif([Score] < 3, 1,0)`                                                                                      |
+    |                          |                                                                                                              |
+    |                          | `)`                                                                                                          |
+    |                          |                                                                                                              |
+    |                          | `/`                                                                                                          |
+    |                          |                                                                                                              |
+    |                          | `SUM([Number of Response])`                                                                                  |
+    +--------------------------+--------------------------------------------------------------------------------------------------------------+
 
-    There are seven calculated fields created..
+    There are eight calculated fields created.
 
-    \
-    ![](images/calculated%20fields%20-%207%20total.png){width="31%"}
+    ![](images/calculated%20fields%20-%208%20total.png)
 
-3.  Create the following **parameters** and their calculated field to be used for toggling responses in the dashboard
+3.  Right click on **Score**, select **Aliases** and add alias for all values from 1 to 5.
+
+    1 - Strongly Agree
+
+    2 - Somewhat Agree
+
+    3 - Neutral
+
+    4 - Somewhat disagree
+
+    5 - Strongly disagree
+
+    ![](images/score%20-%20alias%20dict-01.png){width="50%"}
+
+4.  Create the following **parameters** and their calculated field to be used for toggling responses in the dashboard
 
     -   
 
@@ -298,7 +324,7 @@ Importing and Preparing the data in Tableau
         |                                                                                                                                       |                                                                                |
         | Set *Data Type* as **Integer**.                                                                                                       | Add the following formula. Click **Apply**, then click **OK.**                 |
         |                                                                                                                                       |                                                                                |
-        | Set *Allowable Values* as **List** and add the *ListofValues* per screenshot below.                                                   | ![](images/parameter%20-%20view%20responses%20by%20-%20calc.png){width="100%"} |
+        | Set *Allowable Values* as **List** and add the *ListofValues* per screenshot below. Note the *DisplayAs* column.                      | ![](images/parameter%20-%20view%20responses%20by%20-%20calc.png){width="100%"} |
         |                                                                                                                                       |                                                                                |
         | ![](images/parameter%20-%20view%20responses%20by.png){width="100%"}                                                                   |                                                                                |
         +---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
@@ -306,18 +332,90 @@ Importing and Preparing the data in Tableau
         |                                                                                                                                       |                                                                                |
         | Set *Data Type* as **Integer**.                                                                                                       | Add the following formula. Click **Apply**, then click **OK.**                 |
         |                                                                                                                                       |                                                                                |
-        | Set *Allowable Values* as **List** and add the *ListofValues* per screenshot below.                                                   | ![](images/parameter%20-%20sort%20by%20-%20calc.png){width="100%"}             |
+        | Set *Allowable Values* as **List** and add the *ListofValues* per screenshot below. Note the *DisplayAs* column.                      | ![](images/parameter%20-%20sort%20by%20-%20calc.png){width="100%"}             |
         |                                                                                                                                       |                                                                                |
         | ![](images/parameter%20-%20sort%20by.png){width="100%"}                                                                               |                                                                                |
         +---------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
 
-    Once you have created all the parameters above, right click on each parameter in the **Data: Parameters** pane and select **ShowParameter**.
+    Once you have created all the parameters above, right click on **Question Parameter** in the *Data: Parameters* pane and select **ShowParameter**. Then, do the same for **View respnse by** and **Sort by**. The three parameters should appear on the right hand side of your window.
 
-4.  asdf
+    ![](images/parameters%20-%20show%20parameters-01.png){width="80%"}
 
-5.  \
+5.  For the parameter *View response by* that is shown,click on the down arrowhead to the right of "View response by" and select **SingleValueList** from the dropdown.
 
-Parameters Control
+    ![](images/parameters%20-%20change%20button.png){width="35%"}
+
+6.  Rename the worksheet from *Sheet1* to **Likert.**
+
+    ![](images/rename%20sheet%20to%20Likert.png){width="80%"}
+
+7.  From the *Data* pane, drag **View By** to Rows, drag Percentage Disagree **to Columns**, then drag **Percentage Agree** to Columns.
+
+    ![](images/likert%2001%20-%20drag%20rows%20and%20columns.png){width="80%"}
+
+    *AGG(Percentage Agree)* must be to the right of *AGG(Percentage Disagree)*.
+
+8.  Click on **All** below the *Marks* pane. From the *Data* pane, drag **Score** and drop onto **Color**. The color legend will appear on the right of your window.
+
+    ![](images/likert%2002%20-%20drop%20score%20to%20color.png){width="80%"}
+
+9.  On the color legend,click on the down arrowhead to the right of "Score" and select **EditColors** from the dropdown. Select **Tableau Classic 20** as the Color Palette and update each color according to the screenshot below. Click **Apply**, then click **OK.**
+
+    ![](images/likert%2003%20-%20change%20color.png){width="80%"}
+
+10. On the color legend, click and drag **Neutral** to the top of the list. Next, drag **Strongly agree** to third on the list.
+
+    ![](images/likert%2004%20-%20click%20and%20drag%20neutral%20to%20top-01.png){width="45%"}
+
+11. Right click on the x-axis for **Percentage Disagree**. Set Range to **Fixed**, Fixed start to **0**, and Fixed end to **1.** For *Scale*, **tick** Reversed. For *Axis Titles*, remove Percentage Disagree from the Title. The title is left blank.
+
+    ![](images/likert%2005%20-%20axis%20for%20percentage%20disagree.png){width="45%"}
+
+    Go to Tick Marks. Set *Major Tick Marks* to **Fixed** and update *Tick Interval* to **0.2**.
+
+    ![](images/likert%2006%20-%20axis%20for%20percentage%20disagree%20-%20tick%20marks.png){width="45%"}
+
+12. Right click on the x-axis for **Percentage Agree**. Set Range to **Fixed**, Fixed start to **0**, and Fixed end to **1.** For *Axis Titles*, remove Percentage Disagree from the Title. The title is left blank.
+
+    Then, go to Tick Marks. Set *Major Tick Marks* to **Fixed** and update *Tick Interval* to **0.2**.
+
+13. Right click on the x-axis for *Percentage Agree*, select **Format**. Under *Scale* \> **Numbers**, choose **Percentage** and set decimal places to **0**. Do the same for the x-axis for *Percentage Disagree*.
+
+    ![](images/likert%2007%20-%20format%20x%20axis%20numbers-01.png){width="80%"}
+
+14. On the taskbar at the top, go to Analysis \> Totals, select **Show Column Grand Totals** and **Column Totals to Top**. Ensure that there is a tickmark in the front.
+
+    ![](images/likert%2008%20-%20show%20column%20totals.png){width="80%"}
+
+15. Right click on the y-axis, select **Format**. For *Alignment,* select **Center** for both Horizontal and Vertical.
+
+    ![](images/likert%2009%20-%20view%20by%20-%20align%20center.png){width="80%"}
+
+16. Double click on the Chart Title: *Likert*. Remove \<SheetName\>. Click on **Insert** at the top right, and select **Parameters.QuestionParameter**. This allows the title to change dynamically when the reader selects the survey question they wish to view the responses for.
+
+    ![](images/likert%2010%20-%20chart%20title%20-%20add%20question%20parameter.png){width="50%"}
+
+    Then, copy and paste the following two lines below.
+
+    > **Strongly disagree** \| **Somewhat disagree** \| **Neutral** \| **Somewhat agree** \| **Strongly agree**
+
+    Update the alignment to **Center** and font (type, size and color) according to the screenshot below.
+
+    ![](images/likert%2011%20-%20chart%20title%20-%20formatting.png){width="80%"}
+
+17. On the taskbar at the top, go to Worksheet. **Uncheck** *Show Sort Controls*.
+
+    ![](images/likert%2012%20-%20uncheck%20sort%20controls.png){width="80%"}
+
+The divergent bar chart is now ready with parameter controls on the right to allow the reader to select.
+
+![](images/likert%20-%20ready-02.png){width="100%"}
+
+### Creating dot-and-line chart for confidence levels
+
+1.  
+
+asdf
 
 Dashboarding
 
