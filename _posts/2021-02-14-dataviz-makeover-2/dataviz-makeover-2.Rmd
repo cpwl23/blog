@@ -715,7 +715,7 @@ The dashboard is now completed (available on [Tableau](https://public.tableau.co
 
     Unsurprisingly, the same countries that were most worried about getting Covid-19 also have **less belief in their government health authorities** to provide an effective Covid-19 vaccine, namely **South Korea** and **Japan**.
 
-4.  Despite **Singapore** having **greater confidence in their government** **health authorities** than other countries, respondents from Singapore are less likely than other countries to take the vaccine should it be available to them this week.
+4.  Despite **Singapore** having **greater confidence in their government** **health authorities** than other countries, respondents from Singapore are **less likely** than other countries to take the vaccine should it be available to them this week.
 
     > If a Covid-19 vaccine were made available to me this week, I would definitely get it.
 
