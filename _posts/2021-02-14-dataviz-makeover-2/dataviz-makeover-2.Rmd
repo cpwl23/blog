@@ -18,7 +18,6 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-
 # A. Critic
 
 A critic of the following data visualization is provided in terms of clarity and aesthetics.
@@ -699,13 +698,17 @@ The dashboard is now completed (available [here](https://public.tableau.com/view
 
 # E. Main Observations
 
-1.  The proportion of respondents that are worried about getting Covid-19 do not vary much across gender, age or employment status. However, **varying levels of concern** are apparent when comparing responses **by country.** **Japan**, **Spain** and **South Korea** are the top three countries with **more than 50%** of respondents in these countries worrying about getting Covid-19.
+1.  **Vaccine confidence today is higher in the older age groups**, with more than half of the respondents aged 50 and above keen to take the vaccine if it were made available to them this week. At 95% confidence level, 71% of respondents aged 66 years and above will take the vaccine today, compared to the only 43% in those aged 18 to 33 years.
+
+    ![](images/vaccine%20today%20-%20age%20group.png){width="70%"}
+
+2.  The proportion of respondents that are worried about getting Covid-19 do not vary much across gender, age or employment status. However, **varying levels of concern** are apparent when comparing responses **by country.** **Japan**, **Spain** and **South Korea** are the top three countries with **more than 50%** of respondents in these countries worrying about getting Covid-19.
 
     > I am worried about getting Covid-19.
 
     ![](images/worried%20about%20covid%20-%20country.png){width="49%"}![](images/worried%20about%20covid%20-%20gender.png){width="49%"}![](images/worried%20about%20covid%20-%20age.png){width="50%"}![](images/worried%20about%20covid%20-%20employment%20status.png){width="50%"}
 
-2.  Despite Japan ranking the highest for worrying about getting Covid-19, Japanese respondents are **unwilling to take the vaccine** should it be available to them this week.
+3.  Despite Japan ranking the highest for worrying about getting Covid-19, Japanese respondents are **unwilling to take the vaccine** should it be available to them this week.
 
     ![In Japan, 30% of respondents disagreed to taking the vaccine if it were made available to them this week.](images/japan%2001.png){width="100%"}
 
@@ -713,7 +716,7 @@ The dashboard is now completed (available [here](https://public.tableau.com/view
 
     ![](images/japan%2002.png){width="100%"}
 
-3.  With regards to confidence in the government, **Denmark** and **United Kingdom** are leading at 73% and 69% of total respondents respectively that agree with the statement below.
+4.  With regards to confidence in the government, **Denmark** and **United Kingdom** are leading at 73% and 69% of total respondents respectively that agree with the statement below.
 
     > I believe government health authorities in my country will provide me with an effective Covid-19 vaccine.
 
@@ -721,8 +724,15 @@ The dashboard is now completed (available [here](https://public.tableau.com/view
 
     Unsurprisingly, the same countries that were most worried about getting Covid-19 also have **less belief in their government health authorities** to provide an effective Covid-19 vaccine, namely **South Korea** and **Japan**.
 
-4.  Despite **Singapore** having **greater confidence in their government** **health authorities** than other countries, respondents from Singapore are **less likely** than other countries to take the vaccine should it be available to them this week.
+5.  Despite **Singapore** having **greater confidence in their government** **health authorities** than other countries, respondents from Singapore are **less likely** than other countries to take the vaccine should it be available to them this week.
 
     > If a Covid-19 vaccine were made available to me this week, I would definitely get it.
 
     ![Vaccine interest is higher in those aged 50 and above as more than 50% of them are keen to take the vaccine if it were available to them this week.](images/singapore%20-%20now%2037percent-01.png)
+
+6.  Overall, people are **more confident of taking the vaccine a year from now** instead. The proportion of respondents that somewhat/strongly agree to taking the Covid-19 vaccine is 7 percentage points higher when deciding between taking a vaccine this week or taking a vaccine one year later.
+
+    | I will take the vaccine this week...                                           | I will take the vaccine a year from now...                               |
+    |--------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+    | ![](images/vaccine%20availability%2001%20-%20this%20week-01.png){width="100%"} | ![](images/vaccine%20availability%2002%20-%201%20year.png){width="100%"} |
+    |                                                                                |                                                                          |
