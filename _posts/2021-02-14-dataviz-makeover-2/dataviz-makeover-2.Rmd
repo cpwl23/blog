@@ -700,6 +700,8 @@ The dashboard is now completed (available [here](https://public.tableau.com/view
 
 1.  **Vaccine confidence today is higher in the older age groups**, with more than half of the respondents aged 50 and above keen to take the vaccine if it were made available to them this week. At 95% confidence level, 71% of respondents aged 66 years and above will take the vaccine today, compared to the only 43% in those aged 18 to 33 years.
 
+    > If a Covid-19 vaccine were made available to me this week, I would definitely get it.
+
     ![](images/vaccine%20today%20-%20age%20group.png){width="70%"}
 
 2.  The proportion of respondents that are worried about getting Covid-19 do not vary much across gender, age or employment status. However, **varying levels of concern** are apparent when comparing responses **by country.** **Japan**, **Spain** and **South Korea** are the top three countries with **more than 50%** of respondents in these countries worrying about getting Covid-19.
