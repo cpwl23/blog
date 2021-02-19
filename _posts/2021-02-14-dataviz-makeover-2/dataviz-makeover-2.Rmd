@@ -1,8 +1,8 @@
 ---
-title: "DataViz Makeover 2 - Work in Progress"
+title: "DataViz Makeover 2"
 description: |
   Due 19 Feb 2021, 2359h.
-preview: images/dashboard%2000-01.png
+preview: DataViz2%images/dashboard%00.png
 author:
   - name: Cheryl Pay
     url: 
@@ -66,7 +66,7 @@ Available [here](https://public.tableau.com/views/dataviz2-final/PublicSurveyonC
 
 [![](images/dashboard%2000-01.png){width="100%"}](https://public.tableau.com/profile/cheryl.pay#!/vizhome/dataviz2-final/PublicSurveyonCovid-19Vaccination?publish=yes)
 
-# D. Guide to creating visualization on Tableau
+# D. Step by Step Guide
 
 ### Download and prepare data file in .csv format
 
@@ -144,7 +144,7 @@ Available [here](https://public.tableau.com/views/dataviz2-final/PublicSurveyonC
 
 6.  Repeat steps 4 - 5 for the .csv files for all other countries. Once you have completed the above for all countries, save your data-merge.csv file to a local folder. Your final data-merge.csv should have 40,083 records.
 
-Importing and Preparing the data in Tableau
+### Importing and Preparing the data in Tableau
 
 1.  Open Tableau. Drag and drop your **data-merge.csv** file to Tableau.
 
@@ -243,9 +243,13 @@ Importing and Preparing the data in Tableau
     |                          |                                                                                                              |
     |                          | `end`                                                                                                        |
     +--------------------------+--------------------------------------------------------------------------------------------------------------+
-    | Percentage Agree         | `sum([Count Agree]) / sum({ EXCLUDE [Score] : sum([Number of Response])})`                                   |
+    | Percentage Agree         | `sum([Count Agree]) /`                                                                                       |
+    |                          |                                                                                                              |
+    |                          | `sum({ EXCLUDE [Score] : sum([Number of Response])})`                                                        |
     +--------------------------+--------------------------------------------------------------------------------------------------------------+
-    | Percentage Disagree      | `sum([Count Disagree]) / sum({ EXCLUDE [Score] : sum([Number of Response])})`                                |
+    | Percentage Disagree      | `sum([Count Disagree]) /`                                                                                    |
+    |                          |                                                                                                              |
+    |                          | `sum({ EXCLUDE [Score] : sum([Number of Response])})`                                                        |
     +--------------------------+--------------------------------------------------------------------------------------------------------------+
     | Prop Agree               | `sum(`                                                                                                       |
     |                          |                                                                                                              |
