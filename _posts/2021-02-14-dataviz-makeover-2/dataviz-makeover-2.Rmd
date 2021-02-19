@@ -2,7 +2,7 @@
 title: "DataViz Makeover 2"
 description: |
   Due 19 Feb 2021, 2359h.
-preview: images/dashboard%00.png
+preview: images/dashboard%00-01.png
 author:
   - name: Cheryl Pay
     url: 
@@ -17,6 +17,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
 
 # A. Critic
 
