@@ -2,7 +2,7 @@
 title: "DataViz Makeover 2"
 description: |
   Due 19 Feb 2021, 2359h.
-preview: images/dashboard%00-01.png
+preview: images/998.png
 author:
   - name: Cheryl Pay
     url: 
