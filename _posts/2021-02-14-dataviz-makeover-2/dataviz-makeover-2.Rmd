@@ -2,6 +2,7 @@
 title: "DataViz Makeover 2 - Work in Progress"
 description: |
   Due 19 Feb 2021, 2359h.
+preview: images/dashboard%2000-01.png
 author:
   - name: Cheryl Pay
     url: 
@@ -19,20 +20,20 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # A. Critic
 
-A critic of the following data visualization is provided.
+A critic of the following data visualization is provided in terms of clarity and aesthetics.
 
-![](images/00%20original.png){width="100%"}
+![](images/00%20original%20with%20annotation.png){width="100%"}
 
-#### Clarity
+### Clarity
 
 +-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | S/N | Critique                                                                                                                                                                                                                                                                                                                                | Suggestion                                                                                                                                                                                                               |
 +=====+=========================================================================================================================================================================================================================================================================================================================================+==========================================================================================================================================================================================================================+
-| 1   | The y-axis on both charts do not follow the same sorting i.e. the stacked bar chart is sorted by alphabetical order on the y-axis while the bar chart on the right is sorted by descending percentage on the x-axis. Some readers may overlook this and assume that the bars in the same row belong to the same country in both charts. | Create parameter to allow users to select whether to sort by alphabetical or proportion agree, in ascending or descending orders. Ensure that this parameter is applied to all relevant charts for easy cross-reference. |
+| 1   | The title of the 100% stacked bar chart, *Which country is more pro-vacinne?* does not provide any insights as to how the responses were collected.                                                                                                                                                                                     | Show in the visualization the survey question that respondents answered i.e. *If a Covid-19 vaccine were made available to me this week, I would definitely get it.*                                                     |
 +-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| 2   | Demographics data such as age and gender are not reflected in the charts; these demographics data are important to provide further insights into the willingness of the public on Covid-19 vaccination (as trends may surface based on these factors).                                                                                  | Create parameter to allow users to select their category of choice (country, age, gender etc) to view the responses accordingly. Ensure that this parameter is applied to all relevant charts for easy cross-reference.  |
+| 2   | The y-axis on both charts do not follow the same sorting i.e. the stacked bar chart is sorted by alphabetical order on the y-axis while the bar chart on the right is sorted by descending percentage on the x-axis. Some readers may overlook this and assume that the bars in the same row belong to the same country in both charts. | Create parameter to allow users to select whether to sort by alphabetical or proportion agree, in ascending or descending orders. Ensure that this parameter is applied to all relevant charts for easy cross-reference. |
 +-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| 3   | The title of the 100% stacked bar chart, *Which country is more pro-vacinne?* does not provide any insights as to how the responses were collected.                                                                                                                                                                                     | Show in the visualization the survey question that respondents answered i.e. *If a Covid-19 vaccine were made available to me this week, I would definitely get it.*                                                     |
+| 3   | Demographics data such as age and gender are not reflected in the charts; these demographics data are important to provide further insights into the willingness of the public on Covid-19 vaccination (as trends may surface based on these factors).                                                                                  | Create parameter to allow users to select their category of choice (country, age, gender etc) to view the responses accordingly. Ensure that this parameter is applied to all relevant charts for easy cross-reference.  |
 +-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | 4   | The visualization provided does not state how the data is collected i.e. respondents answered one question of a public survey. Furthermore, Vac 1 in the legend on the right does not indicate what the question is.                                                                                                                    | Insert a title "Public Survey on Covid-19 Vaccination".                                                                                                                                                                  |
 |     |                                                                                                                                                                                                                                                                                                                                         |                                                                                                                                                                                                                          |
@@ -41,7 +42,7 @@ A critic of the following data visualization is provided.
 | 5   | Confidence levels in the survey responses are not reflected in the visualization. Confidence levels are important to show how representative is the survey of the general population.                                                                                                                                                   | Show error bars with a selector on confidence levels, 95% and 99%.                                                                                                                                                       |
 +-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#### Aesthetics
+### Aesthetics
 
 +-----+---------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | S/N | Critique                                                                                                                                                      | Suggestion                                                                                                                                                                                                                       |
@@ -55,17 +56,17 @@ A critic of the following data visualization is provided.
 | 9   | The x-axis of both charts have different end points and their major tick marks have different decimal places.                                                 | Format both charts to have the same start and end points, and the number formats with the same decimal places.                                                                                                                   |
 +-----+---------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-# B. Alternative Graphical Representation - Sketch
+# B. Proposed Sketch
 
-asdfghjl insert sketch here
+![](images/sketch.png)
 
-Additional enhancements
+# C. Proposed Dashboard
 
-# C. Proposed Dashboard created on Tableau
+Available [here](https://public.tableau.com/views/dataviz2-final/PublicSurveyonCovid-19Vaccination?:language=en&:display_count=y&:origin=viz_share_link) on Tableau Public.
 
 [![](images/dashboard%2000-01.png){width="100%"}](https://public.tableau.com/profile/cheryl.pay#!/vizhome/dataviz2-final/PublicSurveyonCovid-19Vaccination?publish=yes)
 
-# D. Step by step
+# D. Guide to creating visualization on Tableau
 
 ### Download and prepare data file in .csv format
 
@@ -687,7 +688,7 @@ The diverging bar chart is now ready with parameter controls on the right to all
 
     The above action will result in the Gender and Age(group) stacked bar charts to change accordingly when a selection is made in the diverging bar chart.
 
-The dashboard is now completed (available on [Tableau](https://public.tableau.com/views/dataviz2-final/PublicSurveyonCovid-19Vaccination?:language=en&:display_count=y&publish=yes&:origin=viz_share_link)).
+The dashboard is now completed (available [here](https://public.tableau.com/views/dataviz2-final/PublicSurveyonCovid-19Vaccination?:language=en&:display_count=y&:origin=viz_share_link) on Tableau Public).
 
 ![](images/dashboard%2000.png){width="100%"}
 
@@ -719,4 +720,4 @@ The dashboard is now completed (available on [Tableau](https://public.tableau.co
 
     > If a Covid-19 vaccine were made available to me this week, I would definitely get it.
 
-    ![Vaccine interest is higher in those aged 50 and above - more than 50% of them are keen to take the vaccine if it were available to them this week.](images/singapore%20-%20now%2037percent-01.png)
+    ![Vaccine interest is higher in those aged 50 and above as more than 50% of them are keen to take the vaccine if it were available to them this week.](images/singapore%20-%20now%2037percent-01.png)
