@@ -678,10 +678,11 @@ The diverging bar chart is now ready with parameter controls on the right to all
 
 15. In the *Actions* dialogue box, click Add Action \> **Filter**.
 
+    ![](images/dashboard%2014%20-%20action%20filters-01.png){width="45%"}
+
+```{=html}
 <!-- -->
-
-    ![](images/dashboard%2014%20-%20action%20filters.png){width="45%"}
-
+```
 16. In the *Edit Filter Action* dialogue box, set Name: **Distribution of Gender and Age (group)**.
 
     -   Source Sheets: Tick **Likert** only, and Run action on: **Select.**
@@ -734,7 +735,10 @@ The dashboard is now completed (available [here](https://public.tableau.com/view
 
 6.  Overall, people are **more confident of taking the vaccine a year from now** instead. The proportion of respondents that somewhat/strongly agree to taking the Covid-19 vaccine is 7 percentage points higher when deciding between taking a vaccine this week or taking a vaccine one year later.
 
+    +--------------------------------------------------------------------------------+--------------------------------------------------------------------------+
     | I will take the vaccine this week...                                           | I will take the vaccine a year from now...                               |
-    |--------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+    +================================================================================+==========================================================================+
     | ![](images/vaccine%20availability%2001%20-%20this%20week-01.png){width="100%"} | ![](images/vaccine%20availability%2002%20-%201%20year.png){width="100%"} |
+    +--------------------------------------------------------------------------------+--------------------------------------------------------------------------+
     |                                                                                |                                                                          |
+    +--------------------------------------------------------------------------------+--------------------------------------------------------------------------+
