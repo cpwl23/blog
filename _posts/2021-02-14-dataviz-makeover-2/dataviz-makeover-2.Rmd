@@ -10,7 +10,7 @@ date: 02-14-2021
 output:
   distill::distill_article:
     toc: true
-    toc_float: false
+    toc_float: true
     self_contained: false
 ---
 
@@ -78,33 +78,20 @@ Available [here](https://public.tableau.com/views/dataviz2-final/PublicSurveyonC
 
 3.  In Microsoft Excel, create a new workbook, insert the following column headers to each column, save as **data-merge.csv**.
 
-    +--------+-------------------+
     | Column | Column Header     |
-    +========+===================+
+    |--------|-------------------|
     | A      | Country           |
-    +--------+-------------------+
     | B      | RecordNo          |
-    +--------+-------------------+
     | C      | endtime           |
-    +--------+-------------------+
     | D      | age               |
-    +--------+-------------------+
     | E      | gender            |
-    +--------+-------------------+
     | F      | employment_status |
-    +--------+-------------------+
     | G      | vac_1             |
-    +--------+-------------------+
     | H      | vac2_1            |
-    +--------+-------------------+
     | I      | vac2_2            |
-    +--------+-------------------+
     | J      | vac2_3            |
-    +--------+-------------------+
     | K      | vac2_6            |
-    +--------+-------------------+
     | L      | vac_3             |
-    +--------+-------------------+
 
 4.  Go to the **data** folder, open **australia.csv**. (If it is in a .zip file, then extract the zip file. You will see the .csv file after the extraction.)
 
@@ -454,17 +441,12 @@ The diverging bar chart is now ready with parameter controls on the right to all
 
     ![](images/uncertainty%2003%20-%20create%20calculated%20field.png){width="80%"}
 
-    +--------------------+-------------------------------------------------------------------------------+
     | Name               | Formula                                                                       |
-    +====================+===============================================================================+
+    |--------------------|-------------------------------------------------------------------------------|
     | CI_Lower Limit 95% | ![](images/uncertainty%2004%20-%20CI_Lower%20Limit%2095-01.png){width="100%"} |
-    +--------------------+-------------------------------------------------------------------------------+
     | CI_Upper Limit 95% | ![](images/uncertainty%2005%20-%20CI_Upper%20Limit%2095.png){width="100%"}    |
-    +--------------------+-------------------------------------------------------------------------------+
     | CI_Lower Limit 99% | ![](images/uncertainty%2006%20-%20CI_Lower%20Limit%2099.png){width="100%"}    |
-    +--------------------+-------------------------------------------------------------------------------+
     | CI_Upper Limit 99% | ![](images/uncertainty%2007%20-%20CI_Upper%20Limit%2099-01.png){width="100%"} |
-    +--------------------+-------------------------------------------------------------------------------+
 
 6.  From the *Data* pane, drag **Row by** to Rows, drag **Prop Agree** to Columns. In the *Marks* pane, change Automatic to **Circle**.
 
@@ -542,7 +524,7 @@ The diverging bar chart is now ready with parameter controls on the right to all
 
     ![](images/uncertainty%2022%20-%20edit%20tooltip.png){width="80%"}
 
-#### Create worksheets for Age and Gender
+### Create bar charts for Age and Gender
 
 1.  Create new worksheet. Rename the sheet to **Gender**.
 
@@ -680,9 +662,8 @@ The diverging bar chart is now ready with parameter controls on the right to all
 
     ![](images/dashboard%2014%20-%20action%20filters-01.png){width="45%"}
 
-```{=html}
 <!-- -->
-```
+
 16. In the *Edit Filter Action* dialogue box, set Name: **Distribution of Gender and Age (group)**.
 
     -   Source Sheets: Tick **Likert** only, and Run action on: **Select.**
