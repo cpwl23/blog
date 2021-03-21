@@ -82,7 +82,7 @@ The tooltips for the visualization can be enhanced further.
 
 # C. Proposed Dashboard
 
-Available here on Tableau Public.
+Available [here](https://public.tableau.com/views/dataviz_makeover_3_16163176803610/ArmedConflictFrequencyinSoutheastAsia?:language=en&:display_count=y&publish=yes&:origin=viz_share_link) on Tableau Public.
 
 ![](images/99-03.png){width="100%"}
 
@@ -686,9 +686,9 @@ Available here on Tableau Public.
 
     ![](images/47%20data%20source2-01.png){width="45%"}
 
-The dashboard is completed. You can select a country from the choropleth map, and the other charts will change accordingly.
+The dashboard is completed (available [here](https://public.tableau.com/views/dataviz_makeover_3_16163176803610/ArmedConflictFrequencyinSoutheastAsia?:language=en&:display_count=y&publish=yes&:origin=viz_share_link)). You can select a country from the choropleth map, and the other charts will change accordingly.
 
-![](images/99-03.png){width="100%"}
+[![](images/99-03.png){width="100%"}](https://public.tableau.com/views/dataviz_makeover_3_16163176803610/ArmedConflictFrequencyinSoutheastAsia?:language=en&:display_count=y&publish=yes&:origin=viz_share_link)
 
 # E. Main Observations
 
