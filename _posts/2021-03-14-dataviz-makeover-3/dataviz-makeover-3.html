@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { color: #20794d; } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #20794d; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+  <!--radix_placeholder_meta_tags-->
+  <title>DataViz Makeover 3</title>
+
+  <meta property="description" itemprop="description" content="Due 21 Mar 2021, 2359h."/>
+
+
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2021-03-14"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-03-14"/>
+  <meta name="article:author" content="Cheryl Pay"/>
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="DataViz Makeover 3"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Due 21 Mar 2021, 2359h."/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="DataViz Makeover 3"/>
+  <meta property="twitter:description" content="Due 21 Mar 2021, 2359h."/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","preview","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["DataViz Makeover 3"]},{"type":"character","attributes":{},"value":["Due 21 Mar 2021, 2359h.\n"]},{"type":"character","attributes":{},"value":["images/99-03.png"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Cheryl Pay"]},{"type":"NULL"}]}]},{"type":"character","attributes":{},"value":["03-14-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_float","self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["dataviz-makeover-3_files/anchor-4.2.2/anchor.min.js","dataviz-makeover-3_files/bowser-1.9.3/bowser.min.js","dataviz-makeover-3_files/distill-2.2.21/template.v2.js","dataviz-makeover-3_files/header-attrs-2.7/header-attrs.js","dataviz-makeover-3_files/jquery-1.11.3/jquery.min.js","dataviz-makeover-3_files/popper-2.6.0/popper.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-bundle.umd.min.js","dataviz-makeover-3_files/tippy-6.2.7/tippy-light-border.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.css","dataviz-makeover-3_files/tippy-6.2.7/tippy.umd.min.js","dataviz-makeover-3_files/webcomponents-2.0.0/webcomponents.js","images/01a tableau connect excel.png","images/01b file save tbw-01.png","images/01b file save tbw.png","images/02 line y-axis.png","images/03 formula.png","images/03a copy.png","images/03b paste special values.png","images/04 filter year of event date 03.png","images/04A data source filter 01.png","images/04A data source filter 02.png","images/04A data source filter 03 years-01.png","images/04A data source filter 03 years.png","images/04a rename ws to density-01.png","images/04a rename ws to density.png","images/04b drag lat and long.png","images/04c add - count id-01.png","images/04c add - count id.png","images/04c add-01.png","images/04c add.png","images/04c drag and drop event id to color.png","images/04c map.png","images/04d marks pane-01.png","images/04d marks pane.png","images/04e color change.png","images/05 drag event date to filters-01.png","images/05 drag event date to filters.png","images/05 select years all.png","images/05 select years-01.png","images/05 select years.png","images/06 filter country.png","images/07 filter event type.png","images/08 apply filter to all worksheets.png","images/09 show filter.png","images/10 event type radio button.png","images/11 drag.png","images/12 measure count-01.png","images/12 measure count.png","images/13 automatic to circle.png","images/14 hide event type header.png","images/15 label-01.png","images/15 label.png","images/15a label alignment top.png","images/16 label font.png","images/17 right click x axis - format.png","images/18 format font size and alignment of x axis.png","images/19 remove y axis title.png","images/20 format y axis number format.png","images/20b fit width.png","images/21 tooltip.png","images/22 edit title.png","images/23 insert sheet.png","images/24 armed conflict grey.png","images/25 add fields to tooltip.png","images/25 change size.png","images/25 color add border.png","images/25 drag fields to tooltip.png","images/25 drag.png","images/25 point map tooltip.png","images/25 tooltip before and after.png","images/26 drag fields to row columns marks.png","images/26 measure count.png","images/27 entire view.png","images/27 format font size 8 - axis-01.png","images/27 format font size 8 - axis.png","images/27 format font size 8 - yaxis-01.png","images/27 format font size 8 - yaxis-02.png","images/27 format font size 8 - yaxis-03.png","images/27 format font size 8 - yaxis.png","images/27 format yaxis number-01.png","images/27 format yaxis number.png","images/27 hide event date header.png","images/27 leave y axis title blank.png","images/27 right click y axis format.png","images/27 title.png","images/27 tooltip-01.png","images/27 tooltip.png","images/28 drag.png","images/28 edit title.png","images/28 fit entire view.png","images/28 fit height.png","images/28 format country 2.png","images/28 format country 3.png","images/28 format country.png","images/28 format event type 2.png","images/28 format event type-01.png","images/28 format event type.png","images/28 format pane 2.png","images/28 format pane 3.png","images/28 format pane.png","images/28 hide event type.png","images/28 hover.png","images/28 tooltip.png","images/29 create new dashboard-01.png","images/29 create new dashboard.png","images/29 rename dashboard.png","images/29 title 1.png","images/29 title 2.png","images/29 title 3.png","images/30 a-01.png","images/30 a-02.png","images/30 a.png","images/30 b-01.png","images/30 b.png","images/30 c-01.png","images/30 c.png","images/31 a point map-01.png","images/31 a point map.png","images/31 b.png","images/32 a line.png","images/32 b line.png","images/33 a.png","images/33 b.png","images/34 a.png","images/34 b-01.png","images/34 b-02.png","images/34 b.png","images/35 hide density-01.png","images/35 hide density.png","images/35 remove country filter.png","images/36 a.png","images/36 b.png","images/38 blank 2.png","images/39 a drag text.png","images/39 b text-01.png","images/39 b text.png","images/39 c.png","images/39 d.png","images/39 e-01.png","images/39 e.png","images/40 hide title point map.png","images/41 a add blank.png","images/41 b add blank.png","images/41 c resized blank.png","images/42 a floating density.png","images/42 b edit legend title.png","images/42 c right click format legend-01.png","images/42 c right click format legend.png","images/42 d body font-01.png","images/42 d body font.png","images/42 dashboard - edit title font.png","images/42 dashboard - show title.png","images/42 dashboard - show title2.png","images/42 point map title.png","images/43 event type legend floating.png","images/43 move event type legend floating.png","images/44 resize filters-01.png","images/44 resize filters.png","images/45 add action > filter-01.png","images/45 add action > filter.png","images/45 add actions > filter.png","images/45 dashboard > actions-01.png","images/45 dashboard > actions.png","images/45 select on density-01.png","images/45 select on density.png","images/46 point map - do not fix-01.png","images/46 point map - do not fix.png","images/46 point map - do not fix2.png","images/47 data source.png","images/47 data source2-01.png","images/47 data source2.png","images/99-01.png","images/99-02.png","images/99-03.png","images/99.png","images/density tooltip-01.png","images/density tooltip-02.png","images/density tooltip.png","images/density-01.png","images/density.png","images/dot by event type-01.png","images/dot by event type-02.png","images/dot by event type.png","images/line chart tooltip.png","images/line chart with tooltip.png","images/line chart-01.png","images/line chart-02.png","images/line chart.png","images/obs 1 - battles.png","images/obs 1 - explosions.png","images/obs 1 - phillippines highest number of conflicts-01.png","images/obs 1 - phillippines highest number of conflicts.png","images/obs 1 - protests.png","images/obs 1 - riots.png","images/obs 1 - strategic developments.png","images/obs 1 - violence against civilians.png","images/obs 2 - protests.png","images/obs 2 - riots.png","images/obs 3 - philippines-01.png","images/obs 3 - philippines.png","images/obs 3 - violence against civilians.png","images/obs 4 - indonesia.png","images/obs 4 - myanmar.png","images/obs 4 - philippines.png","images/obs 5 - protests indonesia and thailand-01.png","images/obs 5 - protests indonesia and thailand.png","images/obs 5 - thailand protests spike 2020.png","images/Picture1 blue.png","images/Picture1 line chart tooltip.png","images/Picture1 line count of sheet1.png","images/Picture1 overlap points-01.png","images/Picture1 overlap points.png","images/Picture1 point map tooltip.png","images/Picture1 space.jpg","images/Picture1 wrapped.png","images/Picture1 y-axis-01.png","images/Picture1 y-axis.png","images/Picture1.jpg","images/sketch1.png","images/sketch2-01.png","images/sketch2.png","images/sketch3-01.png","images/sketch3-02.png","images/sketch3.png","images/worksheet - new worksheet.png"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="dataviz-makeover-3_files/header-attrs-2.7/header-attrs.js"></script>
+  <script src="dataviz-makeover-3_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="dataviz-makeover-3_files/popper-2.6.0/popper.min.js"></script>
+  <link href="dataviz-makeover-3_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="dataviz-makeover-3_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="dataviz-makeover-3_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="dataviz-makeover-3_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="dataviz-makeover-3_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="dataviz-makeover-3_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="dataviz-makeover-3_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"DataViz Makeover 3","description":"Due 21 Mar 2021, 2359h.","authors":[{"author":"Cheryl Pay","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-03-14T00:00:00.000+00:00","citationText":"Pay, 2021"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>DataViz Makeover 3</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+<p><p>Due 21 Mar 2021, 2359h.</p></p>
+</div>
+
+<div class="d-byline">
+  Cheryl Pay  
+  
+<br/>03-14-2021
+</div>
+
+<div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#a.-critic">A. Critic</a>
+<ul>
+<li><a href="#clarity">Clarity</a></li>
+<li><a href="#aesthetics">Aesthetics</a></li>
+</ul></li>
+<li><a href="#b.-proposed-sketch">B. Proposed Sketch</a></li>
+<li><a href="#c.-proposed-dashboard">C. Proposed Dashboard</a></li>
+<li><a href="#d.-step-by-step-guide">D. Step by Step Guide</a>
+<ul>
+<li><a href="#preparing-the-data">Preparing the data</a></li>
+<li><a href="#creating-the-choropleth-map">Creating the <strong>choropleth</strong> map</a></li>
+<li><a href="#creating-the-point-map">Creating the point map</a></li>
+<li><a href="#creating-the-line-chart">Creating the line chart</a></li>
+<li><a href="#create-table-for-fatality-count">Create table for Fatality Count</a></li>
+<li><a href="#preparing-the-dashboard">Preparing the dashboard</a></li>
+</ul></li>
+<li><a href="#e.-main-observations">E. Main Observations</a></li>
+</ul>
+</nav>
+</div>
+<h1 id="a.-critic">A. Critic</h1>
+<p>A critic of the following data visualization is provided in terms of clarity and aesthetics.</p>
+<p><a href="https://public.tableau.com/profile/tskam#!/vizhome/South-eastAsiaArmedConflictAnalysis/South-eastAsiaArmedConflictAnalysis"><img src="images/Picture1.jpg" style="width:80.0%" /></a></p>
+<h3 id="clarity">Clarity</h3>
+<table>
+<colgroup>
+<col style="width: 1%" />
+<col style="width: 36%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>S/N</th>
+<th>Critique</th>
+<th>Suggestion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><p>As the points on the map overlap each other (highlighted below), the map does not clearly show the frequency of events in each region.</p>
+<p><img src="" /><img src="images/Picture1%20overlap%20points-01.png" style="width:80.0%" /></p></td>
+<td><p>Instead of using a point map, use a <strong>choropleth map</strong> to show the concentration of events in the region.</p>
+<p>The point map can be retained to show only one type of event instead of all events.</p></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>The dashboard is lacking the <strong>Event Date</strong> filter to allow users to select the event date period they are interested to view.</td>
+<td>Create a filter for users to select the year (multiple values) they are interested to view.</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>The dashboard is lacking the <strong>Event Type</strong> filter to allow users to select the event type to show on the charts.</td>
+<td>Create a filter for users to select the event type (single) value they are interested to view. This filter must also act on the point map.</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><p>The y-axis tick marks are of varying scale for <em>Armed Conflict Event by Type</em>. Should the user miss to notice this, the user will be comparing the event counts and trends incorrectly.</p>
+<p><img src="images/Picture1%20y-axis-01.png" style="width:65.0%" /></p></td>
+<td>Create one line chart for <em>Armed Conflict Occurrences, by Event Type by Year</em>. Each event type will be a line (series). Ensure the lines are colored according to the legend of the choropleth map. All the event types will be on the same y-axis for easy comparison; there will only be 1 panel instead of 6 panels.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="aesthetics">Aesthetics</h3>
+<table>
+<colgroup>
+<col style="width: 1%" />
+<col style="width: 53%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>S/N</th>
+<th>Critique</th>
+<th>Suggestion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><p>The y-axis title of the line charts read “Count of Sheet1” when users do not know what Sheet1 is.</p>
+<p><img src="images/Picture1%20line%20count%20of%20sheet1.png" style="width:80.0%" /></p></td>
+<td>Rename the y-axis title to “Count” or remove the y-axis title entirely if count of events is clearly stated elsewhere (e.g. in the title).</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><p>The map and line chart has no blank space between each other, causing the visualization to look cramped.</p>
+<p><img src="images/Picture1%20space.jpg" style="width:80.0%" /></p></td>
+<td>Insert blank spaces between the map and the line chart.</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><p>The lines in the line chart are colored blue for all Event Types. This is misleading since the same blue color is used to represent Event Type: Battles in the map.</p>
+<p><img src="images/Picture1%20blue.png" style="width:80.0%" /></p></td>
+<td>The lines in the line chart should follow the legend (colors) for Event Type used in the map. This creates consistency for the readers.</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><p>Event Type labels are <em>wrapped</em> while the text for the legend is not.</p>
+<p><img src="images/Picture1%20wrapped.png" style="width:80.0%" /></p></td>
+<td>Ensure that text is wrapped so that the entire text is shown on the visualization instead of “…”.</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><p>The tooltips for the point map and line chart are neat.</p>
+<p><img src="images/Picture1%20point%20map%20tooltip.png" style="width:80.0%" /></p>
+<p><img src="images/Picture1%20line%20chart%20tooltip.png" style="width:80.0%" /></p></td>
+<td>Retain the neatness of the tooltip. Consider including more details in the tooltip e.g. location, notes of the event.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="b.-proposed-sketch">B. Proposed Sketch</h1>
+<p><img src="images/sketch1.png" /></p>
+<p>The tooltips for the visualization can be enhanced further.</p>
+<figure>
+<img src="images/sketch2-01.png" style="width:60.0%" alt="Tooltip for the choropleth map - sketch" /><figcaption aria-hidden="true">Tooltip for the choropleth map - sketch</figcaption>
+</figure>
+<figure>
+<img src="images/sketch3-02.png" style="width:60.0%" alt="Tooltip for the point map - sketch" /><figcaption aria-hidden="true">Tooltip for the point map - sketch</figcaption>
+</figure>
+<h1 id="c.-proposed-dashboard">C. Proposed Dashboard</h1>
+<p>Available here on Tableau Public.</p>
+<p><img src="images/99-03.png" style="width:100.0%" /></p>
+<h1 id="d.-step-by-step-guide">D. Step by Step Guide</h1>
+<h3 id="preparing-the-data">Preparing the data</h3>
+<ol type="1">
+<li><p>Create a unique event ID for each observation in the data by first creating a new column titled “Event_ID_UNIQUE” to the left of ISO.</p></li>
+<li><p>Insert the formula <strong>=F2&amp;“_”&amp;C2</strong> into Cell A2.</p>
+<p>EVENT_ID_CNTY <em>is an individual identifier by number and country acronym that is updated annually, hence</em> EVENT_ID_CNTY <em>is concatenated with</em> Year <em>to result in a unique event ID across all years and all countries. This field is named</em> Event_ID_UNIQUE<em>.</em></p>
+<p><img src="images/03%20formula.png" style="width:80.0%" /></p></li>
+<li><p>Then, hover your cursor to the bottom right corner of cell A2. When a black cross appears, double-click on the black-cross. This will fill all the cells below Cell A2, up to the last observation.</p></li>
+<li><p>Next, right-click on Column A. Select <strong>Copy</strong>.</p>
+<p><img src="images/03a%20copy.png" style="width:50.0%" /></p></li>
+<li><p>Then, right-click-on Column A again. Select <strong>Paste Special</strong> &gt; <strong>Values</strong>.</p>
+<p><img src="images/03b%20paste%20special%20values.png" style="width:50.0%" /></p></li>
+<li><p>Once the above is completed, save your file as <strong>data.xlsx</strong> (Microsoft Excel file format).</p>
+<p>We will be using <strong>EVENT_ID_UNIQUE</strong> to count the number of events for our data visualization on Tableau.</p></li>
+<li><p>Go to Tableau, connect to the Microsoft Excel file: <strong>data.xlsx</strong>.</p>
+<p><img src="images/01a%20tableau%20connect%20excel.png" style="width:20.0%" /></p></li>
+<li><p>Go to Data &gt; Edit Data Source Filters.</p>
+<p><img src="images/04A%20data%20source%20filter%2001.png" style="width:80.0%" /></p>
+<p>Click <strong>Add</strong>. Select <strong>Event Date</strong>.</p>
+<p><img src="images/04A%20data%20source%20filter%2002.png" style="width:80.0%" /></p>
+<p>Select <strong>Years</strong>.</p>
+<p><img src="images/04A%20data%20source%20filter%2003%20years-01.png" style="width:40.0%" /></p>
+<p>Tick years <strong>2015 to 2020</strong>. Then press <strong>OK</strong>.</p>
+<p><img src="images/04%20filter%20year%20of%20event%20date%2003.png" style="width:45.0%" /></p></li>
+<li><p>Go to File &gt; Save As, save the Tableau workbook as <strong>dataviz3</strong>.</p>
+<p><img src="images/01b%20file%20save%20tbw-01.png" style="width:80.0%" /></p></li>
+</ol>
+<h3 id="creating-the-choropleth-map">Creating the <strong>choropleth</strong> map</h3>
+<ol type="1">
+<li><p>Right click <strong>Sheet1</strong>, select <strong>Rename</strong>. Rename the sheet to “Choropleth”.</p>
+<p><img src="images/04a%20rename%20ws%20to%20density-01.png" style="width:80.0%" /></p></li>
+<li><p>From the <em>Data</em> pane, drag <strong>Longtitude</strong> to <em>Columns</em> and <strong>Latitude</strong> to <em>Rows</em>.</p>
+<p><img src="images/04b%20drag%20lat%20and%20long.png" style="width:80.0%" /></p></li>
+<li><p>From the <em>Data</em> pane, drag <strong>Event ID UNIQUE</strong> to the Marks pane: Color.</p>
+<p><img src="images/04c%20drag%20and%20drop%20event%20id%20to%20color.png" style="width:40.0%" /></p>
+<p>Select <strong>Add all members</strong> when the dialogue below appears.</p>
+<p><img src="images/04c%20add-01.png" style="width:40.0%" /></p></li>
+<li><p>In the <em>Marks</em> pane, click on the down arrowhead next to for Event ID UNIQUE. Select Measure &gt; <strong>Count</strong>.</p>
+<p><img src="images/04c%20add%20-%20count%20id-01.png" style="width:50.0%" /></p></li>
+<li><p>From the <em>Data</em> pane, drag the following to the <em>Marks</em> pane.</p>
+<ul>
+<li><p><strong>Country</strong> to Marks: <u>Label</u></p></li>
+<li><p><strong>Country</strong> to Marks: <u>Detail</u></p></li>
+<li><p>F<strong>atalities</strong> to Marks: <u>Tooltip</u></p></li>
+</ul>
+<p>The <em>Marks</em> pane should look like this.</p>
+<p><img src="images/04d%20marks%20pane.png" style="width:20.0%" /></p></li>
+<li><p>In the <em>Marks</em> pane, change the chart type to <strong>Map</strong>.</p>
+<p><img src="images/04c%20map.png" style="width:80.0%" /></p></li>
+<li><p>In the <em>Marks</em> pane, click on <strong>Color</strong> &gt; <strong>Edit Colors</strong>. Change <em>Automatic</em> to <strong>Gray</strong>.</p>
+<p><img src="images/04e%20color%20change.png" style="width:80.0%" /></p></li>
+<li><p>From the <em>Data</em> pane, drag <strong>Event Date</strong> to <em>Filters</em>.</p>
+<p><img src="images/05%20drag%20event%20date%20to%20filters-01.png" style="width:40.0%" /></p>
+<p>Select <strong>Years</strong>.</p>
+<p><img src="images/05%20select%20years-01.png" style="width:40.0%" /></p>
+<p>Select <strong>All</strong>. Ensure that all the years from 2015 to 2020 are ticked. Then press <strong>OK</strong>.</p>
+<p><img src="images/05%20select%20years%20all.png" style="width:40.0%" /></p></li>
+<li><p>From the <em>Data</em> pane, drag <strong>Country</strong> to <em>Filters</em>. Click <strong>All</strong>, then <strong>OK</strong>.</p>
+<p><img src="images/06%20filter%20country.png" style="width:40.0%" /></p></li>
+<li><p>From the <em>Data</em> pane, drag <strong>Event Type</strong> to <em>Filters</em>.</p>
+<p><img src="images/07%20filter%20event%20type.png" style="width:40.0%" /></p></li>
+<li><p>Click on the down arrowhead of <u>YEAR(Event Date)</u> in the <em>Filters</em> pane. Go to <strong>Apply to Worksheets</strong> &gt; <strong>All Using This Data Source</strong>.</p>
+<p><img src="images/08%20apply%20filter%20to%20all%20worksheets.png" style="width:80.0%" /></p></li>
+<li><p>Repeat Step 11 for <u>Country</u> and <u>Event Type</u> in the <em>Filters</em> pane.</p></li>
+<li><p>Click on the down arrowhead of <u>YEAR(Event Date)</u> in the <em>Filters</em> pane. Select <strong>Show Filter</strong> by ensuring there is a tick next to <strong>Show Filter</strong>.</p>
+<p><img src="images/09%20show%20filter.png" style="width:40.0%" /></p></li>
+<li><p>Repeat Step 13 for <u>Country</u> and <u>Event Type</u> in the <em>Filters</em> pane.</p></li>
+<li><p>For the filter: <strong>Event Type</strong> shown, click the down arrowhead next to <strong>Event Type</strong>. Select <strong>Single Value (list)</strong>.</p>
+<p><img src="images/10%20event%20type%20radio%20button.png" style="width:80.0%" /></p>
+<h4 id="creating-dot-by-event-type-for-tooltip">Creating <em>Dot by Event Type</em> for tooltip</h4>
+<ol type="1">
+<li><p>In the toolbar on the top, go to <strong>Worksheet</strong> &gt; <strong>New Worksheet</strong>.</p>
+<p><img src="images/worksheet%20-%20new%20worksheet.png" style="width:80.0%" /></p></li>
+<li><p>Rename the worksheet to “Dot by Event Type”.</p>
+<p><img src="images/04a%20rename%20ws%20to%20density-01.png" style="width:80.0%" /></p></li>
+<li><p>From the <em>Data</em> pane, drag <strong>Event Type</strong> to <em>Columns</em> and <strong>Event ID UNIQUE</strong> to <em>Rows</em>.</p>
+<p><img src="images/11%20drag.png" style="width:80.0%" /></p></li>
+<li><p>In the <em>Rows</em>, click on <strong>Event ID UNIQUE</strong> and go to <strong>Measure (Count)</strong> &gt; <strong>Count</strong>. Ensure there is a tick next to <strong>Count</strong>.</p>
+<p><img src="images/12%20measure%20count-01.png" style="width:80.0%" /></p></li>
+<li><p>From the <em>Data</em> pane, drag <strong>Country</strong> to <u>Color</u> in the <em>Marks</em> pane.</p></li>
+<li><p>From the <em>Data</em> pane, drag <strong>Fatalities</strong> to <u>Size</u> in the <em>Marks</em> pane.</p></li>
+<li><p>In the <em>Marks</em> pane, change chart type from Automatic to <strong>Circle</strong>.</p>
+<p><img src="images/13%20automatic%20to%20circle.png" style="width:40.0%" /></p></li>
+<li><p>From the <em>Data</em> pane, drag <strong>Fatalities</strong> to <u>Label</u> in the <em>Marks</em> pane.</p></li>
+<li><p>Right click on <strong>Event Type</strong> in the chart. Select <strong>Hide Field Labels for Columns</strong>.</p>
+<p><img src="images/14%20hide%20event%20type%20header.png" style="width:50.0%" /></p></li>
+<li><p>In the <em>Marks</em> pane, click on <u>Label</u>. Click on “<strong>…</strong>” next to <strong>Text</strong>.</p>
+<p><img src="images/15%20label-01.png" style="width:50.0%" /></p>
+<p>Click on the double headed arrow next to <strong>Alignment</strong>. Select <em>Top</em> in the Vertical section.</p>
+<p><img src="images/15a%20label%20alignment%20top.png" style="width:50.0%" /></p></li>
+<li><p>In the <strong>Edit Label</strong> dialogue box, set Font to <strong>Tableau Book</strong>, size to <strong>8</strong> and color to the fourth shade of gray per screenshot below.</p>
+<p>Add “deaths” to the line below &lt;SUM(Fatalities)&gt;.</p>
+<p>“&lt;SUM(Fatalities)&gt;” is bold while “deaths” is not bold.</p>
+<p><img src="images/16%20label%20font.png" style="width:80.0%" /></p></li>
+<li><p>Right click on the x-axis and select <strong>Format</strong>.</p>
+<p><img src="images/17%20right%20click%20x%20axis%20-%20format.png" style="width:50.0%" /></p></li>
+<li><p>In the <em>Format Event Type</em> pane, set <em>Font</em> size to <strong>8</strong>. Set <em>Alignment</em> to Wrap: <strong>On</strong>.</p>
+<p><img src="images/18%20format%20font%20size%20and%20alignment%20of%20x%20axis.png" style="width:50.0%" /></p></li>
+<li><p>Double click on the y-axis. Remove “Count of Event ID UNIQUE” from the Axis Titles:Title.</p>
+<p><img src="images/19%20remove%20y%20axis%20title.png" style="width:45.0%" /></p></li>
+<li><p>In the <em>Format CNT(Event ID UNIQUE)</em> pane, go to <strong>Numbers</strong>. Select <strong>Numbers (Standard)</strong>.</p>
+<p><img src="images/20%20format%20y%20axis%20number%20format.png" style="width:50.0%" /></p></li>
+<li><p>From the taskbar, change the Fit to <strong>Fit Width</strong>.</p>
+<p><img src="images/20b%20fit%20width.png" style="width:80.0%" /></p></li>
+</ol>
+<p>The <em>Dot by Event Type</em> chart should look like this.</p>
+<p><img src="images/dot%20by%20event%20type-02.png" style="width:75.0%" /></p></li>
+<li><p>Go to the worksheet named <strong>Choropleth</strong>. In the <em>Marks</em> pane, click on <u>Tooltip</u>.</p>
+<p><img src="images/21%20tooltip.png" style="width:50.0%" /></p></li>
+<li><p>In the <strong>Edit Tooltip</strong> dialogue box, edit the text to the following.</p>
+<blockquote>
+<p><strong>&lt;Country&gt;</strong></p>
+<p><strong>&lt;CNT(Event ID UNIQUE)&gt;</strong> armed conflicts and <strong>&lt;SUM(Fatalities)&gt; deaths</strong> recorded.<br />
+</p>
+<p><u>Number of Armed Conflicts</u></p>
+<p>&lt;Sheet name=“Dot by Event Type” maxwidth=“500” maxheight=“300” filter=“&lt;All Fields&gt;”&gt;</p>
+</blockquote>
+<p><img src="images/22%20edit%20title.png" style="width:80.0%" /></p>
+<blockquote>
+<p><strong>&lt;Country&gt;</strong></p>
+</blockquote>
+<p>Tableau Book, Size 12, Bold<br />
+Color = black (darkest gray)</p>
+<blockquote>
+<p><strong>&lt;CNT(Event ID UNIQUE)&gt;</strong> armed conflicts and <strong>&lt;SUM(Fatalities)&gt; deaths</strong> recorded.</p>
+</blockquote>
+<p>Tableau Book, Size 10<br />
+Color = black (darkest gray)<br />
+Only <strong>&lt;CNT(Event ID UNIQUE)&gt;</strong> and <strong>&lt;SUM(Fatalities)&gt; deaths</strong> are in bold.</p>
+<blockquote>
+<p><u>Number of Armed Conflicts</u></p>
+</blockquote>
+<p>Tableau Book, Size 10, Underlined<br />
+Color = third-lightest shade of gray</p>
+<p><img src="images/24%20armed%20conflict%20grey.png" style="width:50.0%" /></p>
+<blockquote>
+<p>&lt;Sheet name=“Dot by Event Type” maxwidth=“500” maxheight=“300” filter=“&lt;All Fields&gt;”&gt;</p>
+</blockquote>
+<p>Go to <strong>Insert</strong> &gt; <strong>Sheets</strong> &gt; <strong>Dot by Event Type</strong>. Edit the maxwidth and maxheight to “500” and “300” respectively.</p>
+<p><img src="images/23%20insert%20sheet.png" style="width:80.0%" /></p>
+<p>The <strong>choropleth</strong> <strong>map</strong> is shown below.</p>
+<p><img src="images/density-01.png" /></p>
+<p>When hovering onto an individual country, the tooltip appears to reflect the number of armed conflicts, number of deaths and the event type for the country. In the screenshot below, Indonesia is shown.</p>
+<p><img src="images/density%20tooltip-02.png" style="width:80.0%" /></p></li>
+</ol>
+<h3 id="creating-the-point-map">Creating the point map</h3>
+<ol type="1">
+<li><p>In the toolbar on the top, go to <strong>Worksheet</strong> &gt; <strong>New Worksheet</strong>.</p>
+<p><img src="images/worksheet%20-%20new%20worksheet.png" style="width:80.0%" /></p></li>
+<li><p>Rename the worksheet to “Point Map”.</p>
+<p><img src="images/04a%20rename%20ws%20to%20density-01.png" style="width:80.0%" /></p></li>
+<li><p>From the <em>Data</em> pane, drag <strong>Longitude</strong> to Columns and <strong>Latitude</strong> to Rows. Next, drag <strong>Event Type</strong> to <u>Color</u> in the <em>Marks</em> pane and <strong>Event ID UNIQUE</strong> to <u>Detail</u> in the <em>Marks</em> pane.</p>
+<p><img src="images/25%20drag.png" style="width:80.0%" /></p></li>
+<li><p>In the <em>Marks</em> pane, click on <u>Size</u>. Reduce the size per screenshot below.</p>
+<p><img src="images/25%20change%20size.png" style="width:35.0%" /></p></li>
+<li><p>In the <em>Marks</em> pane, click on <u>Color</u>. Go to the dropdown for <strong>Border</strong> and select the gray color as shown in the red box below.</p>
+<p><img src="images/25%20color%20add%20border.png" style="width:30.0%" /></p></li>
+<li><p>Hold onto <strong>Ctrl</strong> and select the following fields from the <em>Data</em> pane. Drag them to <u>Tooltip</u> in the <em>Marks</em> pane.</p>
+<blockquote>
+<p>Country, Event Date, Event Type, Location, Notes, Sub Event Type, Fatalities</p>
+</blockquote>
+<p><img src="images/25%20add%20fields%20to%20tooltip.png" style="width:40.0%" /></p></li>
+<li><p>In the <em>Marks</em> pane, click on <u>Tooltip</u>. In the <strong>Edit Tooltip</strong> dialogue box, remove the irrelevant fields and rearrange the fields accordingly (see screenshot below). Note that &lt;ATTR(Notes)&gt; is not bold. Click <strong>OK</strong> to save your tooltip.</p>
+<blockquote>
+<p>Country: <strong>&lt;ATTR(Country)&gt;</strong></p>
+<p>Location: <strong>&lt;ATTR(Location)&gt;</strong></p>
+<p>Event Type: <strong>&lt;Event Type&gt;</strong></p>
+<p>Sub Event Type: <strong>&lt;ATTR(Sub Event Type)&gt;</strong></p>
+<p>Event Date: <strong>&lt;ATTR(Event Date)&gt;</strong></p>
+<p>Fatalities: <strong>&lt;SUM(Fatalities)&gt;</strong></p>
+<p><br />
+&lt;ATTR(Notes)&gt;</p>
+</blockquote>
+<p><img src="images/25%20tooltip%20before%20and%20after.png" style="width:80.0%" /></p>
+<p>When hovering onto a point, the tooltip now appears and shows the details of the event at that point.</p>
+<p><img src="images/25%20point%20map%20tooltip.png" style="width:80.0%" /></p></li>
+</ol>
+<h3 id="creating-the-line-chart">Creating the line chart</h3>
+<ol type="1">
+<li><p>In the toolbar on the top, go to <strong>Worksheet</strong> &gt; <strong>New Worksheet</strong>.</p>
+<p><img src="images/worksheet%20-%20new%20worksheet.png" style="width:80.0%" /></p></li>
+<li><p>Rename the worksheet to “Line by Event Type”.</p>
+<p><img src="images/04a%20rename%20ws%20to%20density-01.png" style="width:80.0%" /></p></li>
+<li><p>From the <em>Data</em> pane, drag <strong>Event Date</strong> to Columns and <strong>Event ID UNIQUE</strong> to Rows. Next, drag <strong>Event Type</strong> to <u>Color</u> in the <em>Marks</em> pane, <strong>Country</strong> to <u>Tooltip</u> in the <em>Marks</em> pane, and <strong>Fatalities</strong> to <u>Tooltip</u> in the <em>Marks</em> pane.</p>
+<p><img src="images/26%20drag%20fields%20to%20row%20columns%20marks.png" style="width:80.0%" /></p></li>
+<li><p>From <em>Rows</em>, click on the down arrow next to <strong>Event ID UNIQUE</strong>. Select <strong>Measure</strong> &gt; <strong>Count</strong>.</p>
+<p><img src="images/26%20measure%20count.png" style="width:45.0%" /></p></li>
+<li><p>Double click on the y-axis. Remove “Count of Event ID UNIQUE” from the Axis Titles:Title.</p>
+<p><img src="images/27%20leave%20y%20axis%20title%20blank.png" style="width:40.0%" /></p></li>
+<li><p>Right click on the y-axis. Select <strong>Format</strong>.</p>
+<p><img src="images/27%20right%20click%20y%20axis%20format.png" style="width:45.0%" /></p></li>
+<li><p>On the left panel, go to <strong>Font</strong> and change font size to <strong>8</strong>.</p>
+<p><img src="images/27%20format%20font%20size%208%20-%20yaxis-02.png" style="width:25.0%" /></p></li>
+<li><p>Then, go to <strong>Numbers</strong> and select <strong>Number (Standard)</strong>.</p>
+<p><img src="images/27%20format%20yaxis%20number-01.png" style="width:35.0%" /></p></li>
+<li><p>Right click on the x-axis. Select <strong>Format</strong>.</p></li>
+<li><p>On the left panel, select <strong>Font</strong> and change font size to <strong>8</strong>.</p>
+<p><img src="images/27%20format%20font%20size%208%20-%20axis-01.png" style="width:25.0%" /></p></li>
+<li><p>Double-click on the Title of the chart. In the <strong>Edit Title</strong> dialogue box, type the following. Ensure that the font type, size and color is chosen as Tableau Light, 10 and gray (per screenshot). Click <strong>OK</strong>.</p>
+<blockquote>
+<p>Armed Conflict Occurrences, by Event Type by Year</p>
+</blockquote>
+<p><img src="images/27%20title.png" style="width:40.0%" /></p></li>
+<li><p>From the taskbar, change the Fit to <strong>Entire View</strong>.</p>
+<p><img src="images/27%20entire%20view.png" style="width:40.0%" /></p></li>
+<li><p>In the <em>Marks</em> pane, click on <u>Tooltip</u>. In the <strong>Edit Tooltip</strong> dialogue box, rearrange the fields accordingly and update the text (see screenshot below). Note that &lt;Event Type&gt; is not bold, instead it is italicized. Click <strong>OK</strong> to save your tooltip.</p>
+<blockquote>
+<p><strong>&lt;CNT(Event ID UNIQUE)&gt;</strong> <em>&lt;Event Type&gt;</em> happened in <strong>&lt;ATTR(Country)&gt;</strong> in &lt;YEAR(Event Date)&gt;.</p>
+<p><strong>&lt;SUM(Fatalities)&gt;</strong> deaths recorded.</p>
+</blockquote>
+<p><img src="images/27%20tooltip-01.png" style="width:80.0%" /></p></li>
+<li><p>Right click on <strong>Event Date</strong>. Select <strong>Hide Field Labels for Columns</strong>.</p>
+<p><img src="images/27%20hide%20event%20date%20header.png" style="width:45.0%" /></p>
+<p>The line chart is shown below.</p>
+<p><img src="images/line%20chart-02.png" style="width:80.0%" /></p>
+<p>The tooltip appears when you hover over a point.</p>
+<p><img src="images/line%20chart%20with%20tooltip.png" style="width:50.0%" /></p></li>
+</ol>
+<h3 id="create-table-for-fatality-count">Create table for Fatality Count</h3>
+<ol type="1">
+<li><p>In the toolbar on the top, go to <strong>Worksheet</strong> &gt; <strong>New Worksheet</strong>.</p>
+<p><img src="images/worksheet%20-%20new%20worksheet.png" style="width:80.0%" /></p></li>
+<li><p>Rename the worksheet to “Fatality Count”.</p>
+<p><img src="images/04a%20rename%20ws%20to%20density-01.png" style="width:80.0%" /></p></li>
+<li><p>From the <em>Data</em> pane, drag <strong>Event Type</strong> to Columns and <strong>Country</strong> to Rows. Next, drag <strong>Fatalities</strong> to <u>Text</u> in the <em>Marks</em> pane.</p>
+<p><img src="images/28%20drag.png" style="width:80.0%" /></p></li>
+<li><p>From the taskbar, change the Fit to <strong>Entire View</strong>.</p>
+<p><img src="images/28%20fit%20entire%20view.png" style="width:60.0%" /></p></li>
+<li><p>Right click on <strong>Event Type</strong> in the chart. Select <strong>Hide Field Labels for Columns</strong>.</p>
+<p><img src="images/28%20hide%20event%20type.png" style="width:45.0%" /></p></li>
+<li><p>Double-click on the Title of the chart. In the <strong>Edit Title</strong> dialogue box, highlight &lt;Sheet Name&gt;. Update font type, size and color to Tableau Light, 10, Bold and Italicized (per screenshot below). Click <strong>OK</strong>.</p>
+<p><img src="images/28%20edit%20title.png" style="width:45.0%" /></p></li>
+<li><p>In the table, right-click on <strong>Battles</strong>. Select <strong>Format…</strong>.</p>
+<p><img src="images/28%20format%20event%20type-01.png" style="width:40.0%" /></p></li>
+<li><p>On the left panel, go to <strong>Font</strong>. Update font to <strong>Tableau Regular</strong> and size to <strong>8</strong>.</p>
+<p><img src="images/28%20format%20event%20type%202.png" style="width:40.0%" /></p></li>
+<li><p>In the table, right-click on <strong>Battles</strong>. Select <strong>Format…</strong>.</p>
+<p><img src="images/28%20format%20pane.png" style="width:40.0%" /></p></li>
+<li><p>On the left panel, go to <strong>Pane</strong>. Update font to <strong>Tableau Book</strong> and size to <strong>7</strong>.</p>
+<p><img src="images/28%20format%20pane%202.png" style="width:40.0%" /></p></li>
+<li><p>Then go to <em>Alignment</em> section. Go to <strong>Pane</strong> &gt; Horizontal, select <u>Center</u>.</p>
+<p><img src="images/28%20format%20pane%203.png" style="width:40.0%" /></p></li>
+<li><p>In the table, right-click on <strong>Cambodia</strong>. Select <strong>Format…</strong>.</p>
+<p><img src="images/28%20format%20country.png" style="width:40.0%" /></p></li>
+<li><p>On the left panel, go to <strong>Font</strong>. Update font to <strong>Tableau Book</strong> and size to <strong>7</strong>.</p>
+<p><img src="images/28%20format%20country%202.png" style="width:40.0%" /></p></li>
+<li><p>Next go to <strong>Alignment</strong> &gt; Horizontal, select <u>Center</u>.</p>
+<p><img src="images/28%20format%20country%203.png" style="width:40.0%" /></p></li>
+<li><p>In the <em>Marks</em> pane, click on <u>Tooltip</u>. In the <strong>Edit Tooltip</strong> dialogue box, update the text to the following. Click <strong>OK</strong>.</p>
+<blockquote>
+<p><strong>&lt;Country&gt;</strong> had <strong>&lt;SUM(Fatalities)&gt;</strong> deaths from <strong>&lt;Event Type&gt;</strong>.</p>
+</blockquote>
+<p><img src="images/28%20tooltip.png" style="width:80.0%" /></p>
+<p>The table, with tooltip, is shown below.</p>
+<p><img src="images/28%20hover.png" style="width:60.0%" /></p></li>
+</ol>
+<h3 id="preparing-the-dashboard">Preparing the dashboard</h3>
+<ol type="1">
+<li><p>In the toolbar on the top, go to <strong>Dashboard</strong> &gt; <strong>New Dashboard</strong>.</p>
+<p><img src="images/29%20create%20new%20dashboard-01.png" style="width:80.0%" /></p></li>
+<li><p>At the bottom of your window, right-click on <em>Dashboard 1</em>. Select <strong>Rename</strong>. Rename the dashboard.</p>
+<blockquote>
+<p>Armed Conflict Frequency in Southeast Asia</p>
+</blockquote>
+<p><img src="images/29%20rename%20dashboard.png" style="width:50.0%" /></p></li>
+<li><p>From the Dashboard pane, tick <strong>show dashboard title</strong>.</p>
+<p><img src="images/42%20dashboard%20-%20show%20title.png" style="width:50.0%" /></p></li>
+<li><p>Double-click on the dashboard title.</p>
+<p><img src="images/42%20dashboard%20-%20show%20title2.png" style="width:50.0%" /></p></li>
+<li><p>In the <strong>Edit Title</strong> dialogue box, update the font attributes accordingly. Click <strong>OK</strong>.</p>
+<blockquote>
+<p>Tableau Book, Size 15, <em>third</em> shade of gray</p>
+</blockquote>
+<p><img src="images/42%20dashboard%20-%20edit%20title%20font.png" style="width:45.0%" /></p></li>
+<li><p>From <em>Dashboard: Sheets,</em> drag <strong>Choropleth</strong> to the bottom half of the dashboard.<br />
+Resize the choropleth map by dragging the top border upwards.</p>
+<p><img src="images/30%20a-02.png" style="width:30.0%" /> <img src="images/30%20b-01.png" style="width:30.0%" /> <img src="images/30%20c-01.png" style="width:30.0%" /></p></li>
+<li><p>From <em>Dashboard: Sheets</em>, drag <strong>Point Map</strong> to the right of the dashboard. Release your cursor only when you see the long shaded rectangle below.</p>
+<p><img src="images/31%20a%20point%20map-01.png" style="width:45.0%" /> <img src="images/31%20b.png" style="width:45.0%" /></p></li>
+<li><p>From <em>Dashboard: Sheets</em>, drag <strong>Line by Event Type</strong> to the bottom of the choropleth map - you will have to move your cursor to the horizontal scroll bar. Release your cursor only when you see the shaded rectangle below.</p>
+<p><img src="images/32%20a%20line.png" style="width:45.0%" /> <img src="images/32%20b%20line.png" style="width:45.0%" /></p></li>
+<li><p>From <em>Dashboard: Sheets</em>, drag <strong>Fatality Count</strong> to the bottom of the line chart. Release your cursor only when you see the shaded rectangle below.</p>
+<p><img src="images/33%20a.png" style="width:45.0%" /> <img src="images/33%20b.png" style="width:45.0%" /></p></li>
+<li><p>For <em>Fatality Count</em>, resize (drag) the column headers to ensure that the labels are clearly shown. For instance, “Violence against civilians” should be shown and not “Violence agains…”.</p>
+<p><img src="images/34%20a.png" style="width:45.0%" /></p>
+<p><img src="images/34%20b-02.png" style="width:45.0%" /></p></li>
+<li><p>On the dashboard, right-click on the choropleth map title: <em>Choropleth</em> and select <strong>Hide Title</strong>.</p>
+<p><img src="images/35%20hide%20density-01.png" style="width:45.0%" /></p></li>
+<li><p>Select the <strong>Country</strong> filter. Click on the cross to remove the filter from the dashboard.</p>
+<p><img src="images/35%20remove%20country%20filter.png" style="width:80.0%" /></p></li>
+<li><p>Rearrange the filters such that the filter for <strong>Year of Event Date</strong> is positioned above the filter for <strong>Event Type</strong>.</p>
+<p><img src="images/36%20a.png" style="width:40.0%" /> <img src="images/36%20b.png" style="width:40.0%" /></p></li>
+<li><p>From the <em>Dashboard</em> pane, select Objects: <strong>Text</strong> and drag to the dashboard title. Release your cursor only when you see the shaded rectangle below.</p>
+<p><img src="images/39%20a%20drag%20text.png" style="width:45.0%" /></p>
+<p>In the <strong>Edit Text</strong> dialogue box, enter the following.</p>
+<blockquote>
+<p>Select a country from the map below to drill-down. To select multiple countries simultaneously, hold the Ctrl (control) key and click on each country.</p>
+</blockquote>
+<p>Update font to Tableau Book, Size 10 and third shade of gray. Press <strong>OK</strong>.</p>
+<p><img src="images/39%20b%20text-01.png" style="width:45.0%" /></p></li>
+<li><p>Select the dashboard title. Drag the title to above the text “Select a country…”.</p>
+<p><img src="images/39%20c.png" style="width:45.0%" /> <img src="images/39%20d.png" style="width:45.0%" /></p></li>
+<li><p>Then resize both the title and the text.</p>
+<p><img src="images/39%20e-01.png" style="width:80.0%" /></p></li>
+<li><p>Right-click on the title: <em>Point Map</em>. Change the text to the following. To add &lt;Event Type&gt;, go to <u>Insert</u>, select <strong>ATTR(Event Type)</strong>.</p>
+<blockquote>
+<p>&lt;Sheet Name&gt; of Event (&lt;Event Type&gt;)</p>
+</blockquote>
+<p><img src="images/42%20point%20map%20title.png" style="width:40.0%" /></p></li>
+<li><p>From the <em>Dashboard</em> pane, select Objects: <strong>Blank</strong> and drag to the center of the dashboard. Release your cursor only when you see the shaded rectangle below.</p>
+<p><img src="images/41%20a%20add%20blank.png" style="width:80.0%" /></p></li>
+<li><p>Reduce the size of the blank. Refer to the screenshot on the right, below.</p>
+<p><img src="images/41%20b%20add%20blank.png" style="width:45.0%" /> <img src="" /><img src="images/41%20c%20resized%20blank.png" style="width:45.0%" /></p></li>
+<li><p>Select the legend <strong>Count of Event ID UNIQUE</strong>. Click the down arrowhead and select <strong>Floating</strong>.</p>
+<p><img src="images/42%20a%20floating%20density.png" style="width:80.0%" /></p></li>
+<li><p>Double click on the legend title: <em>Count of Event ID UNIQUE</em>. In the <strong>Edit Legend Title</strong> dialogue box, change the font size to 7. Update the text to the following.</p>
+<blockquote>
+<p>Number of Occurrences</p>
+</blockquote>
+<p><img src="images/42%20b%20edit%20legend%20title.png" style="width:45.0%" /></p></li>
+<li><p>Drag the legend to the top right of the choropleth map. Right click on the color scale and select <strong>Format Legend</strong>.</p>
+<p><img src="images/42%20c%20right%20click%20format%20legend-01.png" style="width:80.0%" /></p></li>
+<li><p>In the <em>Format Legends</em> pane, go to <strong>Font</strong> and update font size to <strong>7</strong>.</p>
+<p><img src="images/42%20d%20body%20font-01.png" style="width:45.0%" /></p></li>
+<li><p>Select the legend <strong>Event Type</strong>. Click the down arrowhead and select <strong>Floating</strong>.</p>
+<p><img src="images/43%20event%20type%20legend%20floating.png" style="width:30.0%" /></p></li>
+<li><p>Move the legend to the bottom left of the point map.</p>
+<p><img src="images/43%20move%20event%20type%20legend%20floating.png" style="width:80.0%" /></p></li>
+<li><p>Extend the size of the filters <em>Year of Event Date</em> and <em>Event Type</em> to ensure that no scrolling (horizontal/vertical) is required for both filters.</p>
+<p><img src="images/44%20resize%20filters-01.png" style="width:80.0%" /></p></li>
+<li><p>asdf</p>
+<p><img src="images/45%20dashboard%20%3E%20actions.png" style="width:80.0%" /></p></li>
+<li><p>In the toolbar on the top, go to <strong>Dashboard</strong> &gt; <strong>Actions</strong>.</p>
+<p><img src="images/45%20dashboard%20%3E%20actions-01.png" style="width:80.0%" /></p></li>
+<li><p>Go to Add Actions, select <strong>Filter</strong>.</p>
+<p><img src="images/45%20add%20actions%20%3E%20filter.png" style="width:45.0%" /></p></li>
+<li><p>In the <strong>Add Filter Action</strong> dialogue box, set the <em>Name</em> as “Select on Choropleth”.</p>
+<blockquote>
+<p>For <em>Source Sheets</em>, tick only <strong>Choropleth</strong>, leaving the other three un-ticked.<br />
+Run action on: <strong>Select</strong>.</p>
+<p>For <em>Target Sheets</em>, tick all sheets.<br />
+Clearing the selection will: <strong>Show all values</strong>.</p>
+</blockquote>
+<p><img src="images/45%20select%20on%20density-01.png" style="width:45.0%" /></p></li>
+<li><p>Hover your cursor over the point map. Ensure that the map is not fixed i.e. ensure that the pin icon (below) does not have a cross. If there is a cross, click on the pin once to remove the cross.</p>
+<p><img src="images/46%20point%20map%20-%20do%20not%20fix-01.png" style="width:80.0%" /></p></li>
+<li><p>Last but not least, we will add text stating the data source. From the <em>Dashboard</em> pane, select Objects: <strong>Text</strong> and drag to the bottom of the point map.</p>
+<p><img src="images/47%20data%20source.png" style="width:80.0%" /></p></li>
+<li><p>In the <strong>Edit Text</strong> dialogue box, update the text to the following.</p>
+<blockquote>
+<p>Data Source: <em>The Armed Conflict Location &amp; Event Data Project (ACLED)</em></p>
+</blockquote>
+<p>Ensure that the font is set to <strong>Tableau Book, size 9</strong>, and the third-shade of gray (in screenshot below). Align the text to the <strong>right</strong>. Note that “<em>The Armed Conflict Location &amp; Event Data Project (ACLED)</em>” is italicized.</p>
+<p><img src="images/47%20data%20source2-01.png" style="width:45.0%" /></p></li>
+</ol>
+<p>The dashboard is completed. You can select a country from the choropleth map, and the other charts will change accordingly.</p>
+<p><img src="images/99-03.png" style="width:100.0%" /></p>
+<h1 id="e.-main-observations">E. Main Observations</h1>
+<ol type="1">
+<li><p>From 2015 to 2020, <strong>Philippines</strong> has recorded the highest number of armed conflicts at <strong>11,092</strong> occurrences.</p>
+<p><img src="images/obs%201%20-%20phillippines%20highest%20number%20of%20conflicts-01.png" style="width:80.0%" /></p>
+<p>When drilling down by Event Type, <strong>Myanmar</strong> has the highest number of <em>Battles</em> and <em>Explosions/Remote Violence</em> in the region.</p>
+<p><img src="images/obs%201%20-%20battles.png" style="width:45.0%" /> <img src="images/obs%201%20-%20explosions.png" style="width:45.0%" /></p>
+<p><strong>Indonesia</strong> has the highest number of <em>Protests</em> and <em>Riots</em> in the region.</p>
+<p><img src="images/obs%201%20-%20protests.png" style="width:45.0%" /> <img src="images/obs%201%20-%20riots.png" style="width:45.0%" /></p>
+<p><strong>Philippines</strong> has the highest number of <em>Strategic Developments</em> and <em>Violence against civilians</em> in the region.</p>
+<p><img src="images/obs%201%20-%20strategic%20developments.png" style="width:45.0%" /></p></li>
+<li><p><em>Protests</em> and <em>Riots</em> are on the rise from 2015 to 2020 <strong>in the region</strong>.</p>
+<p><img src="images/obs%202%20-%20protests.png" style="width:80.0%" /></p>
+<p><img src="images/obs%202%20-%20riots.png" style="width:80.0%" /></p></li>
+<li><p>In <strong>2020</strong>, <strong>Indonesia</strong> has the highest number of <em>protests</em> (1,050), followed by <strong>Thailand</strong> (679).</p>
+<p><img src="images/obs%205%20-%20protests%20indonesia%20and%20thailand-01.png" style="width:80.0%" /></p></li>
+<li><p>Despite the emergence of the coronavirus pandemic, <strong>Thailand</strong> faced a <u>spike</u> of <em>protests</em> from 2019 (164) to 2020 (679). Led by high school and university students, the young people are calling for the dissolution of parliament, an end to harassment of government critics and for changes to the military-backed constitution (<a href="https://www.theguardian.com/world/2020/sep/22/thailand-protests-everything-you-need-to-know">Ratcliffe</a>, 2020).</p></li>
+<li><p><strong>Violence against civilians</strong> is on the <u>decrease</u> in the Southeast Asia region since 2016.</p>
+<p><em>Year 2015 is excluded because there is no data for Philippines for year 2015.</em></p>
+<p><img src="images/obs%203%20-%20violence%20against%20civilians.png" style="width:80.0%" /></p>
+<blockquote>
+<p><strong>Philippines</strong> has the greatest number of violence against civilians (6,621) and related fatalities (8,286), despite the count of violence against civilians decreasing over the years.</p>
+</blockquote>
+<p><img src="images/obs%203%20-%20philippines-01.png" style="width:45.0%" /> <img src="images/obs%204%20-%20philippines.png" style="width:40.0%" /></p></li>
+<li><p>On the contrary, <strong>Myanmar</strong> and <strong>Indonesia</strong> are facing a <u>rise</u> in <strong>violence against civilians</strong>.</p>
+<p><img src="images/obs%204%20-%20myanmar.png" style="width:45.0%" /> <img src="images/obs%204%20-%20indonesia.png" style="width:45.0%" /></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div></li>
+</ol>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

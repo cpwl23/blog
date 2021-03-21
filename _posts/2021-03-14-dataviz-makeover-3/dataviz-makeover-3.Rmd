@@ -1,0 +1,735 @@
+---
+title: "DataViz Makeover 3"
+description: |
+  Due 21 Mar 2021, 2359h.
+preview: images/99-03.png
+author:
+  - name: Cheryl Pay
+    url: 
+date: 03-14-2021
+output:
+  distill::distill_article:
+    toc: true
+    toc_float: true
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# A. Critic
+
+A critic of the following data visualization is provided in terms of clarity and aesthetics.
+
+[![](images/Picture1.jpg){width="80%"}](https://public.tableau.com/profile/tskam#!/vizhome/South-eastAsiaArmedConflictAnalysis/South-eastAsiaArmedConflictAnalysis)
+
+### Clarity
+
++-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| S/N | Critique                                                                                                                                                                                | Suggestion                                                                                                                                                                                                                                                                                                              |
++=====+=========================================================================================================================================================================================+=========================================================================================================================================================================================================================================================================================================================+
+| 1   | As the points on the map overlap each other (highlighted below), the map does not clearly show the frequency of events in each region.                                                  | Instead of using a point map, use a **choropleth map** to show the concentration of events in the region.                                                                                                                                                                                                               |
+|     |                                                                                                                                                                                         |                                                                                                                                                                                                                                                                                                                         |
+|     | ![]()![](images/Picture1%20overlap%20points-01.png){width="80%"}                                                                                                                        | The point map can be retained to show only one type of event instead of all events.                                                                                                                                                                                                                                     |
++-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 2   | The dashboard is lacking the **Event Date** filter to allow users to select the event date period they are interested to view.                                                          | Create a filter for users to select the year (multiple values) they are interested to view.                                                                                                                                                                                                                             |
++-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 3   | The dashboard is lacking the **Event Type** filter to allow users to select the event type to show on the charts.                                                                       | Create a filter for users to select the event type (single) value they are interested to view. This filter must also act on the point map.                                                                                                                                                                              |
++-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| 4   | The y-axis tick marks are of varying scale for *Armed Conflict Event by Type*. Should the user miss to notice this, the user will be comparing the event counts and trends incorrectly. | Create one line chart for *Armed Conflict Occurrences, by Event Type by Year*. Each event type will be a line (series). Ensure the lines are colored according to the legend of the choropleth map. All the event types will be on the same y-axis for easy comparison; there will only be 1 panel instead of 6 panels. |
+|     |                                                                                                                                                                                         |                                                                                                                                                                                                                                                                                                                         |
+|     | ![](images/Picture1%20y-axis-01.png){width="65%"}                                                                                                                                       |                                                                                                                                                                                                                                                                                                                         |
++-----+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+### Aesthetics
+
++-----+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| S/N | Critique                                                                                                                                                            | Suggestion                                                                                                                                 |
++=====+=====================================================================================================================================================================+============================================================================================================================================+
+| 1   | The y-axis title of the line charts read "Count of Sheet1" when users do not know what Sheet1 is.                                                                   | Rename the y-axis title to "Count" or remove the y-axis title entirely if count of events is clearly stated elsewhere (e.g. in the title). |
+|     |                                                                                                                                                                     |                                                                                                                                            |
+|     | ![](images/Picture1%20line%20count%20of%20sheet1.png){width="80%"}                                                                                                  |                                                                                                                                            |
++-----+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| 2   | The map and line chart has no blank space between each other, causing the visualization to look cramped.                                                            | Insert blank spaces between the map and the line chart.                                                                                    |
+|     |                                                                                                                                                                     |                                                                                                                                            |
+|     | ![](images/Picture1%20space.jpg){width="80%"}                                                                                                                       |                                                                                                                                            |
++-----+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| 3   | The lines in the line chart are colored blue for all Event Types. This is misleading since the same blue color is used to represent Event Type: Battles in the map. | The lines in the line chart should follow the legend (colors) for Event Type used in the map. This creates consistency for the readers.    |
+|     |                                                                                                                                                                     |                                                                                                                                            |
+|     | ![](images/Picture1%20blue.png){width="80%"}                                                                                                                        |                                                                                                                                            |
++-----+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| 4   | Event Type labels are *wrapped* while the text for the legend is not.                                                                                               | Ensure that text is wrapped so that the entire text is shown on the visualization instead of "...".                                        |
+|     |                                                                                                                                                                     |                                                                                                                                            |
+|     | ![](images/Picture1%20wrapped.png){width="80%"}                                                                                                                     |                                                                                                                                            |
++-----+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| 5   | The tooltips for the point map and line chart are neat.                                                                                                             | Retain the neatness of the tooltip. Consider including more details in the tooltip e.g. location, notes of the event.                      |
+|     |                                                                                                                                                                     |                                                                                                                                            |
+|     | ![](images/Picture1%20point%20map%20tooltip.png){width="80%"}                                                                                                       |                                                                                                                                            |
+|     |                                                                                                                                                                     |                                                                                                                                            |
+|     | ![](images/Picture1%20line%20chart%20tooltip.png){width="80%"}                                                                                                      |                                                                                                                                            |
++-----+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+
+# B. Proposed Sketch
+
+![](images/sketch1.png)
+
+The tooltips for the visualization can be enhanced further.
+
+![Tooltip for the choropleth map - sketch](images/sketch2-01.png){width="60%"}
+
+![Tooltip for the point map - sketch](images/sketch3-02.png){width="60%"}
+
+# C. Proposed Dashboard
+
+Available here on Tableau Public.
+
+![](images/99-03.png){width="100%"}
+
+# D. Step by Step Guide
+
+### Preparing the data
+
+1.  Create a unique event ID for each observation in the data by first creating a new column titled "Event_ID_UNIQUE" to the left of ISO.
+
+2.  Insert the formula **=F2&"\_"&C2** into Cell A2.
+
+    EVENT_ID_CNTY *is an individual identifier by number and country acronym that is updated annually, hence* EVENT_ID_CNTY *is concatenated with* Year *to result in a unique event ID across all years and all countries. This field is named* Event_ID_UNIQUE*.*
+
+    ![](images/03%20formula.png){width="80%"}
+
+3.  Then, hover your cursor to the bottom right corner of cell A2. When a black cross appears, double-click on the black-cross. This will fill all the cells below Cell A2, up to the last observation.
+
+4.  Next, right-click on Column A. Select **Copy**.
+
+    ![](images/03a%20copy.png){width="50%"}
+
+5.  Then, right-click-on Column A again. Select **Paste Special** \> **Values**.
+
+    ![](images/03b%20paste%20special%20values.png){width="50%"}
+
+6.  Once the above is completed, save your file as **data.xlsx** (Microsoft Excel file format).
+
+    We will be using **EVENT_ID_UNIQUE** to count the number of events for our data visualization on Tableau.
+
+7.  Go to Tableau, connect to the Microsoft Excel file: **data.xlsx**.
+
+    ![](images/01a%20tableau%20connect%20excel.png){width="20%"}
+
+8.  Go to Data \> Edit Data Source Filters.
+
+    ![](images/04A%20data%20source%20filter%2001.png){width="80%"}
+
+    Click **Add**. Select **Event Date**.
+
+    ![](images/04A%20data%20source%20filter%2002.png){width="80%"}
+
+    Select **Years**.
+
+    ![](images/04A%20data%20source%20filter%2003%20years-01.png){width="40%"}
+
+    Tick years **2015 to 2020**. Then press **OK**.
+
+    ![](images/04%20filter%20year%20of%20event%20date%2003.png){width="45%"}
+
+9.  Go to File \> Save As, save the Tableau workbook as **dataviz3**.
+
+    ![](images/01b%20file%20save%20tbw-01.png){width="80%"}
+
+### Creating the **choropleth** map
+
+1.  Right click **Sheet1**, select **Rename**. Rename the sheet to "Choropleth".
+
+    ![](images/04a%20rename%20ws%20to%20density-01.png){width="80%"}
+
+2.  From the *Data* pane, drag **Longtitude** to *Columns* and **Latitude** to *Rows*.
+
+    ![](images/04b%20drag%20lat%20and%20long.png){width="80%"}
+
+3.  From the *Data* pane, drag **Event ID UNIQUE** to the Marks pane: Color.
+
+    ![](images/04c%20drag%20and%20drop%20event%20id%20to%20color.png){width="40%"}
+
+    Select **Add all members** when the dialogue below appears.
+
+    ![](images/04c%20add-01.png){width="40%"}
+
+4.  In the *Marks* pane, click on the down arrowhead next to for Event ID UNIQUE. Select Measure \> **Count**.
+
+    ![](images/04c%20add%20-%20count%20id-01.png){width="50%"}
+
+5.  From the *Data* pane, drag the following to the *Marks* pane.
+
+    -   **Country** to Marks: [Label]{.ul}
+
+    -   **Country** to Marks: [Detail]{.ul}
+
+    -   F**atalities** to Marks: [Tooltip]{.ul}
+
+    The *Marks* pane should look like this.
+
+    ![](images/04d%20marks%20pane.png){width="20%"}
+
+6.  In the *Marks* pane, change the chart type to **Map**.
+
+    ![](images/04c%20map.png){width="80%"}
+
+7.  In the *Marks* pane, click on **Color** \> **Edit Colors**. Change *Automatic* to **Gray**.
+
+    ![](images/04e%20color%20change.png){width="80%"}
+
+8.  From the *Data* pane, drag **Event Date** to *Filters*.
+
+    ![](images/05%20drag%20event%20date%20to%20filters-01.png){width="40%"}
+
+    Select **Years**.
+
+    ![](images/05%20select%20years-01.png){width="40%"}
+
+    Select **All**. Ensure that all the years from 2015 to 2020 are ticked. Then press **OK**.
+
+    ![](images/05%20select%20years%20all.png){width="40%"}
+
+9.  From the *Data* pane, drag **Country** to *Filters*. Click **All**, then **OK**.
+
+    ![](images/06%20filter%20country.png){width="40%"}
+
+10. From the *Data* pane, drag **Event Type** to *Filters*.
+
+    ![](images/07%20filter%20event%20type.png){width="40%"}
+
+11. Click on the down arrowhead of [YEAR(Event Date)]{.ul} in the *Filters* pane. Go to **Apply to Worksheets** \> **All Using This Data Source**.
+
+    ![](images/08%20apply%20filter%20to%20all%20worksheets.png){width="80%"}
+
+12. Repeat Step 11 for [Country]{.ul} and [Event Type]{.ul} in the *Filters* pane.
+
+13. Click on the down arrowhead of [YEAR(Event Date)]{.ul} in the *Filters* pane. Select **Show Filter** by ensuring there is a tick next to **Show Filter**.
+
+    ![](images/09%20show%20filter.png){width="40%"}
+
+14. Repeat Step 13 for [Country]{.ul} and [Event Type]{.ul} in the *Filters* pane.
+
+15. For the filter: **Event Type** shown, click the down arrowhead next to **Event Type**. Select **Single Value (list)**.
+
+    ![](images/10%20event%20type%20radio%20button.png){width="80%"}
+
+    #### Creating *Dot by Event Type* for tooltip
+
+    1.  In the toolbar on the top, go to **Worksheet** \> **New Worksheet**.
+
+        ![](images/worksheet%20-%20new%20worksheet.png){width="80%"}
+
+    2.  Rename the worksheet to "Dot by Event Type".
+
+        ![](images/04a%20rename%20ws%20to%20density-01.png){width="80%"}
+
+    3.  From the *Data* pane, drag **Event Type** to *Columns* and **Event ID UNIQUE** to *Rows*.
+
+        ![](images/11%20drag.png){width="80%"}
+
+    4.  In the *Rows*, click on **Event ID UNIQUE** and go to **Measure (Count)** \> **Count**. Ensure there is a tick next to **Count**.
+
+        ![](images/12%20measure%20count-01.png){width="80%"}
+
+    5.  From the *Data* pane, drag **Country** to [Color]{.ul} in the *Marks* pane.
+
+    6.  From the *Data* pane, drag **Fatalities** to [Size]{.ul} in the *Marks* pane.
+
+    7.  In the *Marks* pane, change chart type from Automatic to **Circle**.
+
+        ![](images/13%20automatic%20to%20circle.png){width="40%"}
+
+    8.  From the *Data* pane, drag **Fatalities** to [Label]{.ul} in the *Marks* pane.
+
+    9.  Right click on **Event Type** in the chart. Select **Hide Field Labels for Columns**.
+
+        ![](images/14%20hide%20event%20type%20header.png){width="50%"}
+
+    10. In the *Marks* pane, click on [Label]{.ul}. Click on "**...**" next to **Text**.
+
+        ![](images/15%20label-01.png){width="50%"}
+
+        Click on the double headed arrow next to **Alignment**. Select *Top* in the Vertical section.
+
+        ![](images/15a%20label%20alignment%20top.png){width="50%"}
+
+    11. In the **Edit Label** dialogue box, set Font to **Tableau Book**, size to **8** and color to the fourth shade of gray per screenshot below.
+
+        Add "deaths" to the line below \<SUM(Fatalities)\>.
+
+        "\<SUM(Fatalities)\>" is bold while "deaths" is not bold.
+
+        ![](images/16%20label%20font.png){width="80%"}
+
+    12. Right click on the x-axis and select **Format**.
+
+        ![](images/17%20right%20click%20x%20axis%20-%20format.png){width="50%"}
+
+    13. In the *Format Event Type* pane, set *Font* size to **8**. Set *Alignment* to Wrap: **On**.
+
+        ![](images/18%20format%20font%20size%20and%20alignment%20of%20x%20axis.png){width="50%"}
+
+    14. Double click on the y-axis. Remove "Count of Event ID UNIQUE" from the Axis Titles:Title.
+
+        ![](images/19%20remove%20y%20axis%20title.png){width="45%"}
+
+    15. In the *Format CNT(Event ID UNIQUE)* pane, go to **Numbers**. Select **Numbers (Standard)**.
+
+        ![](images/20%20format%20y%20axis%20number%20format.png){width="50%"}
+
+    16. From the taskbar, change the Fit to **Fit Width**.
+
+        ![](images/20b%20fit%20width.png){width="80%"}
+
+    The *Dot by Event Type* chart should look like this.
+
+    ![](images/dot%20by%20event%20type-02.png){width="75%"}
+
+16. Go to the worksheet named **Choropleth**. In the *Marks* pane, click on [Tooltip]{.ul}.
+
+    ![](images/21%20tooltip.png){width="50%"}
+
+17. In the **Edit Tooltip** dialogue box, edit the text to the following.
+
+    > **\<Country\>**
+    >
+    > **\<CNT(Event ID UNIQUE)\>** armed conflicts and **\<SUM(Fatalities)\> deaths** recorded.\
+    >
+    > [Number of Armed Conflicts]{.ul}
+    >
+    > \<Sheet name="Dot by Event Type" maxwidth="500" maxheight="300" filter="\<All Fields\>"\>
+
+    ![](images/22%20edit%20title.png){width="80%"}
+
+    > **\<Country\>**
+
+    Tableau Book, Size 12, Bold\
+    Color = black (darkest gray)
+
+    > **\<CNT(Event ID UNIQUE)\>** armed conflicts and **\<SUM(Fatalities)\> deaths** recorded.
+
+    Tableau Book, Size 10\
+    Color = black (darkest gray)\
+    Only **\<CNT(Event ID UNIQUE)\>** and **\<SUM(Fatalities)\> deaths** are in bold.
+
+    > [Number of Armed Conflicts]{.ul}
+
+    Tableau Book, Size 10, Underlined\
+    Color = third-lightest shade of gray
+
+    ![](images/24%20armed%20conflict%20grey.png){width="50%"}
+
+    > \<Sheet name="Dot by Event Type" maxwidth="500" maxheight="300" filter="\<All Fields\>"\>
+
+    Go to **Insert** \> **Sheets** \> **Dot by Event Type**. Edit the maxwidth and maxheight to "500" and "300" respectively.
+
+    ![](images/23%20insert%20sheet.png){width="80%"}
+
+    The **choropleth** **map** is shown below.
+
+    ![](images/density-01.png)
+
+    When hovering onto an individual country, the tooltip appears to reflect the number of armed conflicts, number of deaths and the event type for the country. In the screenshot below, Indonesia is shown.
+
+    ![](images/density%20tooltip-02.png){width="80%"}
+
+### Creating the point map
+
+1.  In the toolbar on the top, go to **Worksheet** \> **New Worksheet**.
+
+    ![](images/worksheet%20-%20new%20worksheet.png){width="80%"}
+
+2.  Rename the worksheet to "Point Map".
+
+    ![](images/04a%20rename%20ws%20to%20density-01.png){width="80%"}
+
+3.  From the *Data* pane, drag **Longitude** to Columns and **Latitude** to Rows. Next, drag **Event Type** to [Color]{.ul} in the *Marks* pane and **Event ID UNIQUE** to [Detail]{.ul} in the *Marks* pane.
+
+    ![](images/25%20drag.png){width="80%"}
+
+4.  In the *Marks* pane, click on [Size]{.ul}. Reduce the size per screenshot below.
+
+    ![](images/25%20change%20size.png){width="35%"}
+
+5.  In the *Marks* pane, click on [Color]{.ul}. Go to the dropdown for **Border** and select the gray color as shown in the red box below.
+
+    ![](images/25%20color%20add%20border.png){width="30%"}
+
+6.  Hold onto **Ctrl** and select the following fields from the *Data* pane. Drag them to [Tooltip]{.ul} in the *Marks* pane.
+
+    > Country, Event Date, Event Type, Location, Notes, Sub Event Type, Fatalities
+
+    ![](images/25%20add%20fields%20to%20tooltip.png){width="40%"}
+
+7.  In the *Marks* pane, click on [Tooltip]{.ul}. In the **Edit Tooltip** dialogue box, remove the irrelevant fields and rearrange the fields accordingly (see screenshot below). Note that \<ATTR(Notes)\> is not bold. Click **OK** to save your tooltip.
+
+    > Country: **\<ATTR(Country)\>**
+    >
+    > Location: **\<ATTR(Location)\>**
+    >
+    > Event Type: **\<Event Type\>**
+    >
+    > Sub Event Type: **\<ATTR(Sub Event Type)\>**
+    >
+    > Event Date: **\<ATTR(Event Date)\>**
+    >
+    > Fatalities: **\<SUM(Fatalities)\>**
+    >
+    > \
+    > \<ATTR(Notes)\>
+
+    ![](images/25%20tooltip%20before%20and%20after.png){width="80%"}
+
+    When hovering onto a point, the tooltip now appears and shows the details of the event at that point.
+
+    ![](images/25%20point%20map%20tooltip.png){width="80%"}
+
+### Creating the line chart
+
+1.  In the toolbar on the top, go to **Worksheet** \> **New Worksheet**.
+
+    ![](images/worksheet%20-%20new%20worksheet.png){width="80%"}
+
+2.  Rename the worksheet to "Line by Event Type".
+
+    ![](images/04a%20rename%20ws%20to%20density-01.png){width="80%"}
+
+3.  From the *Data* pane, drag **Event Date** to Columns and **Event ID UNIQUE** to Rows. Next, drag **Event Type** to [Color]{.ul} in the *Marks* pane, **Country** to [Tooltip]{.ul} in the *Marks* pane, and **Fatalities** to [Tooltip]{.ul} in the *Marks* pane.
+
+    ![](images/26%20drag%20fields%20to%20row%20columns%20marks.png){width="80%"}
+
+4.  From *Rows*, click on the down arrow next to **Event ID UNIQUE**. Select **Measure** \> **Count**.
+
+    ![](images/26%20measure%20count.png){width="45%"}
+
+5.  Double click on the y-axis. Remove "Count of Event ID UNIQUE" from the Axis Titles:Title.
+
+    ![](images/27%20leave%20y%20axis%20title%20blank.png){width="40%"}
+
+6.  Right click on the y-axis. Select **Format**.
+
+    ![](images/27%20right%20click%20y%20axis%20format.png){width="45%"}
+
+7.  On the left panel, go to **Font** and change font size to **8**.
+
+    ![](images/27%20format%20font%20size%208%20-%20yaxis-02.png){width="25%"}
+
+8.  Then, go to **Numbers** and select **Number (Standard)**.
+
+    ![](images/27%20format%20yaxis%20number-01.png){width="35%"}
+
+9.  Right click on the x-axis. Select **Format**.
+
+10. On the left panel, select **Font** and change font size to **8**.
+
+    ![](images/27%20format%20font%20size%208%20-%20axis-01.png){width="25%"}
+
+11. Double-click on the Title of the chart. In the **Edit Title** dialogue box, type the following. Ensure that the font type, size and color is chosen as Tableau Light, 10 and gray (per screenshot). Click **OK**.
+
+    > Armed Conflict Occurrences, by Event Type by Year
+
+    ![](images/27%20title.png){width="40%"}
+
+12. From the taskbar, change the Fit to **Entire View**.
+
+    ![](images/27%20entire%20view.png){width="40%"}
+
+13. In the *Marks* pane, click on [Tooltip]{.ul}. In the **Edit Tooltip** dialogue box, rearrange the fields accordingly and update the text (see screenshot below). Note that \<Event Type\> is not bold, instead it is italicized. Click **OK** to save your tooltip.
+
+    > **\<CNT(Event ID UNIQUE)\>** *\<Event Type\>* happened in **\<ATTR(Country)\>** in \<YEAR(Event Date)\>.
+    >
+    > **\<SUM(Fatalities)\>** deaths recorded.
+
+    ![](images/27%20tooltip-01.png){width="80%"}
+
+14. Right click on **Event Date**. Select **Hide Field Labels for Columns**.
+
+    ![](images/27%20hide%20event%20date%20header.png){width="45%"}
+
+    The line chart is shown below.
+
+    ![](images/line%20chart-02.png){width="80%"}
+
+    The tooltip appears when you hover over a point.
+
+    ![](images/line%20chart%20with%20tooltip.png){width="50%"}
+
+### Create table for Fatality Count
+
+1.  In the toolbar on the top, go to **Worksheet** \> **New Worksheet**.
+
+    ![](images/worksheet%20-%20new%20worksheet.png){width="80%"}
+
+2.  Rename the worksheet to "Fatality Count".
+
+    ![](images/04a%20rename%20ws%20to%20density-01.png){width="80%"}
+
+3.  From the *Data* pane, drag **Event Type** to Columns and **Country** to Rows. Next, drag **Fatalities** to [Text]{.ul} in the *Marks* pane.
+
+    ![](images/28%20drag.png){width="80%"}
+
+4.  From the taskbar, change the Fit to **Entire View**.
+
+    ![](images/28%20fit%20entire%20view.png){width="60%"}
+
+5.  Right click on **Event Type** in the chart. Select **Hide Field Labels for Columns**.
+
+    ![](images/28%20hide%20event%20type.png){width="45%"}
+
+6.  Double-click on the Title of the chart. In the **Edit Title** dialogue box, highlight \<Sheet Name\>. Update font type, size and color to Tableau Light, 10, Bold and Italicized (per screenshot below). Click **OK**.
+
+    ![](images/28%20edit%20title.png){width="45%"}
+
+7.  In the table, right-click on **Battles**. Select **Format...**.
+
+    ![](images/28%20format%20event%20type-01.png){width="40%"}
+
+8.  On the left panel, go to **Font**. Update font to **Tableau Regular** and size to **8**.
+
+    ![](images/28%20format%20event%20type%202.png){width="40%"}
+
+9.  In the table, right-click on **Battles**. Select **Format...**.
+
+    ![](images/28%20format%20pane.png){width="40%"}
+
+10. On the left panel, go to **Pane**. Update font to **Tableau Book** and size to **7**.
+
+    ![](images/28%20format%20pane%202.png){width="40%"}
+
+11. Then go to *Alignment* section. Go to **Pane** \> Horizontal, select [Center]{.ul}.
+
+    ![](images/28%20format%20pane%203.png){width="40%"}
+
+12. In the table, right-click on **Cambodia**. Select **Format...**.
+
+    ![](images/28%20format%20country.png){width="40%"}
+
+13. On the left panel, go to **Font**. Update font to **Tableau Book** and size to **7**.
+
+    ![](images/28%20format%20country%202.png){width="40%"}
+
+14. Next go to **Alignment** \> Horizontal, select [Center]{.ul}.
+
+    ![](images/28%20format%20country%203.png){width="40%"}
+
+15. In the *Marks* pane, click on [Tooltip]{.ul}. In the **Edit Tooltip** dialogue box, update the text to the following. Click **OK**.
+
+    > **\<Country\>** had **\<SUM(Fatalities)\>** deaths from **\<Event Type\>**.
+
+    ![](images/28%20tooltip.png){width="80%"}
+
+    The table, with tooltip, is shown below.
+
+    ![](images/28%20hover.png){width="60%"}
+
+### Preparing the dashboard
+
+1.  In the toolbar on the top, go to **Dashboard** \> **New Dashboard**.
+
+    ![](images/29%20create%20new%20dashboard-01.png){width="80%"}
+
+2.  At the bottom of your window, right-click on *Dashboard 1*. Select **Rename**. Rename the dashboard.
+
+    > Armed Conflict Frequency in Southeast Asia
+
+    ![](images/29%20rename%20dashboard.png){width="50%"}
+
+3.  From the Dashboard pane, tick **show dashboard title**.
+
+    ![](images/42%20dashboard%20-%20show%20title.png){width="50%"}
+
+4.  Double-click on the dashboard title.
+
+    ![](images/42%20dashboard%20-%20show%20title2.png){width="50%"}
+
+5.  In the **Edit Title** dialogue box, update the font attributes accordingly. Click **OK**.
+
+    > Tableau Book, Size 15, *third* shade of gray
+
+    ![](images/42%20dashboard%20-%20edit%20title%20font.png){width="45%"}
+
+6.  From *Dashboard: Sheets,* drag **Choropleth** to the bottom half of the dashboard.\
+    Resize the choropleth map by dragging the top border upwards.
+
+    ![](images/30%20a-02.png){width="30%"} ![](images/30%20b-01.png){width="30%"} ![](images/30%20c-01.png){width="30%"}
+
+7.  From *Dashboard: Sheets*, drag **Point Map** to the right of the dashboard. Release your cursor only when you see the long shaded rectangle below.
+
+    ![](images/31%20a%20point%20map-01.png){width="45%"} ![](images/31%20b.png){width="45%"}
+
+8.  From *Dashboard: Sheets*, drag **Line by Event Type** to the bottom of the choropleth map - you will have to move your cursor to the horizontal scroll bar. Release your cursor only when you see the shaded rectangle below.
+
+    ![](images/32%20a%20line.png){width="45%"} ![](images/32%20b%20line.png){width="45%"}
+
+9.  From *Dashboard: Sheets*, drag **Fatality Count** to the bottom of the line chart. Release your cursor only when you see the shaded rectangle below.
+
+    ![](images/33%20a.png){width="45%"} ![](images/33%20b.png){width="45%"}
+
+10. For *Fatality Count*, resize (drag) the column headers to ensure that the labels are clearly shown. For instance, "Violence against civilians" should be shown and not "Violence agains...".
+
+    ![](images/34%20a.png){width="45%"}
+
+    ![](images/34%20b-02.png){width="45%"}
+
+11. On the dashboard, right-click on the choropleth map title: *Choropleth* and select **Hide Title**.
+
+    ![](images/35%20hide%20density-01.png){width="45%"}
+
+12. Select the **Country** filter. Click on the cross to remove the filter from the dashboard.
+
+    ![](images/35%20remove%20country%20filter.png){width="80%"}
+
+13. Rearrange the filters such that the filter for **Year of Event Date** is positioned above the filter for **Event Type**.
+
+    ![](images/36%20a.png){width="40%"} ![](images/36%20b.png){width="40%"}
+
+14. From the *Dashboard* pane, select Objects: **Text** and drag to the dashboard title. Release your cursor only when you see the shaded rectangle below.
+
+    ![](images/39%20a%20drag%20text.png){width="45%"}
+
+    In the **Edit Text** dialogue box, enter the following.
+
+    > Select a country from the map below to drill-down. To select multiple countries simultaneously, hold the Ctrl (control) key and click on each country.
+
+    Update font to Tableau Book, Size 10 and third shade of gray. Press **OK**.
+
+    ![](images/39%20b%20text-01.png){width="45%"}
+
+15. Select the dashboard title. Drag the title to above the text "Select a country...".
+
+    ![](images/39%20c.png){width="45%"} ![](images/39%20d.png){width="45%"}
+
+16. Then resize both the title and the text.
+
+    ![](images/39%20e-01.png){width="80%"}
+
+17. Right-click on the title: *Point Map*. Change the text to the following. To add \<Event Type\>, go to [Insert]{.ul}, select **ATTR(Event Type)**.
+
+    > \<Sheet Name\> of Event (\<Event Type\>)
+
+    ![](images/42%20point%20map%20title.png){width="40%"}
+
+18. From the *Dashboard* pane, select Objects: **Blank** and drag to the center of the dashboard. Release your cursor only when you see the shaded rectangle below.
+
+    ![](images/41%20a%20add%20blank.png){width="80%"}
+
+19. Reduce the size of the blank. Refer to the screenshot on the right, below.
+
+    ![](images/41%20b%20add%20blank.png){width="45%"} ![]()![](images/41%20c%20resized%20blank.png){width="45%"}
+
+20. Select the legend **Count of Event ID UNIQUE**. Click the down arrowhead and select **Floating**.
+
+    ![](images/42%20a%20floating%20density.png){width="80%"}
+
+21. Double click on the legend title: *Count of Event ID UNIQUE*. In the **Edit Legend Title** dialogue box, change the font size to 7. Update the text to the following.
+
+    > Number of Occurrences
+
+    ![](images/42%20b%20edit%20legend%20title.png){width="45%"}
+
+22. Drag the legend to the top right of the choropleth map. Right click on the color scale and select **Format Legend**.
+
+    ![](images/42%20c%20right%20click%20format%20legend-01.png){width="80%"}
+
+23. In the *Format Legends* pane, go to **Font** and update font size to **7**.
+
+    ![](images/42%20d%20body%20font-01.png){width="45%"}
+
+24. Select the legend **Event Type**. Click the down arrowhead and select **Floating**.
+
+    ![](images/43%20event%20type%20legend%20floating.png){width="30%"}
+
+25. Move the legend to the bottom left of the point map.
+
+    ![](images/43%20move%20event%20type%20legend%20floating.png){width="80%"}
+
+26. Extend the size of the filters *Year of Event Date* and *Event Type* to ensure that no scrolling (horizontal/vertical) is required for both filters.
+
+    ![](images/44%20resize%20filters-01.png){width="80%"}
+
+27. asdf
+
+    ![](images/45%20dashboard%20%3E%20actions.png){width="80%"}
+
+28. In the toolbar on the top, go to **Dashboard** \> **Actions**.
+
+    ![](images/45%20dashboard%20%3E%20actions-01.png){width="80%"}
+
+29. Go to Add Actions, select **Filter**.
+
+    ![](images/45%20add%20actions%20%3E%20filter.png){width="45%"}
+
+30. In the **Add Filter Action** dialogue box, set the *Name* as "Select on Choropleth".
+
+    > For *Source Sheets*, tick only **Choropleth**, leaving the other three un-ticked.\
+    > Run action on: **Select**.
+    >
+    > For *Target Sheets*, tick all sheets.\
+    > Clearing the selection will: **Show all values**.
+
+    ![](images/45%20select%20on%20density-01.png){width="45%"}
+
+31. Hover your cursor over the point map. Ensure that the map is not fixed i.e. ensure that the pin icon (below) does not have a cross. If there is a cross, click on the pin once to remove the cross.
+
+    ![](images/46%20point%20map%20-%20do%20not%20fix-01.png){width="80%"}
+
+32. Last but not least, we will add text stating the data source. From the *Dashboard* pane, select Objects: **Text** and drag to the bottom of the point map.
+
+    ![](images/47%20data%20source.png){width="80%"}
+
+33. In the **Edit Text** dialogue box, update the text to the following.
+
+    > Data Source: *The Armed Conflict Location & Event Data Project (ACLED)*
+
+    Ensure that the font is set to **Tableau Book, size 9**, and the third-shade of gray (in screenshot below). Align the text to the **right**. Note that "*The Armed Conflict Location & Event Data Project (ACLED)*" is italicized.
+
+    ![](images/47%20data%20source2-01.png){width="45%"}
+
+The dashboard is completed. You can select a country from the choropleth map, and the other charts will change accordingly.
+
+![](images/99-03.png){width="100%"}
+
+# E. Main Observations
+
+1.  From 2015 to 2020, **Philippines** has recorded the highest number of armed conflicts at **11,092** occurrences.
+
+    ![](images/obs%201%20-%20phillippines%20highest%20number%20of%20conflicts-01.png){width="80%"}
+
+    When drilling down by Event Type, **Myanmar** has the highest number of *Battles* and *Explosions/Remote Violence* in the region.
+
+    ![](images/obs%201%20-%20battles.png){width="45%"} ![](images/obs%201%20-%20explosions.png){width="45%"}
+
+    **Indonesia** has the highest number of *Protests* and *Riots* in the region.
+
+    ![](images/obs%201%20-%20protests.png){width="45%"} ![](images/obs%201%20-%20riots.png){width="45%"}
+
+    **Philippines** has the highest number of *Strategic Developments* and *Violence against civilians* in the region.
+
+    ![](images/obs%201%20-%20strategic%20developments.png){width="45%"}
+
+2.  *Protests* and *Riots* are on the rise from 2015 to 2020 **in the region**.
+
+    ![](images/obs%202%20-%20protests.png){width="80%"}
+
+    ![](images/obs%202%20-%20riots.png){width="80%"}
+
+3.  In **2020**, **Indonesia** has the highest number of *protests* (1,050), followed by **Thailand** (679).
+
+    ![](images/obs%205%20-%20protests%20indonesia%20and%20thailand-01.png){width="80%"}
+
+4.  Despite the emergence of the coronavirus pandemic, **Thailand** faced a [spike]{.ul} of *protests* from 2019 (164) to 2020 (679). Led by high school and university students, the young people are calling for the dissolution of parliament, an end to harassment of government critics and for changes to the military-backed constitution ([Ratcliffe](https://www.theguardian.com/world/2020/sep/22/thailand-protests-everything-you-need-to-know), 2020).
+
+5.  **Violence against civilians** is on the [decrease]{.ul} in the Southeast Asia region since 2016.
+
+    *Year 2015 is excluded because there is no data for Philippines for year 2015.*
+
+    ![](images/obs%203%20-%20violence%20against%20civilians.png){width="80%"}
+
+    > **Philippines** has the greatest number of violence against civilians (6,621) and related fatalities (8,286), despite the count of violence against civilians decreasing over the years.
+
+    ![](images/obs%203%20-%20philippines-01.png){width="45%"} ![](images/obs%204%20-%20philippines.png){width="40%"}
+
+6.  On the contrary, **Myanmar** and **Indonesia** are facing a [rise]{.ul} in **violence against civilians**.
+
+    ![](images/obs%204%20-%20myanmar.png){width="45%"} ![](images/obs%204%20-%20indonesia.png){width="45%"}
