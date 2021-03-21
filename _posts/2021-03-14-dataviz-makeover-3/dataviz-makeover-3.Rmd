@@ -696,15 +696,17 @@ The dashboard is completed (available [here](https://public.tableau.com/views/da
 
     ![](images/obs%201%20-%20phillippines%20highest%20number%20of%20conflicts-01.png){width="80%"}
 
-    When drilling down by Event Type, **Myanmar** has the highest number of *Battles* and *Explosions/Remote Violence* in the region.
+    When drilling down by Event Type,
+
+    > **Myanmar** has the highest number of *Battles* and *Explosions/Remote Violence* in the region.
 
     ![](images/obs%201%20-%20battles.png){width="45%"} ![](images/obs%201%20-%20explosions.png){width="45%"}
 
-    **Indonesia** has the highest number of *Protests* and *Riots* in the region.
+    > **Indonesia** has the highest number of *Protests* and *Riots* in the region.
 
     ![](images/obs%201%20-%20protests.png){width="45%"} ![](images/obs%201%20-%20riots.png){width="45%"}
 
-    **Philippines** has the highest number of *Strategic Developments* and *Violence against civilians* in the region.
+    > **Philippines** has the highest number of *Strategic Developments* and *Violence against civilians* in the region.
 
     ![](images/obs%201%20-%20strategic%20developments.png){width="45%"}
 
@@ -719,6 +721,8 @@ The dashboard is completed (available [here](https://public.tableau.com/views/da
     ![](images/obs%205%20-%20protests%20indonesia%20and%20thailand-01.png){width="80%"}
 
 4.  Despite the emergence of the coronavirus pandemic, **Thailand** faced a [spike]{.ul} of *protests* from 2019 (164) to 2020 (679). Led by high school and university students, the young people are calling for the dissolution of parliament, an end to harassment of government critics and for changes to the military-backed constitution ([Ratcliffe](https://www.theguardian.com/world/2020/sep/22/thailand-protests-everything-you-need-to-know), 2020).
+
+    ![](images/obs%205%20-%20thailand%20protests%20spike%202020-01.png){width="80%"}
 
 5.  **Violence against civilians** is on the [decrease]{.ul} in the Southeast Asia region since 2016.
 
