@@ -8,7 +8,11 @@ navbar:
     - text: "Home"
       href: index.html
     - text: "DataViz Makeover"
-      href: dataviz.html
+      menu:
+        - text: "Dataviz Makeover 1"
+          href: dataviz-makeover-1.html
+        - text: "asdt"
+          href: dataviz-makeover-2.html
     - text: "Assignment"
       href: assignment.html
     - text: "About"
