@@ -9,8 +9,8 @@ navbar:
       href: index.html
     - text: "DataViz Makeover"
       href: dataviz.html
-    - text: "Visual Analytics Project"
-      href: vap.html
+    - text: "Assignment"
+      href: assignment.html
     - text: "About"
       href: about.html
 output:
