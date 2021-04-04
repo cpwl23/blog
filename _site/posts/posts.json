@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2021-04-04-assignment/",
+    "title": "Assignment",
+    "description": "A short description of the post.",
+    "author": [
+      {
+        "name": "Cheryl Pay",
+        "url": {}
+      }
+    ],
+    "date": "2021-04-04",
+    "categories": [],
+    "contents": "\nDistill is a publication format for scientific and technical writing, native to the web.\nLearn more about using Distill at https://rstudio.github.io/distill.\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-04-04T13:51:33+08:00",
+    "input_file": "assignment.utf8.md"
+  },
+  {
     "path": "posts/2021-03-14-dataviz-makeover-3/",
     "title": "DataViz Makeover 3",
     "description": "Due 21 Mar 2021, 2359h.",
