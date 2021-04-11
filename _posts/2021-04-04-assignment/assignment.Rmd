@@ -11,8 +11,8 @@ output:
     self_contained: false 
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(tidy.opts = list(blank = TRUE, width.cutoff = 60), tidy = TRUE)
+```{r setup, include=FALSE, tidy = TRUE}
+knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 50), tidy=TRUE)
 ```
 
 # Overview
@@ -52,10 +52,11 @@ Below is a list of of packages and their purpose. We will install and launch all
 -   **forcats**: randomly permute factor levels to categorical data i.e. skill_group_name
 -   **randomcoloR**: color code skill_group_name, which are text values, in the table
 -   **tidyverse**: ggplot2
+-   **formatR**: wrap r code chunks
 
 ```{r warning = FALSE, message = FALSE}
 packages = c('readr', 'dplyr', 'tidyr', 'DT', 'formattable', 'reactable',
-             'crosstalk', 'randomcoloR', 'forcats', 'tidyverse')
+             'crosstalk', 'randomcoloR', 'forcats', 'tidyverse', 'formatR')
 
 for(p in packages){
 	if(!require(p, character.only = T)){
@@ -259,6 +260,20 @@ plot2 <- ggplot(data = acctg,
 
 plot2
 ```
+-   geom_bar facet
+
+```{r}
+plot4 <-  ggplot(data = acctg,
+                 aes(x = year,
+                     group = skill_group_category,
+                     fill = skill_group_category)
+         ) +
+  geom_bar(stat = 'count') +
+  scale_fill_brewer(palette="Set2") +
+  facet_wrap(~skill_group_category)
+
+plot4
+```
 
 -   dot plot
 
@@ -272,6 +287,22 @@ plot3 <-  ggplot(data = acctg,
   geom_count()
 
 plot3
+```
+-   line plot
+
+    In the line chart below where each skill group category is a series, the lines overlap and hence several data points are hidden. 
+    
+```{r}
+plot4 <-  ggplot(data = acctg,
+                 aes(x = year,
+                     group = skill_group_category,
+                     color = skill_group_category)
+         ) +
+  geom_line(stat = 'count',) +
+  geom_point(stat = 'count') +
+  scale_colour_brewer(palette="Set2")
+
+plot4
 ```
 
 
