@@ -6,13 +6,15 @@ author:
   - name: Cheryl Pay
     url: {}
 date: 04-04-2021
-output: 
+output:
   distill::distill_article:
-    self_contained: false 
+    toc: true
+    toc_float: true
+    self_contained: false
 ---
 
-```{r setup, include=FALSE, tidy = TRUE}
-knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 50), tidy=TRUE)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 40), tidy=TRUE)
 ```
 
 # Overview
@@ -187,7 +189,7 @@ sd <- SharedData$new(pt_by_year)
 skillFactor <- fct_shuffle(as.factor(unique(industryskillsneeds$skill_group_name)))
 colors <- distinctColorPalette(length(skillFactor))
 
-bscols(
+table1 <- bscols(
   widths = c(6,12),
   list(filter_select("industry_name", 
                      "Industry Name", 
@@ -220,6 +222,8 @@ bscols(
                                         maxWidth = 60)
               )
 ))
+
+table1
 ```
 
 ### Exploring various packages to show skill category distribution changes
@@ -235,11 +239,11 @@ acctg <- industryskillsneeds %>%
 
 #### Stacked bar plot
 
-    A stacked bar plot is created with the legend positioned at the top. The title of the bar plot is intended to by dynamic as the industry (i.e. Accounting) should change according to user selection.
+A stacked bar plot is created with the legend positioned at the top. The title of the bar plot is intended to by dynamic as the industry (i.e. Accounting) should change according to user selection.
     
-    The stacked bars are great in showcasing the sum of skills (10 skills in total). However, skills groups in the middle of the bar cannot be compared easily across the years because their bottom and top edges of each bar vary across the years.
+The stacked bars are great in showcasing the sum of skills (10 skills in total). However, skills groups in the middle of the bar cannot be compared easily across the years because their bottom and top edges of each bar vary across the years.
 
-```{r}
+```{r out.width="70%"}
 plot1 <- ggplot(data = acctg,
                 aes(year,
              fill = skill_group_category)) +
@@ -259,7 +263,7 @@ The bar plot below has a slight edge over the stacked bar as viewers can easily 
     
 In the bar below for the accounting industry, it is apparent that *Specialized Industry Skills* was not identified from 2015 - 2018 (both years included) and this skill group category was included only in 2019.
 
-```{r}
+```{r out.width="70%"}
 plot2 <- ggplot(data = acctg,
                 aes(year,
              fill = skill_group_category)) +
@@ -276,7 +280,7 @@ plot2
     
 The facets below clearly shows each skill group category changes across the years. However, it does have its limitations in showing the distribution within the same year. There are 5 different skill group categories in total and the odd number five makes it impossible to evenly arrange the grids in more than 1 row or more than 1 column.
 
-```{r}
+```{r out.width="70%"}
 plot4 <-  ggplot(data = acctg,
                  aes(x = year,
                      group = skill_group_category,
@@ -293,7 +297,7 @@ plot4
 
 The size of the dots reflect the count of skills in each category. However, as the size differences are not apparent to the human eye, the dot plot below is not an ideal visualization to show distribution of skill group categories over time.
     
-```{r}
+```{r out.width="70%"}
 plot3 <-  ggplot(data = acctg,
                  aes(x = year,
                      y = skill_group_category)
@@ -304,9 +308,11 @@ plot3
 ```
 #### Line plot
 
-In the line chart below where each skill group category is a series, the lines overlap and hence several data points are hidden. We decide not to introduce facets for the same reasons discussed previously.
+In the line chart below where each skill group category is a series, the lines overlap and hence several data points are hidden. Below, *Specialized Industry Skills* is hidden - it has the value of 1 in 2019.
+
+We decide not to introduce facets for the same reasons discussed previously.
     
-```{r}
+```{r out.width="70%"}
 plot4 <-  ggplot(data = acctg,
                  aes(x = year,
                      group = skill_group_category,
@@ -318,7 +324,67 @@ plot4 <-  ggplot(data = acctg,
 
 plot4
 ```
+### Creating bar plot to show distribution changes in skill group categories
+
+We decide on the dodged bar plot to reflect the changes in skill group categories' distribution over the years. Below are examples for four industries.
+
+```{r out.width="50%", tidy = TRUE}
+barplot_acctg <- ggplot(data = acctg,
+                aes(year,
+             fill = skill_group_category)) +
+  geom_bar(position = "dodge") +
+  scale_y_continuous(breaks=c(2,4,6,8,10)) +
+  ggtitle("Distribution of top 10 skills in Accounting") +
+  theme_minimal() +
+  theme(legend.position = "top", legend.title = element_blank()) +
+  scale_fill_brewer(palette="Set2")
+
+barplot_mr <- industryskillsneeds %>%
+  filter(industry_name == "Market Research") %>%
+  ggplot(aes(year,
+             fill = skill_group_category)) +
+  geom_bar(position = "dodge") +
+  scale_y_continuous(breaks=c(2,4,6,8,10)) +
+  ggtitle("Distribution of top 10 skills in Market Research") +
+  theme_minimal() +
+  theme(legend.position = "top", legend.title = element_blank()) +
+  scale_fill_brewer(palette="Set2")
+
+barplot_pp <- industryskillsneeds %>%
+  filter(industry_name == "Paper & Forest Products") %>%
+  ggplot(aes(year,
+             fill = skill_group_category)) +
+  geom_bar(position = "dodge") +
+  scale_y_continuous(breaks=c(2,4,6,8,10)) +
+  ggtitle("Distribution of top 10 skills in Paper & Forest Products") +
+  theme_minimal() +
+  theme(legend.position = "top", legend.title = element_blank()) +
+  scale_fill_brewer(palette="Set2")
+
+
+barplot_banking <- industryskillsneeds %>%
+  filter(industry_name == "Banking") %>%
+  ggplot(aes(year,
+             fill = skill_group_category)) +
+  geom_bar(position = "dodge") +
+  scale_y_continuous(breaks=c(2,4,6,8,10)) +
+  ggtitle("Distribution of top 10 skills in Banking") +
+  theme_minimal() +
+  theme(legend.position = "top", legend.title = element_blank()) +
+  scale_fill_brewer(palette="Set2")
+
+barplot_acctg
+barplot_mr
+barplot_pp
+barplot_banking
+```
+
 
 # Storyboard
 
 asdf
+```{r out.width="50%"}
+plot2
+
+table1
+```
