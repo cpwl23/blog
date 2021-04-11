@@ -1,7 +1,7 @@
 ---
 title: "Assignment"
 description: |
-  A short description of the post.
+  Assignment as part of Visual Analytics Project titled VISTAS - Visualising Industry Skill TAlent Shifts.
 author:
   - name: Cheryl Pay
     url: {}
@@ -382,10 +382,4 @@ barplot_banking
 
 # Storyboard
 
-asdf
-
-```{r out.width="50%"}
-plot2
-
-table1
-```
+On the shiny app, 
