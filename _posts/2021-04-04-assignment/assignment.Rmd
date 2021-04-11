@@ -6,7 +6,7 @@ author:
   - name: Cheryl Pay
     url: {}
 date: 04-04-2021
-output:
+output: 
   distill::distill_article:
     self_contained: false 
 ---
@@ -112,40 +112,44 @@ str(pt_by_year)
 
 To create interactivity in tables, we explored various data table packages and their functions. Below is a summary of our observations. Of all the different packages, we decided on **reactable** to incorporate with **crosstalk** for our interactive table.
 
--   *datatable()* from **DT** package
+#### **DT** package
 
-    By default, there is only a global search function in the top right hand corner; we add column filters by introducing the **filter** argument, and set page length to 10 observations.
+By default, there is only a global search function in the top right hand corner; we add column filters by introducing the **filter** argument, and set page length to 10 observations.
 
-    However the table width exceeds the width of the post.
+However the table width exceeds the width of the post. 
 
-    ```{r results = FALSE}
+*(The results of the code below are hidden intentionally.)*
+
+```{r results = FALSE}
     datatable(pt_by_year,
               rownames = FALSE,
               filter = list(position = 'top'),
               options = list(pageLength = 10)
               )
-    ```
+```
 
--   *formattable()* from **formattable** package
+#### **formattable** package
 
-    Formattable presents all 700 observations immediately and is hence not suitable to show as a datatable on a dashbaord.
+Formattable presents all 700 observations immediately and is hence not suitable to show as a datatable on a dashbaord. 
 
-    ```{r results = FALSE}
+*(The results of the code below are hidden intentionally.)*
+
+```{r results = FALSE}
     formattable(pt_by_year,
                 align =c("c","c","c","c","c", "c")
                 )
-    ```
+```
 
--   *reactable()* from **reactable** package
+#### **reactable** package
 
-    Table width is adjusted to the width of the post. Column filters are introduced and we can possible restrict the filters to only the column: industry_name. However, the text input is free text while we would prefer to include a dropdown for selection of industry_name.
+Table width is adjusted to the width of the post. Column filters are introduced and we can possible restrict the filters to only the column: industry_name. However, the text input is free text while we would prefer to include a dropdown for selection of industry_name.
 
-    ```{r}
+```{r}
     reactable(pt_by_year,
               style = list(fontSize = "12px"),
               filterable = TRUE,
               )
-    ```
+```
 
 Of all three packages, we decide to use **reactable**. The width of the table auto-fits the post. We will explore further customization for reactable in the following section.
 
@@ -222,14 +226,18 @@ bscols(
 
 For this section we will filter the data for industry_name = **Accounting** as example data for the various plots. When creating the app in Shiny, we will allow industry name as an input variable for users to select.
 
+Unless otherwise stated, we are using the **tidyverse** package, , in particular **ggplot**, to create the plots.
+
 ```{r}
 acctg <- industryskillsneeds %>%
   filter(industry_name == "Accounting")
 ```
 
--   geom_bar
+#### Stacked bar plot
 
     A stacked bar plot is created with the legend positioned at the top. The title of the bar plot is intended to by dynamic as the industry (i.e. Accounting) should change according to user selection.
+    
+    The stacked bars are great in showcasing the sum of skills (10 skills in total). However, skills groups in the middle of the bar cannot be compared easily across the years because their bottom and top edges of each bar vary across the years.
 
 ```{r}
 plot1 <- ggplot(data = acctg,
@@ -245,7 +253,11 @@ plot1 <- ggplot(data = acctg,
 plot1
 ```
 
--   geom_bar dodged
+#### *Dodge* bar plots
+    
+The bar plot below has a slight edge over the stacked bar as viewers can easily see the changes in distribution of skill group categories over the years. Each color represents a skill group cateogry.
+    
+In the bar below for the accounting industry, it is apparent that *Specialized Industry Skills* was not identified from 2015 - 2018 (both years included) and this skill group category was included only in 2019.
 
 ```{r}
 plot2 <- ggplot(data = acctg,
@@ -260,7 +272,9 @@ plot2 <- ggplot(data = acctg,
 
 plot2
 ```
--   geom_bar facet
+#### Bar plots with facet
+    
+The facets below clearly shows each skill group category changes across the years. However, it does have its limitations in showing the distribution within the same year. There are 5 different skill group categories in total and the odd number five makes it impossible to evenly arrange the grids in more than 1 row or more than 1 column.
 
 ```{r}
 plot4 <-  ggplot(data = acctg,
@@ -275,9 +289,9 @@ plot4 <-  ggplot(data = acctg,
 plot4
 ```
 
--   dot plot
+#### Dot Plot
 
-    The size of the dots reflect the count of skills in each category. However, as the size differences are not apparent to the human eye, the dot plot below is not an ideal visualization to show distribution of skill group categories over time.
+The size of the dots reflect the count of skills in each category. However, as the size differences are not apparent to the human eye, the dot plot below is not an ideal visualization to show distribution of skill group categories over time.
     
 ```{r}
 plot3 <-  ggplot(data = acctg,
@@ -288,9 +302,9 @@ plot3 <-  ggplot(data = acctg,
 
 plot3
 ```
--   line plot
+#### Line plot
 
-    In the line chart below where each skill group category is a series, the lines overlap and hence several data points are hidden. 
+In the line chart below where each skill group category is a series, the lines overlap and hence several data points are hidden. We decide not to introduce facets for the same reasons discussed previously.
     
 ```{r}
 plot4 <-  ggplot(data = acctg,
@@ -304,7 +318,6 @@ plot4 <-  ggplot(data = acctg,
 
 plot4
 ```
-
 
 # Storyboard
 
