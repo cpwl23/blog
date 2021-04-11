@@ -14,7 +14,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 40), tidy=TRUE)
+knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 50), tidy=TRUE)
 ```
 
 # Overview
@@ -328,7 +328,7 @@ plot4
 
 We decide on the dodged bar plot to reflect the changes in skill group categories' distribution over the years. Below are examples for four industries.
 
-```{r out.width="50%", tidy = TRUE}
+```{r figures-side, fig.show="hold", out.width="50%", tidy = TRUE}
 barplot_acctg <- ggplot(data = acctg,
                 aes(year,
              fill = skill_group_category)) +
@@ -383,6 +383,7 @@ barplot_banking
 # Storyboard
 
 asdf
+
 ```{r out.width="50%"}
 plot2
 
