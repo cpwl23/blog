@@ -34,7 +34,7 @@ One is hence unable to see the change in skills over the years in an industry. B
 We will be creating two visualizations.
 
 1.  Data table to show top 10 skill needs changes in each industry over the years
-2.  Histogram to show the change in distribution of skill group categories in each industry over the years
+2.  Bar graph to show the change in distribution of skill group categories in each industry over the years
 
 ### Data Source
 
@@ -44,17 +44,17 @@ We will be creating two visualizations.
 
 Below is a list of of packages and their purpose. We will install and launch all these packages via a loop in R.
 
--   **readr**: to load data from csv file to R
--   **dplyr**: data manipulation select()
--   **tidyr**: pivot_wider()
--   **DT**: explore data presented in tabular form (1)
--   **formattable**: explore data presented in tabular form (2)
--   **reactable**: explore data presented in tabular form (3)
--   **crosstalk**: allow reactable() to be filtered by user input from filter_select()
--   **forcats**: randomly permute factor levels to categorical data i.e. skill_group_name
--   **randomcoloR**: color code skill_group_name, which are text values, in the table
--   **tidyverse**: ggplot2
--   **formatR**: wrap r code chunks
+-   `readr`: to load data from csv file to R
+-   `dplyr`: data manipulation select()
+-   `tidyr`: pivot_wider()
+-   `DT`: explore data presented in tabular form (1)
+-   `formattable`: explore data presented in tabular form (2)
+-   `reactable`: explore data presented in tabular form (3)
+-   `crosstalk`: allow reactable() to be filtered by user input from filter_select()
+-   `forcats`: randomly permute factor levels to categorical data i.e. skill_group_name
+-   `randomcoloR`: color code skill_group_name, which are text values, in the table
+-   `tidyverse`: ggplot2
+-   `formatR`: wrap r code chunks
 
 ```{r warning = FALSE, message = FALSE}
 packages = c('readr', 'dplyr', 'tidyr', 'DT', 'formattable', 'reactable',
@@ -71,34 +71,31 @@ for(p in packages){
 
 ### Loading the data with read_csv
 
-We use *read_csv* to load the csv file and remove all NA rows with *na.omit()*.
+We use `read_csv` to load the csv file.
 
 ```{r}
 industryskillsneeds <- read_csv("assignment/data/industry_skills_needs.csv")
 ```
 
-Then we use *str()* to view the structure of the data. Since we want see the shift in industry skill needs over the years, we have to pivot our data to have year as columns and skill_group_name as values.
+Then we use `str()` to view the structure of the data. Since we want see the shift in industry skill needs over the years, we have to pivot our data to have year as columns and skill_group_name as values.
 
 ```{r}
 str(industryskillsneeds)
-
-#omit rows with NA values
-#industryskillsneeds <- na.omit(industryskillsneeds)
 ```
 
 ### Pivoting the data
 
 To pivot our data to show the change in top 10 skills by industry by year, we wrangle the data: **industryskillsneeds** as follows.
 
-1\. *select()*: select only columns **industry_name**, **year**, **skill_group_name**, **skill_group_rank**
+1\. `select()`: select only columns **industry_name**, **year**, **skill_group_name**, **skill_group_rank**
 
-2\. *pivot_wider()*: pivot the data with **year** in columns and **skill_group_name** as values
+2\. `pivot_wider()`: pivot the data with **year** in columns and **skill_group_name** as values
 
-3\. *select()*: select all data frame columns to allow sorting
+3\. `select()`: select all data frame columns to allow sorting
 
-4\. *arrange()*: sort the data by **industry name**, then by **skill_group_rank**
+4\. `arrange()`: sort the data by **industry name**, then by **skill_group_rank**
 
-We use *str()* to view the structure of the data.
+We use `str()` to view the structure of the data.
 
 ```{r message = FALSE, fig.width= 4}
 pt_by_year <- industryskillsneeds %>%
@@ -116,9 +113,9 @@ To create interactivity in tables, we explored various data table packages and t
 
 #### **DT** package
 
-By default, there is only a global search function in the top right hand corner; we add column filters by introducing the **filter** argument, and set page length to 10 observations.
+By default, there is only a global search function in the top right hand corner; we add column filters by introducing the `filter` argument, and set page length to 10 observations.
 
-However the table width exceeds the width of the post. 
+However the table width exceeds the width of the post.
 
 *(The results of the code below are hidden intentionally.)*
 
@@ -132,7 +129,7 @@ However the table width exceeds the width of the post.
 
 #### **formattable** package
 
-Formattable presents all 700 observations immediately and is hence not suitable to show as a datatable on a dashbaord. 
+Formattable presents all 700 observations immediately and is hence not suitable to show as a datatable on a dashboard.
 
 *(The results of the code below are hidden intentionally.)*
 
@@ -144,7 +141,7 @@ Formattable presents all 700 observations immediately and is hence not suitable 
 
 #### **reactable** package
 
-Table width is adjusted to the width of the post. Column filters are introduced and we can possible restrict the filters to only the column: industry_name. However, the text input is free text while we would prefer to include a dropdown for selection of industry_name.
+Table width is adjusted to the width of the post with horizontal scroll bar. Column filters are introduced and we can possible restrict the filters to only the column: industry_name. However, the text input is free text while we would prefer to include a dropdown for selection of industry_name.
 
 ```{r}
     reactable(pt_by_year,
@@ -153,11 +150,11 @@ Table width is adjusted to the width of the post. Column filters are introduced 
               )
 ```
 
-Of all three packages, we decide to use **reactable**. The width of the table auto-fits the post. We will explore further customization for reactable in the following section.
+Of all three packages, we decide to use `reactable`. The width of the table auto-fits the post. We will explore further customization for reactable in the following section.
 
 ### Creating data table to show industry skills shift
 
-1.  Introducing crosstalk's filtering API filter_select() to reactable
+1.  Introducing crosstalk's filtering API `filter_select()` to reactable
 
     Only the filter for Industry is relevant. Instead of entering free text in the search bar for industry name, we use **crosstalk**'s filtering API to insert a searchbar with dropdown. Industry names are populated in the dropdown for the user to select.
 
@@ -167,9 +164,9 @@ Of all three packages, we decide to use **reactable**. The width of the table au
 
 4.  To reflect the movement in skill ranks over the years, we introduce colors to the skills in the table using two packages: **forcats** and **randomcoloR**.
 
-    -   *fct_shuffle()* in **forcats** package is called to randomly permute factor levels to each skill_group_name (categorical)
+    -   `fct_shuffle()` in **forcats** package is called to randomly permute factor levels to each skill_group_name (categorical)
 
-    -   *distinctColorPalette* in **randomcoloR** package is called to set a color palette that has the same number of colors as the number of distinct skill_group_name
+    -   `distinctColorPalette` in **randomcoloR** package is called to set a color palette that has the same number of colors as the number of distinct skill_group_name
 
     Since the industry_name that are equal to the skill_group_name have their text colored, we override the color for industry_name by introducing a style argument ni the column definition of industry_name.
 
@@ -181,9 +178,9 @@ Of all three packages, we decide to use **reactable**. The width of the table au
 
     There are many pages for 700 observations and it would be time-consuming for the user to keep clicking the forward arrow to get through the pages. Hence we choose **jump** to allow user to jump to a particular page by directly entering the number in the box.
 
-7.  Highlight=TRUE is set to highlight the row that the cursor hovers onto.
+7.  `Highlight=TRUE` is set to highlight the row that the cursor hovers onto.
 
-```{r message = FALSE}
+```{r message = FALSE, tidy = TRUE}
 sd <- SharedData$new(pt_by_year)
 
 skillFactor <- fct_shuffle(as.factor(unique(industryskillsneeds$skill_group_name)))
@@ -230,7 +227,7 @@ table1
 
 For this section we will filter the data for industry_name = **Accounting** as example data for the various plots. When creating the app in Shiny, we will allow industry name as an input variable for users to select.
 
-Unless otherwise stated, we are using the **tidyverse** package, , in particular **ggplot**, to create the plots.
+Unless otherwise stated, we are using the **tidyverse** package, in particular `ggplot`, to create the plots.
 
 ```{r}
 acctg <- industryskillsneeds %>%
@@ -240,7 +237,7 @@ acctg <- industryskillsneeds %>%
 #### Stacked bar plot
 
 A stacked bar plot is created with the legend positioned at the top. The title of the bar plot is intended to by dynamic as the industry (i.e. Accounting) should change according to user selection.
-    
+
 The stacked bars are great in showcasing the sum of skills (10 skills in total). However, skills groups in the middle of the bar cannot be compared easily across the years because their bottom and top edges of each bar vary across the years.
 
 ```{r out.width="70%"}
@@ -258,9 +255,9 @@ plot1
 ```
 
 #### *Dodge* bar plots
-    
+
 The bar plot below has a slight edge over the stacked bar as viewers can easily see the changes in distribution of skill group categories over the years. Each color represents a skill group cateogry.
-    
+
 In the bar below for the accounting industry, it is apparent that *Specialized Industry Skills* was not identified from 2015 - 2018 (both years included) and this skill group category was included only in 2019.
 
 ```{r out.width="70%"}
@@ -276,8 +273,9 @@ plot2 <- ggplot(data = acctg,
 
 plot2
 ```
+
 #### Bar plots with facet
-    
+
 The facets below clearly shows each skill group category changes across the years. However, it does have its limitations in showing the distribution within the same year. There are 5 different skill group categories in total and the odd number five makes it impossible to evenly arrange the grids in more than 1 row or more than 1 column.
 
 ```{r out.width="70%"}
@@ -296,7 +294,7 @@ plot4
 #### Dot Plot
 
 The size of the dots reflect the count of skills in each category. However, as the size differences are not apparent to the human eye, the dot plot below is not an ideal visualization to show distribution of skill group categories over time.
-    
+
 ```{r out.width="70%"}
 plot3 <-  ggplot(data = acctg,
                  aes(x = year,
@@ -306,12 +304,13 @@ plot3 <-  ggplot(data = acctg,
 
 plot3
 ```
+
 #### Line plot
 
 In the line chart below where each skill group category is a series, the lines overlap and hence several data points are hidden. Below, *Specialized Industry Skills* is hidden - it has the value of 1 in 2019.
 
 We decide not to introduce facets for the same reasons discussed previously.
-    
+
 ```{r out.width="70%"}
 plot4 <-  ggplot(data = acctg,
                  aes(x = year,
@@ -324,6 +323,7 @@ plot4 <-  ggplot(data = acctg,
 
 plot4
 ```
+
 ### Creating bar plot to show distribution changes in skill group categories
 
 We decide on the dodged bar plot to reflect the changes in skill group categories' distribution over the years. Below are examples for four industries.
@@ -339,13 +339,13 @@ barplot_acctg <- ggplot(data = acctg,
   theme(legend.position = "top", legend.title = element_blank()) +
   scale_fill_brewer(palette="Set2")
 
-barplot_mr <- industryskillsneeds %>%
-  filter(industry_name == "Market Research") %>%
+barplot_vet <- industryskillsneeds %>%
+  filter(industry_name == "Veterinary") %>%
   ggplot(aes(year,
              fill = skill_group_category)) +
   geom_bar(position = "dodge") +
   scale_y_continuous(breaks=c(2,4,6,8,10)) +
-  ggtitle("Distribution of top 10 skills in Market Research") +
+  ggtitle("Distribution of top 10 skills in Veterinary") +
   theme_minimal() +
   theme(legend.position = "top", legend.title = element_blank()) +
   scale_fill_brewer(palette="Set2")
@@ -374,12 +374,29 @@ barplot_banking <- industryskillsneeds %>%
   scale_fill_brewer(palette="Set2")
 
 barplot_acctg
-barplot_mr
+barplot_vet
 barplot_pp
 barplot_banking
 ```
 
-
 # Storyboard
 
-On the shiny app, 
+Putting the bar plot and the table side-by-side, the selection of **Industry Name** is meant to apply to both figures. The table complements the bar plot by showing the top 10 skills in each year.
+
+> For our shiny app, when a user hovers over a particular bar in the bar plot, we intend to highlight the corresponding cells (skills) in the table.
+
+![](images/storyboard1-01.png){width="80%"}
+
+-   The selection of industry is a dropdown filter.
+
+-   The bar plot is colored according to skill categories.
+
+-   The skills are values in the data table and their text will be colored accordingly (see [Creating data table to show industry skills shift]).
+
+On the shiny app, we will have multiple tabs for analyses for migration, industry skills and growth trends. In particular, the change in skills and skill categories in each industry over the years is reflected with the visualization above.
+
+For instance, it is apparent from the bar plot below that **Veterinary** is a highly specialized industry as *specialized industry skills* forms majority of the top 10 skills in the industry, with *soft skills* becoming increasingly desired over the years.
+
+```{r echo = FALSE, out.width = "70%"}
+barplot_vet
+```
