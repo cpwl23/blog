@@ -385,13 +385,17 @@ Putting the bar plot and the table side-by-side, the selection of **Industry Nam
 
 > For our shiny app, when a user hovers over a particular bar in the bar plot, we intend to highlight the corresponding cells (skills) in the table.
 
-![](images/storyboard1-01.png){width="80%"}
+![Dashboard with full width](images/storyboard1-01.png){width="60%"}
 
 -   The selection of industry is a dropdown filter.
 
 -   The bar plot is colored according to skill categories.
 
 -   The skills are values in the data table and their text will be colored accordingly (see [Creating data table to show industry skills shift]).
+
+-   For layout interactivity, when the width of the dashboard is reduced, the table will move to the bottom of the bar plot.
+
+    ![Dashboard with reduced width](images/storyboard2.png){width="30%"}
 
 On the shiny app, we will have multiple tabs for analyses for migration, industry skills and growth trends. In particular, the change in skills and skill categories in each industry over the years is reflected with the visualization above.
 
